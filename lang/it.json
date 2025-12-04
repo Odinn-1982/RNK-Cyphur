@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Comunicazioni criptate per Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Apri Cyphur Hub",
+            "Send": "Invia messaggio",
+            "Cancel": "Annulla",
+            "Save": "Salva",
+            "Delete": "Elimina",
+            "Edit": "Modifica",
+            "Close": "Chiudi",
+            "Export": "Esporta",
+            "Import": "Importa",
+            "Confirm": "Conferma",
+            "Clear": "Cancella",
+            "Search": "Cerca",
+            "CreateGroup": "Crea gruppo",
+            "NewChat": "Nuova chat",
+            "Refresh": "Aggiorna",
+            "SelectAll": "Seleziona tutto",
+            "DeselectAll": "Deseleziona tutto"
+        },
+
+        "Hub": {
+            "Title": "Hub Cyphur",
+            "Channels": "Canali",
+            "Groups": "Gruppi",
+            "PrivateChats": "Chat private",
+            "NewConversation": "Nuova conversazione",
+            "NoConversations": "Nessuna conversazione",
+            "StartChatting": "Inizia una nuova chat",
+            "OnlineUsers": "Utenti online",
+            "OfflineUsers": "Utenti offline",
+            "AllUsers": "Tutti gli utenti",
+            "Favorites": "Preferiti",
+            "RecentChats": "Recenti"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Chat privata con {name}",
+            "GroupChat": "Gruppo: {name}",
+            "ChannelChat": "Canale: {name}",
+            "TypeMessage": "Scrivi un messaggio...",
+            "EncryptedChannel": "Canale criptato",
+            "MessagePlaceholder": "Inserisci il tuo messaggio...",
+            "NoMessages": "Nessun messaggio",
+            "StartConversation": "Invia un messaggio per iniziare",
+            "MessageSent": "Messaggio inviato",
+            "MessageDeleted": "Messaggio eliminato",
+            "MessageEdited": "(modificato)",
+            "Edited": "modificato",
+            "Pinned": "Fissato",
+            "ReplyingTo": "Risposta a {name}",
+            "CancelReply": "Annulla risposta"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Assente",
+            "Busy": "Occupato",
+            "Typing": "{name} sta scrivendo...",
+            "TypingMultiple": "{names} stanno scrivendo...",
+            "LastSeen": "Visto {time}",
+            "Active": "Attivo ora"
+        },
+
+        "Groups": {
+            "Title": "Gestione gruppi",
+            "CreateNew": "Crea nuovo gruppo",
+            "GroupName": "Nome del gruppo",
+            "Members": "Membri",
+            "NoGroups": "Nessun gruppo creato",
+            "EditGroup": "Modifica gruppo",
+            "DeleteGroup": "Elimina gruppo",
+            "DeleteConfirm": "Sei sicuro di voler eliminare questo gruppo?",
+            "MemberCount": "{count} membro/i",
+            "GroupCreated": "Gruppo creato con successo",
+            "GroupDeleted": "Gruppo eliminato"
+        },
+
+        "Monitor": {
+            "Title": "Monitor attività",
+            "AllActivity": "Tutta l'attività",
+            "PrivateMessages": "Messaggi privati",
+            "GroupMessages": "Messaggi di gruppo",
+            "NoActivity": "Nessuna attività registrata",
+            "ExportLog": "Esporta registro",
+            "ClearLog": "Cancella registro"
+        },
+
+        "Settings": {
+            "Title": "Impostazioni Cyphur",
+            "General": "Impostazioni generali",
+            "Appearance": "Aspetto",
+            "Notifications": "Notifiche",
+            "Sounds": "Impostazioni audio",
+            "EnableSounds": "Abilita suoni",
+            "SoundVolume": "Volume",
+            "Theme": "Tema",
+            "SaveSettings": "Salva impostazioni"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Mezzanotte",
+            "Plasma": "Plasma",
+            "Hologram": "Ologramma",
+            "Quantum": "Quantum",
+            "Void": "Vuoto"
+        },
+
+        "Errors": {
+            "SendFailed": "Invio messaggio fallito",
+            "ConnectionError": "Errore di connessione",
+            "LoadFailed": "Caricamento dati fallito",
+            "SaveFailed": "Salvataggio dati fallito",
+            "EmptyMessage": "Impossibile inviare messaggio vuoto"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat con {name}",
+        "GroupChat": "Gruppo: {name}",
+        "PrivateChat": "Chat privata",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "membri",
+        "SearchMessages": "Cerca messaggi...",
+        "Results": "risultati",
+        "AddFavorite": "Aggiungi ai preferiti",
+        "RemoveFavorite": "Rimuovi dai preferiti",
+        "Mute": "Silenzia",
+        "Unmute": "Attiva audio",
+        "Reply": "Rispondi",
+        "React": "Reagisci",
+        "Pin": "Fissa",
+        "Unpin": "Rimuovi fissato",
+        "Edit": "Modifica",
+        "Delete": "Elimina",
+        "Send": "Invia",
+        "TypeMessage": "Scrivi un messaggio...",
+        "GMMonitorTitle": "Monitor furtivo",
+        "All": "Tutto",
+        "Private": "Privato",
+        "Group": "Gruppo",
+        "ExportLog": "Esporta registro",
+        "ClearLog": "Cancella registro",
+        "NoInterceptedMessages": "Nessun messaggio intercettato",
+        "OpenCyphur": "Apri Cyphur",
+        "ShareImage": "Condividi immagine",
+        "SetBackground": "Imposta sfondo",
+        "ExportToJournal": "Esporta nel diario",
+        "Stealth": "FURTIVO",
+        "Flagged": "Contrassegnato",
+        "New": "NUOVO"
+    }
+}

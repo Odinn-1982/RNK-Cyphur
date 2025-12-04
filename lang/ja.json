@@ -1,0 +1,172 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Foundry VTT用暗号化通信",
+
+        "Buttons": {
+            "OpenHub": "Cyphur Hubを開く",
+            "Send": "メッセージを送信",
+            "Cancel": "キャンセル",
+            "Save": "保存",
+            "Delete": "削除",
+            "Edit": "編集",
+            "Close": "閉じる",
+            "Export": "エクスポート",
+            "Import": "インポート",
+            "Confirm": "確認",
+            "Clear": "クリア",
+            "Search": "検索",
+            "CreateGroup": "グループ作成",
+            "NewChat": "新規チャット",
+            "Refresh": "更新",
+            "SelectAll": "すべて選択",
+            "DeselectAll": "選択解除"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "チャンネル",
+            "Groups": "グループ",
+            "PrivateChats": "プライベートチャット",
+            "NewConversation": "新規会話",
+            "NoConversations": "会話なし",
+            "StartChatting": "新しいチャットを開始",
+            "OnlineUsers": "オンラインユーザー",
+            "OfflineUsers": "オフラインユーザー",
+            "AllUsers": "全ユーザー",
+            "Favorites": "お気に入り",
+            "RecentChats": "最近"
+        },
+
+        "Chat": {
+            "Title": "チャット",
+            "PrivateWith": "{name}とのプライベートチャット",
+            "GroupChat": "グループ: {name}",
+            "ChannelChat": "チャンネル: {name}",
+            "TypeMessage": "メッセージを入力...",
+            "EncryptedChannel": "暗号化チャンネル",
+            "MessagePlaceholder": "メッセージを入力してください...",
+            "NoMessages": "メッセージなし",
+            "StartConversation": "メッセージを送信して開始",
+            "MessageSent": "メッセージ送信完了",
+            "MessageDeleted": "メッセージ削除済み",
+            "MessageEdited": "(編集済み)",
+            "Edited": "編集済み",
+            "Pinned": "ピン留め",
+            "ReplyingTo": "{name}に返信",
+            "CancelReply": "返信をキャンセル"
+        },
+
+        "Status": {
+            "Online": "オンライン",
+            "Offline": "オフライン",
+            "Away": "離席中",
+            "Busy": "取り込み中",
+            "Typing": "{name}が入力中...",
+            "TypingMultiple": "{names}が入力中...",
+            "LastSeen": "最終確認 {time}",
+            "Active": "アクティブ"
+        },
+
+        "Groups": {
+            "Title": "グループ管理",
+            "CreateNew": "新規グループ作成",
+            "GroupName": "グループ名",
+            "Members": "メンバー",
+            "NoGroups": "グループなし",
+            "EditGroup": "グループを編集",
+            "DeleteGroup": "グループを削除",
+            "DeleteConfirm": "このグループを削除しますか？",
+            "MemberCount": "{count}人のメンバー",
+            "GroupCreated": "グループ作成完了",
+            "GroupDeleted": "グループ削除完了"
+        },
+
+        "Monitor": {
+            "Title": "アクティビティモニター",
+            "AllActivity": "すべてのアクティビティ",
+            "PrivateMessages": "プライベートメッセージ",
+            "GroupMessages": "グループメッセージ",
+            "NoActivity": "アクティビティなし",
+            "ExportLog": "ログをエクスポート",
+            "ClearLog": "ログをクリア"
+        },
+
+        "Settings": {
+            "Title": "Cyphur設定",
+            "General": "一般設定",
+            "Appearance": "外観",
+            "Notifications": "通知",
+            "Sounds": "サウンド設定",
+            "EnableSounds": "サウンドを有効化",
+            "SoundVolume": "音量",
+            "Theme": "テーマ",
+            "SaveSettings": "設定を保存"
+        },
+
+        "Themes": {
+            "Neon": "ネオン",
+            "Matrix": "マトリックス",
+            "Cyber": "サイバー",
+            "Midnight": "ミッドナイト",
+            "Plasma": "プラズマ",
+            "Hologram": "ホログラム",
+            "Quantum": "クォンタム",
+            "Void": "ヴォイド"
+        },
+
+        "QuantumPortal": {
+            "Tooltip": "クォンタムポータルで開く",
+            "Title": "クォンタムポータル",
+            "Opening": "クォンタムポータルを開いています...",
+            "Closed": "クォンタムポータルを閉じました",
+            "SyncEnabled": "リアルタイム同期有効",
+            "Description": "マルチモニター設定用にウィンドウをポップアウト",
+            "ReturnToMain": "メインウィンドウに戻る"
+        },
+
+        "Errors": {
+            "SendFailed": "メッセージ送信失敗",
+            "ConnectionError": "接続エラー",
+            "LoadFailed": "データ読み込み失敗",
+            "SaveFailed": "データ保存失敗",
+            "EmptyMessage": "空のメッセージは送信できません"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "{name}とチャット",
+        "GroupChat": "グループ: {name}",
+        "PrivateChat": "プライベートチャット",
+        "Online": "オンライン",
+        "Offline": "オフライン",
+        "Members": "メンバー",
+        "SearchMessages": "メッセージを検索...",
+        "Results": "件の結果",
+        "AddFavorite": "お気に入りに追加",
+        "RemoveFavorite": "お気に入りから削除",
+        "Mute": "ミュート",
+        "Unmute": "ミュート解除",
+        "Reply": "返信",
+        "React": "リアクション",
+        "Pin": "ピン留め",
+        "Unpin": "ピン解除",
+        "Edit": "編集",
+        "Delete": "削除",
+        "Send": "送信",
+        "TypeMessage": "メッセージを入力...",
+        "GMMonitorTitle": "ステルスモニター",
+        "All": "すべて",
+        "Private": "プライベート",
+        "Group": "グループ",
+        "ExportLog": "ログをエクスポート",
+        "ClearLog": "ログをクリア",
+        "NoInterceptedMessages": "傍受メッセージなし",
+        "OpenCyphur": "Cyphurを開く",
+        "ShareImage": "画像を共有",
+        "SetBackground": "背景を設定",
+        "ExportToJournal": "ジャーナルにエクスポート",
+        "Stealth": "ステルス",
+        "Flagged": "フラグ付き",
+        "New": "新規"
+    }
+}

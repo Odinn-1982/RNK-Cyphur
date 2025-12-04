@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "اتصالات مشفرة لـ Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "فتح مركز Cyphur",
+            "Send": "إرسال رسالة",
+            "Cancel": "إلغاء",
+            "Save": "حفظ",
+            "Delete": "حذف",
+            "Edit": "تعديل",
+            "Close": "إغلاق",
+            "Export": "تصدير",
+            "Import": "استيراد",
+            "Confirm": "تأكيد",
+            "Clear": "مسح",
+            "Search": "بحث",
+            "CreateGroup": "إنشاء مجموعة",
+            "NewChat": "محادثة جديدة",
+            "Refresh": "تحديث",
+            "SelectAll": "تحديد الكل",
+            "DeselectAll": "إلغاء التحديد"
+        },
+
+        "Hub": {
+            "Title": "مركز Cyphur",
+            "Channels": "القنوات",
+            "Groups": "المجموعات",
+            "PrivateChats": "المحادثات الخاصة",
+            "NewConversation": "محادثة جديدة",
+            "NoConversations": "لا توجد محادثات",
+            "StartChatting": "ابدأ محادثة جديدة",
+            "OnlineUsers": "المستخدمون المتصلون",
+            "OfflineUsers": "المستخدمون غير المتصلين",
+            "AllUsers": "جميع المستخدمين",
+            "Favorites": "المفضلة",
+            "RecentChats": "الأخيرة"
+        },
+
+        "Chat": {
+            "Title": "المحادثة",
+            "PrivateWith": "محادثة خاصة مع {name}",
+            "GroupChat": "المجموعة: {name}",
+            "ChannelChat": "القناة: {name}",
+            "TypeMessage": "اكتب رسالة...",
+            "EncryptedChannel": "قناة مشفرة",
+            "MessagePlaceholder": "أدخل رسالتك...",
+            "NoMessages": "لا توجد رسائل",
+            "StartConversation": "أرسل رسالة للبدء",
+            "MessageSent": "تم إرسال الرسالة",
+            "MessageDeleted": "تم حذف الرسالة",
+            "MessageEdited": "(معدّل)",
+            "Edited": "معدّل",
+            "Pinned": "مثبت",
+            "ReplyingTo": "الرد على {name}",
+            "CancelReply": "إلغاء الرد"
+        },
+
+        "Status": {
+            "Online": "متصل",
+            "Offline": "غير متصل",
+            "Away": "بعيد",
+            "Busy": "مشغول",
+            "Typing": "{name} يكتب...",
+            "TypingMultiple": "{names} يكتبون...",
+            "LastSeen": "آخر ظهور {time}",
+            "Active": "نشط الآن"
+        },
+
+        "Groups": {
+            "Title": "إدارة المجموعات",
+            "CreateNew": "إنشاء مجموعة جديدة",
+            "GroupName": "اسم المجموعة",
+            "Members": "الأعضاء",
+            "NoGroups": "لا توجد مجموعات",
+            "EditGroup": "تعديل المجموعة",
+            "DeleteGroup": "حذف المجموعة",
+            "DeleteConfirm": "هل أنت متأكد من حذف هذه المجموعة؟",
+            "MemberCount": "{count} عضو/أعضاء",
+            "GroupCreated": "تم إنشاء المجموعة",
+            "GroupDeleted": "تم حذف المجموعة"
+        },
+
+        "Monitor": {
+            "Title": "مراقب النشاط",
+            "AllActivity": "كل النشاط",
+            "PrivateMessages": "الرسائل الخاصة",
+            "GroupMessages": "رسائل المجموعة",
+            "NoActivity": "لا يوجد نشاط مسجل",
+            "ExportLog": "تصدير السجل",
+            "ClearLog": "مسح السجل"
+        },
+
+        "Settings": {
+            "Title": "إعدادات Cyphur",
+            "General": "الإعدادات العامة",
+            "Appearance": "المظهر",
+            "Notifications": "الإشعارات",
+            "Sounds": "إعدادات الصوت",
+            "EnableSounds": "تفعيل الأصوات",
+            "SoundVolume": "مستوى الصوت",
+            "Theme": "السمة",
+            "SaveSettings": "حفظ الإعدادات"
+        },
+
+        "Themes": {
+            "Neon": "نيون",
+            "Matrix": "ماتريكس",
+            "Cyber": "سايبر",
+            "Midnight": "منتصف الليل",
+            "Plasma": "بلازما",
+            "Hologram": "هولوغرام",
+            "Quantum": "كوانتم",
+            "Void": "الفراغ"
+        },
+
+        "Errors": {
+            "SendFailed": "فشل إرسال الرسالة",
+            "ConnectionError": "خطأ في الاتصال",
+            "LoadFailed": "فشل تحميل البيانات",
+            "SaveFailed": "فشل حفظ البيانات",
+            "EmptyMessage": "لا يمكن إرسال رسالة فارغة"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "محادثة مع {name}",
+        "GroupChat": "المجموعة: {name}",
+        "PrivateChat": "محادثة خاصة",
+        "Online": "متصل",
+        "Offline": "غير متصل",
+        "Members": "أعضاء",
+        "SearchMessages": "البحث في الرسائل...",
+        "Results": "نتائج",
+        "AddFavorite": "إضافة للمفضلة",
+        "RemoveFavorite": "إزالة من المفضلة",
+        "Mute": "كتم",
+        "Unmute": "إلغاء الكتم",
+        "Reply": "رد",
+        "React": "تفاعل",
+        "Pin": "تثبيت",
+        "Unpin": "إلغاء التثبيت",
+        "Edit": "تعديل",
+        "Delete": "حذف",
+        "Send": "إرسال",
+        "TypeMessage": "اكتب رسالة...",
+        "GMMonitorTitle": "المراقب السري",
+        "All": "الكل",
+        "Private": "خاص",
+        "Group": "مجموعة",
+        "ExportLog": "تصدير السجل",
+        "ClearLog": "مسح السجل",
+        "NoInterceptedMessages": "لا توجد رسائل معترضة",
+        "OpenCyphur": "فتح Cyphur",
+        "ShareImage": "مشاركة صورة",
+        "SetBackground": "تعيين الخلفية",
+        "ExportToJournal": "تصدير إلى اليومية",
+        "Stealth": "سري",
+        "Flagged": "مُعلَّم",
+        "New": "جديد"
+    }
+}

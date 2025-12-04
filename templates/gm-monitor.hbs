@@ -1,0 +1,92 @@
+{{!-- Stealth Monitor - Simplified --}}
+<div class="cyphur-monitor-container">
+    <div class="cyphur-monitor-header">
+        <div class="cyphur-monitor-title">
+            <i class="fas fa-eye"></i>
+            <span>Stealth Monitor</span>
+            <span class="cyphur-msg-count">{{messageCount}}</span>
+        </div>
+    </div>
+
+    {{!-- Filters --}}
+    <div class="cyphur-monitor-controls">
+        <input type="text" class="cyphur-monitor-search" placeholder="Search..." value="{{searchQuery}}">
+        
+        <div class="cyphur-filter-btns">
+            <button type="button" class="cyphur-filter-btn {{#if (eq filterType 'all')}}active{{/if}}" data-filter="all">All</button>
+            <button type="button" class="cyphur-filter-btn {{#if (eq filterType 'private')}}active{{/if}}" data-filter="private">
+                <i class="fas fa-lock"></i>
+            </button>
+            <button type="button" class="cyphur-filter-btn {{#if (eq filterType 'group')}}active{{/if}}" data-filter="group">
+                <i class="fas fa-users"></i>
+            </button>
+        </div>
+
+        <div class="cyphur-toggle-options">
+            <button type="button" class="cyphur-toggle-btn {{#if autoScroll}}active{{/if}}" data-action="toggleAutoScroll" title="Auto-scroll">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+    </div>
+
+    {{!-- Two Column Layout --}}
+    <div class="cyphur-monitor-body">
+        {{!-- User Sidebar --}}
+        <div class="cyphur-user-sidebar">
+            <h4>Filter by User</h4>
+            {{#if selectedUsers.length}}
+            <button type="button" class="cyphur-btn-small" data-action="clearUserFilter">
+                <i class="fas fa-times"></i> Clear
+            </button>
+            {{/if}}
+            <div class="cyphur-user-list">
+                {{#each involvedUsers}}
+                <label class="cyphur-user-filter-item">
+                    <input type="checkbox" class="cyphur-user-filter" data-user-id="{{this.id}}" {{#if (includes ../selectedUsers this.id)}}checked{{/if}}>
+                    <img src="{{this.avatar}}" alt="" class="cyphur-user-avatar-small">
+                    <span>{{this.name}}</span>
+                </label>
+                {{else}}
+                <p class="cyphur-no-users">No users yet</p>
+                {{/each}}
+            </div>
+        </div>
+
+        {{!-- Message Log --}}
+        <div class="cyphur-monitor-messages">
+            {{#each messages}}
+            <div class="cyphur-monitor-message {{#if this.isGroup}}group{{else}}private{{/if}}" data-message-id="{{this.id}}">
+                <div class="cyphur-monitor-msg-header">
+                    <img src="{{this.senderAvatar}}" alt="" class="cyphur-monitor-avatar">
+                    <span class="cyphur-monitor-sender">{{this.senderName}}</span>
+                    {{#if this.groupName}}
+                    <span class="cyphur-monitor-channel"><i class="fas fa-users"></i> {{this.groupName}}</span>
+                    {{else if this.recipientName}}
+                    <span class="cyphur-monitor-recipient"><i class="fas fa-arrow-right"></i> {{this.recipientName}}</span>
+                    {{/if}}
+                    <span class="cyphur-monitor-time">{{this.relativeTime}}</span>
+                </div>
+                <div class="cyphur-monitor-msg-content">{{{this.content}}}</div>
+            </div>
+            {{else}}
+            <div class="cyphur-empty-state">
+                <i class="fas fa-eye"></i>
+                <p>No messages intercepted</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    {{!-- Footer --}}
+    <div class="cyphur-monitor-footer">
+        <button type="button" class="cyphur-btn" data-action="exportLog">
+            <i class="fas fa-download"></i> Export
+        </button>
+        <button type="button" class="cyphur-btn" data-action="exportToJournal">
+            <i class="fas fa-book"></i> Journal
+        </button>
+        <button type="button" class="cyphur-btn cyphur-btn-danger" data-action="clearLog">
+            <i class="fas fa-trash"></i> Clear
+        </button>
+    </div>
+</div>

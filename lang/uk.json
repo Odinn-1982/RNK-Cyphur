@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Зашифрований зв'язок для Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Відкрити Cyphur Hub",
+            "Send": "Надіслати повідомлення",
+            "Cancel": "Скасувати",
+            "Save": "Зберегти",
+            "Delete": "Видалити",
+            "Edit": "Редагувати",
+            "Close": "Закрити",
+            "Export": "Експорт",
+            "Import": "Імпорт",
+            "Confirm": "Підтвердити",
+            "Clear": "Очистити",
+            "Search": "Пошук",
+            "CreateGroup": "Створити групу",
+            "NewChat": "Новий чат",
+            "Refresh": "Оновити",
+            "SelectAll": "Вибрати все",
+            "DeselectAll": "Скасувати вибір"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Канали",
+            "Groups": "Групи",
+            "PrivateChats": "Приватні чати",
+            "NewConversation": "Нова розмова",
+            "NoConversations": "Немає розмов",
+            "StartChatting": "Почніть новий чат",
+            "OnlineUsers": "Користувачі онлайн",
+            "OfflineUsers": "Користувачі офлайн",
+            "AllUsers": "Усі користувачі",
+            "Favorites": "Обране",
+            "RecentChats": "Останні"
+        },
+
+        "Chat": {
+            "Title": "Чат",
+            "PrivateWith": "Приватний чат з {name}",
+            "GroupChat": "Група: {name}",
+            "ChannelChat": "Канал: {name}",
+            "TypeMessage": "Введіть повідомлення...",
+            "EncryptedChannel": "Зашифрований канал",
+            "MessagePlaceholder": "Введіть ваше повідомлення...",
+            "NoMessages": "Немає повідомлень",
+            "StartConversation": "Надішліть повідомлення, щоб почати",
+            "MessageSent": "Повідомлення надіслано",
+            "MessageDeleted": "Повідомлення видалено",
+            "MessageEdited": "(відредаговано)",
+            "Edited": "відредаговано",
+            "Pinned": "Закріплено",
+            "ReplyingTo": "Відповідь на {name}",
+            "CancelReply": "Скасувати відповідь"
+        },
+
+        "Status": {
+            "Online": "Онлайн",
+            "Offline": "Офлайн",
+            "Away": "Відійшов",
+            "Busy": "Зайнятий",
+            "Typing": "{name} друкує...",
+            "TypingMultiple": "{names} друкують...",
+            "LastSeen": "Востаннє {time}",
+            "Active": "Активний зараз"
+        },
+
+        "Groups": {
+            "Title": "Управління групами",
+            "CreateNew": "Створити нову групу",
+            "GroupName": "Назва групи",
+            "Members": "Учасники",
+            "NoGroups": "Немає груп",
+            "EditGroup": "Редагувати групу",
+            "DeleteGroup": "Видалити групу",
+            "DeleteConfirm": "Ви впевнені, що хочете видалити цю групу?",
+            "MemberCount": "{count} учасник(ів)",
+            "GroupCreated": "Групу створено",
+            "GroupDeleted": "Групу видалено"
+        },
+
+        "Monitor": {
+            "Title": "Монітор активності",
+            "AllActivity": "Вся активність",
+            "PrivateMessages": "Приватні повідомлення",
+            "GroupMessages": "Групові повідомлення",
+            "NoActivity": "Немає зареєстрованої активності",
+            "ExportLog": "Експорт журналу",
+            "ClearLog": "Очистити журнал"
+        },
+
+        "Settings": {
+            "Title": "Налаштування Cyphur",
+            "General": "Загальні налаштування",
+            "Appearance": "Зовнішній вигляд",
+            "Notifications": "Сповіщення",
+            "Sounds": "Налаштування звуку",
+            "EnableSounds": "Увімкнути звуки",
+            "SoundVolume": "Гучність",
+            "Theme": "Тема",
+            "SaveSettings": "Зберегти налаштування"
+        },
+
+        "Themes": {
+            "Neon": "Неон",
+            "Matrix": "Матриця",
+            "Cyber": "Кібер",
+            "Midnight": "Опівніч",
+            "Plasma": "Плазма",
+            "Hologram": "Голограма",
+            "Quantum": "Квантум",
+            "Void": "Порожнеча"
+        },
+
+        "Errors": {
+            "SendFailed": "Помилка надсилання повідомлення",
+            "ConnectionError": "Помилка з'єднання",
+            "LoadFailed": "Помилка завантаження даних",
+            "SaveFailed": "Помилка збереження даних",
+            "EmptyMessage": "Неможливо надіслати порожнє повідомлення"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Чат з {name}",
+        "GroupChat": "Група: {name}",
+        "PrivateChat": "Приватний чат",
+        "Online": "Онлайн",
+        "Offline": "Офлайн",
+        "Members": "учасників",
+        "SearchMessages": "Пошук повідомлень...",
+        "Results": "результатів",
+        "AddFavorite": "Додати до обраного",
+        "RemoveFavorite": "Видалити з обраного",
+        "Mute": "Вимкнути звук",
+        "Unmute": "Увімкнути звук",
+        "Reply": "Відповісти",
+        "React": "Реакція",
+        "Pin": "Закріпити",
+        "Unpin": "Відкріпити",
+        "Edit": "Редагувати",
+        "Delete": "Видалити",
+        "Send": "Надіслати",
+        "TypeMessage": "Введіть повідомлення...",
+        "GMMonitorTitle": "Прихований монітор",
+        "All": "Усі",
+        "Private": "Приватні",
+        "Group": "Група",
+        "ExportLog": "Експорт журналу",
+        "ClearLog": "Очистити журнал",
+        "NoInterceptedMessages": "Немає перехоплених повідомлень",
+        "OpenCyphur": "Відкрити Cyphur",
+        "ShareImage": "Поділитися зображенням",
+        "SetBackground": "Встановити фон",
+        "ExportToJournal": "Експорт до журналу",
+        "Stealth": "ПРИХОВАНО",
+        "Flagged": "Позначено",
+        "New": "НОВЕ"
+    }
+}

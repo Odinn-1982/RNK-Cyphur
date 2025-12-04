@@ -1,0 +1,187 @@
+<div class="cyphur-chat-container">
+    <!-- Header Toolbar -->
+    <div class="cyphur-toolbar">
+        <div class="cyphur-toolbar-left">
+            <input type="text" class="cyphur-search-input" placeholder="{{localize 'CYPHUR.SearchMessages'}}">
+            {{#if searchActive}}
+            <span class="cyphur-search-count">{{searchResultCount}} {{localize 'CYPHUR.Results'}}</span>
+            {{/if}}
+        </div>
+        <div class="cyphur-toolbar-right">
+            <button type="button" class="cyphur-toolbar-btn cyphur-image-btn" title="{{localize 'CYPHUR.ShareImage'}}">
+                <i class="fas fa-image"></i>
+            </button>
+            <button type="button" class="cyphur-toolbar-btn cyphur-background-btn" title="{{localize 'CYPHUR.SetBackground'}}">
+                <i class="fas fa-paint-brush"></i>
+            </button>
+            <button type="button" class="cyphur-toolbar-btn cyphur-favorite-btn" title="{{#if isFavorite}}{{localize 'CYPHUR.RemoveFavorite'}}{{else}}{{localize 'CYPHUR.AddFavorite'}}{{/if}}">
+                <i class="{{#if isFavorite}}fas{{else}}far{{/if}} fa-star"></i>
+            </button>
+            <button type="button" class="cyphur-toolbar-btn cyphur-mute-btn" title="{{#if isMuted}}{{localize 'CYPHUR.Unmute'}}{{else}}{{localize 'CYPHUR.Mute'}}{{/if}}">
+                <i class="fas fa-{{#if isMuted}}bell-slash{{else}}bell{{/if}}"></i>
+            </button>
+            <button type="button" class="cyphur-toolbar-btn cyphur-export-btn" title="{{localize 'CYPHUR.Export'}}">
+                <i class="fas fa-download"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hidden image input -->
+    <input type="file" class="cyphur-image-input" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
+
+    <!-- Online Status (for private chats) -->
+    {{#unless isGroup}}
+    {{#if otherUser}}
+    <div class="cyphur-status-bar">
+        <span class="cyphur-status-dot {{#if isOnline}}online{{else}}offline{{/if}}"></span>
+        <span class="cyphur-status-text">
+            {{otherUser.name}} - {{#if isOnline}}{{localize 'CYPHUR.Online'}}{{else}}{{localize 'CYPHUR.Offline'}}{{/if}}
+        </span>
+    </div>
+    {{/if}}
+    {{/unless}}
+
+    <!-- Group Info (for group chats) -->
+    {{#if isGroup}}
+    {{#if group}}
+    <div class="cyphur-status-bar">
+        <i class="fas fa-satellite-dish"></i>
+        <span class="cyphur-channel-name">{{group.name}}</span>
+        <span class="cyphur-member-count">{{memberCount}} {{localize 'CYPHUR.Members'}}</span>
+    </div>
+    {{/if}}
+    {{/if}}
+
+    <!-- Message List -->
+    <div class="cyphur-message-list">
+        {{#each messages}}
+        <div class="cyphur-message {{#if this.isOwn}}sent{{else}}received{{/if}} {{#if this.isPinned}}pinned{{/if}}" data-message-id="{{this.id}}">
+            <!-- Avatar -->
+            <div class="cyphur-msg-avatar" style="border-color: {{this.userColor}}">
+                {{#if this.useInitials}}
+                <div class="cyphur-avatar-initials" style="background: {{this.userColor}}">{{this.avatarInitials}}</div>
+                {{else}}
+                <img src="{{this.senderImg}}" alt="{{this.senderName}}">
+                {{/if}}
+            </div>
+
+            <!-- Message Content -->
+            <div class="cyphur-msg-body">
+                <div class="cyphur-msg-header">
+                    <span class="cyphur-msg-sender" style="color: {{this.userColor}}">{{this.senderName}}</span>
+                    <span class="cyphur-msg-time" title="{{this.fullTime}}">{{this.relativeTime}}</span>
+                    {{#if this.isPinned}}
+                    <i class="fas fa-thumbtack cyphur-pin-icon" title="{{localize 'CYPHUR.Pinned'}}"></i>
+                    {{/if}}
+                    {{#if this.edited}}
+                    <span class="cyphur-edited" title="{{localize 'CYPHUR.EditedAt'}} {{this.editedTime}}">({{localize 'CYPHUR.Edited'}})</span>
+                    {{/if}}
+                </div>
+
+                {{#if this.replyTo}}
+                <div class="cyphur-reply-preview">
+                    <i class="fas fa-reply"></i>
+                    <span class="cyphur-reply-sender">{{this.replyTo.senderName}}</span>:
+                    <span class="cyphur-reply-content">{{this.replyTo.preview}}</span>
+                </div>
+                {{/if}}
+
+                <div class="cyphur-msg-content">{{{this.displayContent}}}</div>
+
+                {{#if this.imageUrl}}
+                <div class="cyphur-msg-image">
+                    <img src="{{this.imageUrl}}" alt="{{localize 'CYPHUR.SharedImage'}}" loading="lazy" class="cyphur-shared-image">
+                </div>
+                {{/if}}
+
+                {{#if this.formattedReactions}}
+                <div class="cyphur-reactions">
+                    {{#each this.formattedReactions}}
+                    <div class="cyphur-reaction {{#if this.isOwnReaction}}own{{/if}}" data-emoji="{{this.emoji}}" title="{{this.users}}">
+                        <span class="cyphur-reaction-emoji">{{this.emoji}}</span>
+                        <span class="cyphur-reaction-count">{{this.count}}</span>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+
+                <!-- Message Actions -->
+                <div class="cyphur-msg-actions">
+                    <button type="button" class="cyphur-msg-btn cyphur-msg-reply" title="{{localize 'CYPHUR.Reply'}}">
+                        <i class="fas fa-reply"></i>
+                    </button>
+                    <button type="button" class="cyphur-msg-btn cyphur-msg-react" title="{{localize 'CYPHUR.React'}}">
+                        <i class="far fa-smile"></i>
+                    </button>
+                    <button type="button" class="cyphur-msg-btn cyphur-msg-pin" title="{{#if this.isPinned}}{{localize 'CYPHUR.Unpin'}}{{else}}{{localize 'CYPHUR.Pin'}}{{/if}}">
+                        <i class="fas fa-thumbtack"></i>
+                    </button>
+                    {{#if this.isOwn}}
+                    <button type="button" class="cyphur-msg-btn cyphur-msg-edit" title="{{localize 'CYPHUR.Edit'}}">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button type="button" class="cyphur-msg-btn cyphur-msg-delete" title="{{localize 'CYPHUR.Delete'}}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    {{/if}}
+
+                    <!-- Emoji Picker (hidden by default) -->
+                    <div class="cyphur-emoji-picker">
+                        {{#each ../reactionEmojis}}
+                        <button type="button" class="cyphur-emoji-option" data-emoji="{{this}}">{{this}}</button>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        {{#if typingText}}
+        <div class="cyphur-typing-indicator">
+            <i class="fas fa-ellipsis-h"></i> {{typingText}}
+        </div>
+        {{/if}}
+    </div>
+
+    <!-- Reply Preview -->
+    {{#if replyingTo}}
+    <div class="cyphur-replying-bar">
+        <div class="cyphur-replying-content">
+            <i class="fas fa-reply"></i>
+            <span>{{localize 'CYPHUR.ReplyingTo'}} <strong>{{replyingTo.senderName}}</strong>: {{replyingTo.preview}}</span>
+        </div>
+        <button type="button" class="cyphur-cancel-reply" title="{{localize 'CYPHUR.CancelReply'}}">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    {{/if}}
+
+    <!-- Image Preview Area (for pending uploads) -->
+    <div class="cyphur-image-preview" style="display:none;"></div>
+
+    <!-- Input Area -->
+    <div class="cyphur-input-area">
+        {{#if isGM}}
+        <div class="cyphur-speaker-select">
+            <label>{{localize 'CYPHUR.SpeakAs'}}</label>
+            <select name="speaker">
+                {{#each speakers}}
+                <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/if}}
+        <div class="cyphur-input-row">
+            <button type="button" class="cyphur-attach-btn cyphur-image-btn" title="{{localize 'CYPHUR.AttachImage'}}">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <textarea name="message" rows="2" placeholder="{{localize 'CYPHUR.TypeMessage'}}"></textarea>
+            <button type="submit" class="cyphur-send-btn" title="{{localize 'CYPHUR.Send'}}">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        <div class="cyphur-input-hint">
+            {{localize 'CYPHUR.InputHint'}}
+        </div>
+    </div>
+</div>

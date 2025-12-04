@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Krypterad kommunikation för Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Öppna Cyphur Hub",
+            "Send": "Skicka meddelande",
+            "Cancel": "Avbryt",
+            "Save": "Spara",
+            "Delete": "Ta bort",
+            "Edit": "Redigera",
+            "Close": "Stäng",
+            "Export": "Exportera",
+            "Import": "Importera",
+            "Confirm": "Bekräfta",
+            "Clear": "Rensa",
+            "Search": "Sök",
+            "CreateGroup": "Skapa grupp",
+            "NewChat": "Ny chatt",
+            "Refresh": "Uppdatera",
+            "SelectAll": "Markera alla",
+            "DeselectAll": "Avmarkera alla"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanaler",
+            "Groups": "Grupper",
+            "PrivateChats": "Privata chattar",
+            "NewConversation": "Ny konversation",
+            "NoConversations": "Inga konversationer",
+            "StartChatting": "Starta en ny chatt",
+            "OnlineUsers": "Användare online",
+            "OfflineUsers": "Användare offline",
+            "AllUsers": "Alla användare",
+            "Favorites": "Favoriter",
+            "RecentChats": "Senaste"
+        },
+
+        "Chat": {
+            "Title": "Chatt",
+            "PrivateWith": "Privat chatt med {name}",
+            "GroupChat": "Grupp: {name}",
+            "ChannelChat": "Kanal: {name}",
+            "TypeMessage": "Skriv ett meddelande...",
+            "EncryptedChannel": "Krypterad kanal",
+            "MessagePlaceholder": "Ange ditt meddelande...",
+            "NoMessages": "Inga meddelanden",
+            "StartConversation": "Skicka ett meddelande för att börja",
+            "MessageSent": "Meddelande skickat",
+            "MessageDeleted": "Meddelande borttaget",
+            "MessageEdited": "(redigerat)",
+            "Edited": "redigerat",
+            "Pinned": "Fäst",
+            "ReplyingTo": "Svarar till {name}",
+            "CancelReply": "Avbryt svar"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Borta",
+            "Busy": "Upptagen",
+            "Typing": "{name} skriver...",
+            "TypingMultiple": "{names} skriver...",
+            "LastSeen": "Senast sedd {time}",
+            "Active": "Aktiv nu"
+        },
+
+        "Groups": {
+            "Title": "Grupphantering",
+            "CreateNew": "Skapa ny grupp",
+            "GroupName": "Gruppnamn",
+            "Members": "Medlemmar",
+            "NoGroups": "Inga grupper",
+            "EditGroup": "Redigera grupp",
+            "DeleteGroup": "Ta bort grupp",
+            "DeleteConfirm": "Är du säker på att du vill ta bort denna grupp?",
+            "MemberCount": "{count} medlem/mar",
+            "GroupCreated": "Grupp skapad",
+            "GroupDeleted": "Grupp borttagen"
+        },
+
+        "Monitor": {
+            "Title": "Aktivitetsmonitor",
+            "AllActivity": "All aktivitet",
+            "PrivateMessages": "Privata meddelanden",
+            "GroupMessages": "Gruppmeddelanden",
+            "NoActivity": "Ingen registrerad aktivitet",
+            "ExportLog": "Exportera logg",
+            "ClearLog": "Rensa logg"
+        },
+
+        "Settings": {
+            "Title": "Cyphur inställningar",
+            "General": "Allmänna inställningar",
+            "Appearance": "Utseende",
+            "Notifications": "Aviseringar",
+            "Sounds": "Ljudinställningar",
+            "EnableSounds": "Aktivera ljud",
+            "SoundVolume": "Volym",
+            "Theme": "Tema",
+            "SaveSettings": "Spara inställningar"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Midnatt",
+            "Plasma": "Plasma",
+            "Hologram": "Hologram",
+            "Quantum": "Quantum",
+            "Void": "Tomrum"
+        },
+
+        "Errors": {
+            "SendFailed": "Kunde inte skicka meddelande",
+            "ConnectionError": "Anslutningsfel",
+            "LoadFailed": "Kunde inte ladda data",
+            "SaveFailed": "Kunde inte spara data",
+            "EmptyMessage": "Kan inte skicka tomt meddelande"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chatta med {name}",
+        "GroupChat": "Grupp: {name}",
+        "PrivateChat": "Privat chatt",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "medlemmar",
+        "SearchMessages": "Sök meddelanden...",
+        "Results": "resultat",
+        "AddFavorite": "Lägg till i favoriter",
+        "RemoveFavorite": "Ta bort från favoriter",
+        "Mute": "Tysta",
+        "Unmute": "Slå på ljud",
+        "Reply": "Svara",
+        "React": "Reagera",
+        "Pin": "Fäst",
+        "Unpin": "Lossa",
+        "Edit": "Redigera",
+        "Delete": "Ta bort",
+        "Send": "Skicka",
+        "TypeMessage": "Skriv ett meddelande...",
+        "GMMonitorTitle": "Smygmonitor",
+        "All": "Alla",
+        "Private": "Privat",
+        "Group": "Grupp",
+        "ExportLog": "Exportera logg",
+        "ClearLog": "Rensa logg",
+        "NoInterceptedMessages": "Inga avlyssnade meddelanden",
+        "OpenCyphur": "Öppna Cyphur",
+        "ShareImage": "Dela bild",
+        "SetBackground": "Ställ in bakgrund",
+        "ExportToJournal": "Exportera till dagbok",
+        "Stealth": "SMYG",
+        "Flagged": "Flaggad",
+        "New": "NY"
+    }
+}

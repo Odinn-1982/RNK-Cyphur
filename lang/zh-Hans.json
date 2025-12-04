@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Foundry VTT加密通信",
+
+        "Buttons": {
+            "OpenHub": "打开Cyphur Hub",
+            "Send": "发送消息",
+            "Cancel": "取消",
+            "Save": "保存",
+            "Delete": "删除",
+            "Edit": "编辑",
+            "Close": "关闭",
+            "Export": "导出",
+            "Import": "导入",
+            "Confirm": "确认",
+            "Clear": "清除",
+            "Search": "搜索",
+            "CreateGroup": "创建群组",
+            "NewChat": "新聊天",
+            "Refresh": "刷新",
+            "SelectAll": "全选",
+            "DeselectAll": "取消全选"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "频道",
+            "Groups": "群组",
+            "PrivateChats": "私聊",
+            "NewConversation": "新对话",
+            "NoConversations": "没有对话",
+            "StartChatting": "开始新聊天",
+            "OnlineUsers": "在线用户",
+            "OfflineUsers": "离线用户",
+            "AllUsers": "所有用户",
+            "Favorites": "收藏",
+            "RecentChats": "最近"
+        },
+
+        "Chat": {
+            "Title": "聊天",
+            "PrivateWith": "与{name}的私聊",
+            "GroupChat": "群组: {name}",
+            "ChannelChat": "频道: {name}",
+            "TypeMessage": "输入消息...",
+            "EncryptedChannel": "加密频道",
+            "MessagePlaceholder": "请输入您的消息...",
+            "NoMessages": "没有消息",
+            "StartConversation": "发送消息以开始",
+            "MessageSent": "消息已发送",
+            "MessageDeleted": "消息已删除",
+            "MessageEdited": "(已编辑)",
+            "Edited": "已编辑",
+            "Pinned": "已置顶",
+            "ReplyingTo": "回复{name}",
+            "CancelReply": "取消回复"
+        },
+
+        "Status": {
+            "Online": "在线",
+            "Offline": "离线",
+            "Away": "离开",
+            "Busy": "忙碌",
+            "Typing": "{name}正在输入...",
+            "TypingMultiple": "{names}正在输入...",
+            "LastSeen": "最后在线 {time}",
+            "Active": "当前活跃"
+        },
+
+        "Groups": {
+            "Title": "群组管理",
+            "CreateNew": "创建新群组",
+            "GroupName": "群组名称",
+            "Members": "成员",
+            "NoGroups": "没有创建的群组",
+            "EditGroup": "编辑群组",
+            "DeleteGroup": "删除群组",
+            "DeleteConfirm": "确定要删除此群组吗？",
+            "MemberCount": "{count}位成员",
+            "GroupCreated": "群组创建成功",
+            "GroupDeleted": "群组已删除"
+        },
+
+        "Monitor": {
+            "Title": "活动监控",
+            "AllActivity": "所有活动",
+            "PrivateMessages": "私信",
+            "GroupMessages": "群组消息",
+            "NoActivity": "没有记录的活动",
+            "ExportLog": "导出日志",
+            "ClearLog": "清除日志"
+        },
+
+        "Settings": {
+            "Title": "Cyphur设置",
+            "General": "常规设置",
+            "Appearance": "外观",
+            "Notifications": "通知",
+            "Sounds": "音效设置",
+            "EnableSounds": "启用音效",
+            "SoundVolume": "音量",
+            "Theme": "主题",
+            "SaveSettings": "保存设置"
+        },
+
+        "Themes": {
+            "Neon": "霓虹",
+            "Matrix": "黑客帝国",
+            "Cyber": "赛博",
+            "Midnight": "午夜",
+            "Plasma": "等离子",
+            "Hologram": "全息",
+            "Quantum": "量子",
+            "Void": "虚空"
+        },
+
+        "Errors": {
+            "SendFailed": "消息发送失败",
+            "ConnectionError": "连接错误",
+            "LoadFailed": "数据加载失败",
+            "SaveFailed": "数据保存失败",
+            "EmptyMessage": "无法发送空消息"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "与{name}聊天",
+        "GroupChat": "群组: {name}",
+        "PrivateChat": "私聊",
+        "Online": "在线",
+        "Offline": "离线",
+        "Members": "成员",
+        "SearchMessages": "搜索消息...",
+        "Results": "个结果",
+        "AddFavorite": "添加收藏",
+        "RemoveFavorite": "移除收藏",
+        "Mute": "静音",
+        "Unmute": "取消静音",
+        "Reply": "回复",
+        "React": "反应",
+        "Pin": "置顶",
+        "Unpin": "取消置顶",
+        "Edit": "编辑",
+        "Delete": "删除",
+        "Send": "发送",
+        "TypeMessage": "输入消息...",
+        "GMMonitorTitle": "隐秘监控",
+        "All": "全部",
+        "Private": "私聊",
+        "Group": "群组",
+        "ExportLog": "导出日志",
+        "ClearLog": "清除日志",
+        "NoInterceptedMessages": "没有拦截的消息",
+        "OpenCyphur": "打开Cyphur",
+        "ShareImage": "分享图片",
+        "SetBackground": "设置背景",
+        "ExportToJournal": "导出至日志",
+        "Stealth": "隐秘",
+        "Flagged": "已标记",
+        "New": "新"
+    }
+}

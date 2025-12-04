@@ -1,0 +1,291 @@
+{{!-- Player Hub - Simplified Layout --}}
+
+<div class="cyphur-hub-container">
+    {{!-- Header --}}
+    <div class="cyphur-hub-header">
+        <div class="cyphur-hub-title">
+            <i class="fas fa-satellite-dish"></i>
+            <span>Private Messages</span>
+            {{#if totalUnread}}
+            <span class="cyphur-unread-badge">{{totalUnread}}</span>
+            {{/if}}
+        </div>
+    </div>
+
+    {{!-- Tab Navigation --}}
+    <div class="cyphur-tabs">
+        <button class="cyphur-tab active" data-tab="conversations">
+            <i class="fas fa-comments"></i>
+            <span>Chats</span>
+        </button>
+        <button class="cyphur-tab" data-tab="newchat">
+            <i class="fas fa-plus"></i>
+            <span>New</span>
+        </button>
+        <button class="cyphur-tab" data-tab="settings">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </button>
+        {{#if isGM}}
+        <button class="cyphur-tab" data-tab="gmtools">
+            <i class="fas fa-shield-alt"></i>
+            <span>GM</span>
+        </button>
+        {{/if}}
+    </div>
+
+    {{!-- Tab Content --}}
+    <div class="cyphur-tab-panels">
+        
+        {{!-- CONVERSATIONS TAB --}}
+        <div class="cyphur-tab-content active" data-tab-content="conversations">
+            {{!-- Search --}}
+            <div class="cyphur-search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" class="cyphur-hub-search" placeholder="Search...">
+            </div>
+
+            {{!-- Conversation List --}}
+            <div class="cyphur-conversation-list">
+                {{#if conversations.length}}
+                    {{#each conversations}}
+                    <div class="cyphur-conv-item {{#if hasUnread}}has-unread{{/if}}" 
+                         data-conversation-id="{{id}}" 
+                         data-type="{{type}}"
+                         data-user-id="{{otherUserId}}">
+                        <div class="cyphur-conv-avatar">
+                            {{#if avatar}}
+                            <img src="{{avatar}}" alt="{{name}}">
+                            {{else}}
+                            <div class="cyphur-avatar-initials" style="background: {{color}}">
+                                {{initials}}
+                            </div>
+                            {{/if}}
+                            {{#if isOnline}}
+                            <span class="cyphur-online-dot"></span>
+                            {{/if}}
+                        </div>
+                        <div class="cyphur-conv-info">
+                            <div class="cyphur-conv-name">
+                                {{name}}
+                                {{#if isGM}}<span class="cyphur-gm-badge">GM</span>{{/if}}
+                            </div>
+                            {{#if lastMessage}}
+                            <div class="cyphur-conv-preview">{{lastMessage.preview}}</div>
+                            {{/if}}
+                        </div>
+                        <div class="cyphur-conv-meta">
+                            {{#if lastMessage}}
+                            <span class="cyphur-conv-time">{{lastMessage.time}}</span>
+                            {{/if}}
+                            {{#if hasUnread}}
+                            <span class="cyphur-unread-count">{{unreadCount}}</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                {{else}}
+                    <div class="cyphur-empty-state">
+                        <i class="fas fa-comments"></i>
+                        <p>No conversations</p>
+                    </div>
+                {{/if}}
+            </div>
+
+            {{!-- Export Buttons --}}
+            <div class="cyphur-export-buttons">
+                <button class="cyphur-btn" data-action="exportToJournal">
+                    <i class="fas fa-book"></i>
+                    Journal
+                </button>
+                <button class="cyphur-btn" data-action="exportLocal">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+            </div>
+        </div>
+
+        {{!-- NEW CHAT TAB - 2 Column Layout --}}
+        <div class="cyphur-tab-content" data-tab-content="newchat">
+            <div class="cyphur-two-column">
+                {{!-- GMs Column --}}
+                <div class="cyphur-column cyphur-gm-column">
+                    <div class="cyphur-column-header">
+                        <i class="fas fa-crown"></i>
+                        <span>Game Masters</span>
+                    </div>
+                    <div class="cyphur-user-list">
+                        {{#each gmUsers}}
+                        <div class="cyphur-user-card" data-user-id="{{id}}">
+                            <div class="cyphur-user-avatar">
+                                {{#if avatar}}
+                                <img src="{{avatar}}" alt="{{name}}">
+                                {{else}}
+                                <div class="cyphur-avatar-initials" style="background: {{color}}">{{initials}}</div>
+                                {{/if}}
+                                {{#if isOnline}}<span class="cyphur-online-dot"></span>{{/if}}
+                            </div>
+                            <div class="cyphur-user-name">{{name}}</div>
+                            <div class="cyphur-user-status {{#if isOnline}}online{{else}}offline{{/if}}">
+                                {{#if isOnline}}Online{{else}}Offline{{/if}}
+                            </div>
+                            <i class="fas fa-check cyphur-selected-check"></i>
+                        </div>
+                        {{else}}
+                        <div class="cyphur-empty-column">No GMs</div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                {{!-- Players Column --}}
+                <div class="cyphur-column cyphur-player-column">
+                    <div class="cyphur-column-header">
+                        <i class="fas fa-users"></i>
+                        <span>Players</span>
+                    </div>
+                    <div class="cyphur-user-list">
+                        {{#each playerUsers}}
+                        <div class="cyphur-user-card" data-user-id="{{id}}">
+                            <div class="cyphur-user-avatar">
+                                {{#if avatar}}
+                                <img src="{{avatar}}" alt="{{name}}">
+                                {{else}}
+                                <div class="cyphur-avatar-initials" style="background: {{color}}">{{initials}}</div>
+                                {{/if}}
+                                {{#if isOnline}}<span class="cyphur-online-dot"></span>{{/if}}
+                            </div>
+                            <div class="cyphur-user-name">{{name}}</div>
+                            <div class="cyphur-user-status {{#if isOnline}}online{{else}}offline{{/if}}">
+                                {{#if isOnline}}Online{{else}}Offline{{/if}}
+                            </div>
+                            <i class="fas fa-check cyphur-selected-check"></i>
+                        </div>
+                        {{else}}
+                        <div class="cyphur-empty-column">No Players</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+
+            <button class="cyphur-btn cyphur-btn-primary cyphur-start-chat-btn" data-action="createChat">
+                <i class="fas fa-comment"></i>
+                Start Chat
+            </button>
+        </div>
+
+        {{!-- SETTINGS TAB --}}
+        <div class="cyphur-tab-content" data-tab-content="settings">
+            {{!-- Theme --}}
+            <div class="cyphur-section">
+                <h3><i class="fas fa-palette"></i> Theme</h3>
+                <div class="cyphur-theme-grid">
+                    {{#each themes}}
+                    <div class="cyphur-theme-option {{#if selected}}selected{{/if}}" data-theme="{{key}}">
+                        <div class="cyphur-theme-preview {{key}}"></div>
+                        <span class="cyphur-theme-name">{{name}}</span>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            {{!-- Sounds --}}
+            <div class="cyphur-section">
+                <h3><i class="fas fa-volume-up"></i> Sounds</h3>
+                
+                <div class="cyphur-setting-row">
+                    <label>Enable</label>
+                    <label class="cyphur-toggle">
+                        <input type="checkbox" data-action="toggleSounds" {{#if enableSounds}}checked{{/if}}>
+                        <span class="cyphur-toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="cyphur-setting-row">
+                    <label>Volume</label>
+                    <div class="cyphur-volume-control">
+                        <input type="range" min="0" max="100" step="5" value="{{soundVolume}}" data-action="setVolume">
+                        <span class="cyphur-volume-value">{{soundVolume}}%</span>
+                    </div>
+                </div>
+
+                <div class="cyphur-setting-row">
+                    <label>Sound</label>
+                    <div class="cyphur-sound-select">
+                        <select data-action="setNotificationSound">
+                            {{#each sounds}}
+                            <option value="{{file}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+                            {{/each}}
+                        </select>
+                        <button class="cyphur-btn-icon" data-action="testSound" title="Test">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Notifications --}}
+            <div class="cyphur-section">
+                <h3><i class="fas fa-bell"></i> Notifications</h3>
+                <div class="cyphur-setting-row">
+                    <label>Desktop Alerts</label>
+                    <label class="cyphur-toggle">
+                        <input type="checkbox" data-action="toggleNotifications" {{#if enableNotifications}}checked{{/if}}>
+                        <span class="cyphur-toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        {{!-- GM TOOLS TAB --}}
+        {{#if isGM}}
+        <div class="cyphur-tab-content" data-tab-content="gmtools">
+            <div class="cyphur-section">
+                <div class="cyphur-gm-buttons">
+                    <button class="cyphur-btn cyphur-btn-gm" data-action="openMonitor">
+                        <i class="fas fa-eye"></i>
+                        <span>Stealth Monitor</span>
+                    </button>
+
+                    <button class="cyphur-btn cyphur-btn-gm" data-action="openGroupManager">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Group Manager</span>
+                    </button>
+
+                    <button class="cyphur-btn cyphur-btn-gm" data-action="openGMTools">
+                        <i class="fas fa-gavel"></i>
+                        <span>Moderation</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cyphur-section">
+                <h3><i class="fas fa-image"></i> Backgrounds</h3>
+                
+                <button class="cyphur-btn" data-action="setGlobalBackground">
+                    <i class="fas fa-globe"></i>
+                    Set Global Background
+                </button>
+
+                <div class="cyphur-user-bg-grid">
+                    {{#each users}}
+                    <div class="cyphur-user-bg-card" data-user-id="{{id}}">
+                        <div class="cyphur-user-avatar">
+                            {{#if avatar}}
+                            <img src="{{avatar}}" alt="{{name}}">
+                            {{else}}
+                            <div class="cyphur-avatar-initials" style="background: {{color}}">{{initials}}</div>
+                            {{/if}}
+                        </div>
+                        <span class="cyphur-user-name">{{name}}</span>
+                        <button class="cyphur-btn-icon" data-action="setUserBackground" data-user-id="{{id}}" title="Set Background">
+                            <i class="fas fa-image"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+</div>

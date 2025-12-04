@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Šifrovaná komunikace pro Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Otevřít Cyphur Hub",
+            "Send": "Odeslat zprávu",
+            "Cancel": "Zrušit",
+            "Save": "Uložit",
+            "Delete": "Smazat",
+            "Edit": "Upravit",
+            "Close": "Zavřít",
+            "Export": "Exportovat",
+            "Import": "Importovat",
+            "Confirm": "Potvrdit",
+            "Clear": "Vymazat",
+            "Search": "Hledat",
+            "CreateGroup": "Vytvořit skupinu",
+            "NewChat": "Nový chat",
+            "Refresh": "Obnovit",
+            "SelectAll": "Vybrat vše",
+            "DeselectAll": "Zrušit výběr"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanály",
+            "Groups": "Skupiny",
+            "PrivateChats": "Soukromé chaty",
+            "NewConversation": "Nová konverzace",
+            "NoConversations": "Žádné konverzace",
+            "StartChatting": "Začněte nový chat",
+            "OnlineUsers": "Online uživatelé",
+            "OfflineUsers": "Offline uživatelé",
+            "AllUsers": "Všichni uživatelé",
+            "Favorites": "Oblíbené",
+            "RecentChats": "Nedávné"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Soukromý chat s {name}",
+            "GroupChat": "Skupina: {name}",
+            "ChannelChat": "Kanál: {name}",
+            "TypeMessage": "Napište zprávu...",
+            "EncryptedChannel": "Šifrovaný kanál",
+            "MessagePlaceholder": "Zadejte zprávu...",
+            "NoMessages": "Žádné zprávy",
+            "StartConversation": "Odešlete zprávu pro začátek",
+            "MessageSent": "Zpráva odeslána",
+            "MessageDeleted": "Zpráva smazána",
+            "MessageEdited": "(upraveno)",
+            "Edited": "upraveno",
+            "Pinned": "Připnuto",
+            "ReplyingTo": "Odpověď na {name}",
+            "CancelReply": "Zrušit odpověď"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Pryč",
+            "Busy": "Zaneprázdněn",
+            "Typing": "{name} píše...",
+            "TypingMultiple": "{names} píší...",
+            "LastSeen": "Naposledy viděn {time}",
+            "Active": "Právě aktivní"
+        },
+
+        "Groups": {
+            "Title": "Správa skupin",
+            "CreateNew": "Vytvořit novou skupinu",
+            "GroupName": "Název skupiny",
+            "Members": "Členové",
+            "NoGroups": "Žádné skupiny",
+            "EditGroup": "Upravit skupinu",
+            "DeleteGroup": "Smazat skupinu",
+            "DeleteConfirm": "Opravdu chcete smazat tuto skupinu?",
+            "MemberCount": "{count} člen(ů)",
+            "GroupCreated": "Skupina vytvořena",
+            "GroupDeleted": "Skupina smazána"
+        },
+
+        "Monitor": {
+            "Title": "Monitor aktivity",
+            "AllActivity": "Veškerá aktivita",
+            "PrivateMessages": "Soukromé zprávy",
+            "GroupMessages": "Skupinové zprávy",
+            "NoActivity": "Žádná zaznamenaná aktivita",
+            "ExportLog": "Exportovat log",
+            "ClearLog": "Vymazat log"
+        },
+
+        "Settings": {
+            "Title": "Nastavení Cyphur",
+            "General": "Obecná nastavení",
+            "Appearance": "Vzhled",
+            "Notifications": "Oznámení",
+            "Sounds": "Nastavení zvuku",
+            "EnableSounds": "Povolit zvuky",
+            "SoundVolume": "Hlasitost",
+            "Theme": "Téma",
+            "SaveSettings": "Uložit nastavení"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Půlnoc",
+            "Plasma": "Plazma",
+            "Hologram": "Hologram",
+            "Quantum": "Quantum",
+            "Void": "Prázdnota"
+        },
+
+        "Errors": {
+            "SendFailed": "Odeslání zprávy selhalo",
+            "ConnectionError": "Chyba připojení",
+            "LoadFailed": "Načítání dat selhalo",
+            "SaveFailed": "Ukládání dat selhalo",
+            "EmptyMessage": "Nelze odeslat prázdnou zprávu"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat s {name}",
+        "GroupChat": "Skupina: {name}",
+        "PrivateChat": "Soukromý chat",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "členů",
+        "SearchMessages": "Hledat zprávy...",
+        "Results": "výsledků",
+        "AddFavorite": "Přidat do oblíbených",
+        "RemoveFavorite": "Odebrat z oblíbených",
+        "Mute": "Ztlumit",
+        "Unmute": "Zrušit ztlumení",
+        "Reply": "Odpovědět",
+        "React": "Reagovat",
+        "Pin": "Připnout",
+        "Unpin": "Odepnout",
+        "Edit": "Upravit",
+        "Delete": "Smazat",
+        "Send": "Odeslat",
+        "TypeMessage": "Napište zprávu...",
+        "GMMonitorTitle": "Skrytý monitor",
+        "All": "Vše",
+        "Private": "Soukromé",
+        "Group": "Skupina",
+        "ExportLog": "Exportovat log",
+        "ClearLog": "Vymazat log",
+        "NoInterceptedMessages": "Žádné zachycené zprávy",
+        "OpenCyphur": "Otevřít Cyphur",
+        "ShareImage": "Sdílet obrázek",
+        "SetBackground": "Nastavit pozadí",
+        "ExportToJournal": "Exportovat do deníku",
+        "Stealth": "SKRYTĚ",
+        "Flagged": "Označeno",
+        "New": "NOVÉ"
+    }
+}

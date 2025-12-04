@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Foundry VTT용 암호화 통신",
+
+        "Buttons": {
+            "OpenHub": "Cyphur Hub 열기",
+            "Send": "메시지 보내기",
+            "Cancel": "취소",
+            "Save": "저장",
+            "Delete": "삭제",
+            "Edit": "편집",
+            "Close": "닫기",
+            "Export": "내보내기",
+            "Import": "가져오기",
+            "Confirm": "확인",
+            "Clear": "지우기",
+            "Search": "검색",
+            "CreateGroup": "그룹 만들기",
+            "NewChat": "새 채팅",
+            "Refresh": "새로고침",
+            "SelectAll": "모두 선택",
+            "DeselectAll": "선택 해제"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "채널",
+            "Groups": "그룹",
+            "PrivateChats": "비공개 채팅",
+            "NewConversation": "새 대화",
+            "NoConversations": "대화 없음",
+            "StartChatting": "새 채팅 시작",
+            "OnlineUsers": "온라인 사용자",
+            "OfflineUsers": "오프라인 사용자",
+            "AllUsers": "모든 사용자",
+            "Favorites": "즐겨찾기",
+            "RecentChats": "최근"
+        },
+
+        "Chat": {
+            "Title": "채팅",
+            "PrivateWith": "{name}님과의 비공개 채팅",
+            "GroupChat": "그룹: {name}",
+            "ChannelChat": "채널: {name}",
+            "TypeMessage": "메시지 입력...",
+            "EncryptedChannel": "암호화된 채널",
+            "MessagePlaceholder": "메시지를 입력하세요...",
+            "NoMessages": "메시지 없음",
+            "StartConversation": "메시지를 보내 시작하세요",
+            "MessageSent": "메시지 전송됨",
+            "MessageDeleted": "메시지 삭제됨",
+            "MessageEdited": "(편집됨)",
+            "Edited": "편집됨",
+            "Pinned": "고정됨",
+            "ReplyingTo": "{name}님에게 답장",
+            "CancelReply": "답장 취소"
+        },
+
+        "Status": {
+            "Online": "온라인",
+            "Offline": "오프라인",
+            "Away": "자리비움",
+            "Busy": "바쁨",
+            "Typing": "{name}님이 입력 중...",
+            "TypingMultiple": "{names}님이 입력 중...",
+            "LastSeen": "마지막 접속 {time}",
+            "Active": "활동 중"
+        },
+
+        "Groups": {
+            "Title": "그룹 관리",
+            "CreateNew": "새 그룹 만들기",
+            "GroupName": "그룹 이름",
+            "Members": "멤버",
+            "NoGroups": "생성된 그룹 없음",
+            "EditGroup": "그룹 편집",
+            "DeleteGroup": "그룹 삭제",
+            "DeleteConfirm": "이 그룹을 삭제하시겠습니까?",
+            "MemberCount": "{count}명의 멤버",
+            "GroupCreated": "그룹 생성 완료",
+            "GroupDeleted": "그룹 삭제 완료"
+        },
+
+        "Monitor": {
+            "Title": "활동 모니터",
+            "AllActivity": "모든 활동",
+            "PrivateMessages": "비공개 메시지",
+            "GroupMessages": "그룹 메시지",
+            "NoActivity": "기록된 활동 없음",
+            "ExportLog": "로그 내보내기",
+            "ClearLog": "로그 지우기"
+        },
+
+        "Settings": {
+            "Title": "Cyphur 설정",
+            "General": "일반 설정",
+            "Appearance": "외관",
+            "Notifications": "알림",
+            "Sounds": "소리 설정",
+            "EnableSounds": "소리 활성화",
+            "SoundVolume": "볼륨",
+            "Theme": "테마",
+            "SaveSettings": "설정 저장"
+        },
+
+        "Themes": {
+            "Neon": "네온",
+            "Matrix": "매트릭스",
+            "Cyber": "사이버",
+            "Midnight": "미드나잇",
+            "Plasma": "플라즈마",
+            "Hologram": "홀로그램",
+            "Quantum": "퀀텀",
+            "Void": "보이드"
+        },
+
+        "Errors": {
+            "SendFailed": "메시지 전송 실패",
+            "ConnectionError": "연결 오류",
+            "LoadFailed": "데이터 로드 실패",
+            "SaveFailed": "데이터 저장 실패",
+            "EmptyMessage": "빈 메시지는 보낼 수 없습니다"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "{name}님과 채팅",
+        "GroupChat": "그룹: {name}",
+        "PrivateChat": "비공개 채팅",
+        "Online": "온라인",
+        "Offline": "오프라인",
+        "Members": "멤버",
+        "SearchMessages": "메시지 검색...",
+        "Results": "개 결과",
+        "AddFavorite": "즐겨찾기에 추가",
+        "RemoveFavorite": "즐겨찾기에서 제거",
+        "Mute": "음소거",
+        "Unmute": "음소거 해제",
+        "Reply": "답장",
+        "React": "반응",
+        "Pin": "고정",
+        "Unpin": "고정 해제",
+        "Edit": "편집",
+        "Delete": "삭제",
+        "Send": "보내기",
+        "TypeMessage": "메시지 입력...",
+        "GMMonitorTitle": "스텔스 모니터",
+        "All": "전체",
+        "Private": "비공개",
+        "Group": "그룹",
+        "ExportLog": "로그 내보내기",
+        "ClearLog": "로그 지우기",
+        "NoInterceptedMessages": "가로챈 메시지 없음",
+        "OpenCyphur": "Cyphur 열기",
+        "ShareImage": "이미지 공유",
+        "SetBackground": "배경 설정",
+        "ExportToJournal": "저널에 내보내기",
+        "Stealth": "스텔스",
+        "Flagged": "플래그됨",
+        "New": "새로운"
+    }
+}

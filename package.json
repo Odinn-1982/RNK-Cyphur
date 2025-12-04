@@ -1,0 +1,29 @@
+{
+    "name": "rnk-cyphur",
+    "version": "1.0.0",
+    "description": "Next-generation encrypted communications module for Foundry VTT",
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "lint": "eslint src/**/*.js",
+        "test": "echo \"No tests configured\" && exit 0"
+    },
+    "keywords": [
+        "foundry-vtt",
+        "chat",
+        "messaging",
+        "module",
+        "cyberpunk"
+    ],
+    "author": "Odinn <Asgardinnovations@protonmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Odinn-1982/rnk-cyphur.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Odinn-1982/rnk-cyphur/issues"
+    },
+    "homepage": "https://github.com/Odinn-1982/rnk-cyphur#readme",
+    "devDependencies": {}
+}

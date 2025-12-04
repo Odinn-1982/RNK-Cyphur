@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "การสื่อสารแบบเข้ารหัสสำหรับ Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "เปิด Cyphur Hub",
+            "Send": "ส่งข้อความ",
+            "Cancel": "ยกเลิก",
+            "Save": "บันทึก",
+            "Delete": "ลบ",
+            "Edit": "แก้ไข",
+            "Close": "ปิด",
+            "Export": "ส่งออก",
+            "Import": "นำเข้า",
+            "Confirm": "ยืนยัน",
+            "Clear": "ล้าง",
+            "Search": "ค้นหา",
+            "CreateGroup": "สร้างกลุ่ม",
+            "NewChat": "แชทใหม่",
+            "Refresh": "รีเฟรช",
+            "SelectAll": "เลือกทั้งหมด",
+            "DeselectAll": "ยกเลิกการเลือก"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "ช่อง",
+            "Groups": "กลุ่ม",
+            "PrivateChats": "แชทส่วนตัว",
+            "NewConversation": "สนทนาใหม่",
+            "NoConversations": "ไม่มีการสนทนา",
+            "StartChatting": "เริ่มแชทใหม่",
+            "OnlineUsers": "ผู้ใช้ออนไลน์",
+            "OfflineUsers": "ผู้ใช้ออฟไลน์",
+            "AllUsers": "ผู้ใช้ทั้งหมด",
+            "Favorites": "รายการโปรด",
+            "RecentChats": "ล่าสุด"
+        },
+
+        "Chat": {
+            "Title": "แชท",
+            "PrivateWith": "แชทส่วนตัวกับ {name}",
+            "GroupChat": "กลุ่ม: {name}",
+            "ChannelChat": "ช่อง: {name}",
+            "TypeMessage": "พิมพ์ข้อความ...",
+            "EncryptedChannel": "ช่องเข้ารหัส",
+            "MessagePlaceholder": "กรอกข้อความของคุณ...",
+            "NoMessages": "ไม่มีข้อความ",
+            "StartConversation": "ส่งข้อความเพื่อเริ่มต้น",
+            "MessageSent": "ส่งข้อความแล้ว",
+            "MessageDeleted": "ลบข้อความแล้ว",
+            "MessageEdited": "(แก้ไขแล้ว)",
+            "Edited": "แก้ไขแล้ว",
+            "Pinned": "ปักหมุดแล้ว",
+            "ReplyingTo": "ตอบกลับ {name}",
+            "CancelReply": "ยกเลิกการตอบกลับ"
+        },
+
+        "Status": {
+            "Online": "ออนไลน์",
+            "Offline": "ออฟไลน์",
+            "Away": "ไม่อยู่",
+            "Busy": "ไม่ว่าง",
+            "Typing": "{name} กำลังพิมพ์...",
+            "TypingMultiple": "{names} กำลังพิมพ์...",
+            "LastSeen": "เห็นล่าสุด {time}",
+            "Active": "ใช้งานอยู่"
+        },
+
+        "Groups": {
+            "Title": "จัดการกลุ่ม",
+            "CreateNew": "สร้างกลุ่มใหม่",
+            "GroupName": "ชื่อกลุ่ม",
+            "Members": "สมาชิก",
+            "NoGroups": "ไม่มีกลุ่ม",
+            "EditGroup": "แก้ไขกลุ่ม",
+            "DeleteGroup": "ลบกลุ่ม",
+            "DeleteConfirm": "คุณแน่ใจหรือไม่ว่าต้องการลบกลุ่มนี้?",
+            "MemberCount": "{count} สมาชิก",
+            "GroupCreated": "สร้างกลุ่มแล้ว",
+            "GroupDeleted": "ลบกลุ่มแล้ว"
+        },
+
+        "Monitor": {
+            "Title": "ตรวจสอบกิจกรรม",
+            "AllActivity": "กิจกรรมทั้งหมด",
+            "PrivateMessages": "ข้อความส่วนตัว",
+            "GroupMessages": "ข้อความกลุ่ม",
+            "NoActivity": "ไม่มีกิจกรรมที่บันทึก",
+            "ExportLog": "ส่งออกบันทึก",
+            "ClearLog": "ล้างบันทึก"
+        },
+
+        "Settings": {
+            "Title": "ตั้งค่า Cyphur",
+            "General": "ตั้งค่าทั่วไป",
+            "Appearance": "การแสดงผล",
+            "Notifications": "การแจ้งเตือน",
+            "Sounds": "ตั้งค่าเสียง",
+            "EnableSounds": "เปิดเสียง",
+            "SoundVolume": "ระดับเสียง",
+            "Theme": "ธีม",
+            "SaveSettings": "บันทึกการตั้งค่า"
+        },
+
+        "Themes": {
+            "Neon": "นีออน",
+            "Matrix": "เมทริกซ์",
+            "Cyber": "ไซเบอร์",
+            "Midnight": "เที่ยงคืน",
+            "Plasma": "พลาสม่า",
+            "Hologram": "โฮโลแกรม",
+            "Quantum": "ควอนตัม",
+            "Void": "ความว่างเปล่า"
+        },
+
+        "Errors": {
+            "SendFailed": "ส่งข้อความล้มเหลว",
+            "ConnectionError": "ข้อผิดพลาดการเชื่อมต่อ",
+            "LoadFailed": "โหลดข้อมูลล้มเหลว",
+            "SaveFailed": "บันทึกข้อมูลล้มเหลว",
+            "EmptyMessage": "ไม่สามารถส่งข้อความเปล่าได้"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "แชทกับ {name}",
+        "GroupChat": "กลุ่ม: {name}",
+        "PrivateChat": "แชทส่วนตัว",
+        "Online": "ออนไลน์",
+        "Offline": "ออฟไลน์",
+        "Members": "สมาชิก",
+        "SearchMessages": "ค้นหาข้อความ...",
+        "Results": "ผลลัพธ์",
+        "AddFavorite": "เพิ่มในรายการโปรด",
+        "RemoveFavorite": "ลบจากรายการโปรด",
+        "Mute": "ปิดเสียง",
+        "Unmute": "เปิดเสียง",
+        "Reply": "ตอบกลับ",
+        "React": "รีแอค",
+        "Pin": "ปักหมุด",
+        "Unpin": "เลิกปักหมุด",
+        "Edit": "แก้ไข",
+        "Delete": "ลบ",
+        "Send": "ส่ง",
+        "TypeMessage": "พิมพ์ข้อความ...",
+        "GMMonitorTitle": "ตรวจสอบลับ",
+        "All": "ทั้งหมด",
+        "Private": "ส่วนตัว",
+        "Group": "กลุ่ม",
+        "ExportLog": "ส่งออกบันทึก",
+        "ClearLog": "ล้างบันทึก",
+        "NoInterceptedMessages": "ไม่มีข้อความที่ดักจับ",
+        "OpenCyphur": "เปิด Cyphur",
+        "ShareImage": "แชร์รูปภาพ",
+        "SetBackground": "ตั้งพื้นหลัง",
+        "ExportToJournal": "ส่งออกไปยังบันทึก",
+        "Stealth": "ลับ",
+        "Flagged": "มีธง",
+        "New": "ใหม่"
+    }
+}

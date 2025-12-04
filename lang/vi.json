@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Giao tiếp được mã hóa cho Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Mở Cyphur Hub",
+            "Send": "Gửi tin nhắn",
+            "Cancel": "Hủy",
+            "Save": "Lưu",
+            "Delete": "Xóa",
+            "Edit": "Chỉnh sửa",
+            "Close": "Đóng",
+            "Export": "Xuất",
+            "Import": "Nhập",
+            "Confirm": "Xác nhận",
+            "Clear": "Xóa",
+            "Search": "Tìm kiếm",
+            "CreateGroup": "Tạo nhóm",
+            "NewChat": "Chat mới",
+            "Refresh": "Làm mới",
+            "SelectAll": "Chọn tất cả",
+            "DeselectAll": "Bỏ chọn"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kênh",
+            "Groups": "Nhóm",
+            "PrivateChats": "Chat riêng",
+            "NewConversation": "Cuộc trò chuyện mới",
+            "NoConversations": "Không có cuộc trò chuyện",
+            "StartChatting": "Bắt đầu chat mới",
+            "OnlineUsers": "Người dùng trực tuyến",
+            "OfflineUsers": "Người dùng ngoại tuyến",
+            "AllUsers": "Tất cả người dùng",
+            "Favorites": "Yêu thích",
+            "RecentChats": "Gần đây"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Chat riêng với {name}",
+            "GroupChat": "Nhóm: {name}",
+            "ChannelChat": "Kênh: {name}",
+            "TypeMessage": "Nhập tin nhắn...",
+            "EncryptedChannel": "Kênh được mã hóa",
+            "MessagePlaceholder": "Nhập tin nhắn của bạn...",
+            "NoMessages": "Không có tin nhắn",
+            "StartConversation": "Gửi tin nhắn để bắt đầu",
+            "MessageSent": "Đã gửi tin nhắn",
+            "MessageDeleted": "Đã xóa tin nhắn",
+            "MessageEdited": "(đã chỉnh sửa)",
+            "Edited": "đã chỉnh sửa",
+            "Pinned": "Đã ghim",
+            "ReplyingTo": "Trả lời {name}",
+            "CancelReply": "Hủy trả lời"
+        },
+
+        "Status": {
+            "Online": "Trực tuyến",
+            "Offline": "Ngoại tuyến",
+            "Away": "Vắng mặt",
+            "Busy": "Bận",
+            "Typing": "{name} đang gõ...",
+            "TypingMultiple": "{names} đang gõ...",
+            "LastSeen": "Lần cuối thấy {time}",
+            "Active": "Đang hoạt động"
+        },
+
+        "Groups": {
+            "Title": "Quản lý nhóm",
+            "CreateNew": "Tạo nhóm mới",
+            "GroupName": "Tên nhóm",
+            "Members": "Thành viên",
+            "NoGroups": "Không có nhóm",
+            "EditGroup": "Chỉnh sửa nhóm",
+            "DeleteGroup": "Xóa nhóm",
+            "DeleteConfirm": "Bạn có chắc muốn xóa nhóm này?",
+            "MemberCount": "{count} thành viên",
+            "GroupCreated": "Đã tạo nhóm",
+            "GroupDeleted": "Đã xóa nhóm"
+        },
+
+        "Monitor": {
+            "Title": "Theo dõi hoạt động",
+            "AllActivity": "Tất cả hoạt động",
+            "PrivateMessages": "Tin nhắn riêng",
+            "GroupMessages": "Tin nhắn nhóm",
+            "NoActivity": "Không có hoạt động được ghi nhận",
+            "ExportLog": "Xuất nhật ký",
+            "ClearLog": "Xóa nhật ký"
+        },
+
+        "Settings": {
+            "Title": "Cài đặt Cyphur",
+            "General": "Cài đặt chung",
+            "Appearance": "Giao diện",
+            "Notifications": "Thông báo",
+            "Sounds": "Cài đặt âm thanh",
+            "EnableSounds": "Bật âm thanh",
+            "SoundVolume": "Âm lượng",
+            "Theme": "Chủ đề",
+            "SaveSettings": "Lưu cài đặt"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Nửa đêm",
+            "Plasma": "Plasma",
+            "Hologram": "Hologram",
+            "Quantum": "Quantum",
+            "Void": "Hư không"
+        },
+
+        "Errors": {
+            "SendFailed": "Gửi tin nhắn thất bại",
+            "ConnectionError": "Lỗi kết nối",
+            "LoadFailed": "Tải dữ liệu thất bại",
+            "SaveFailed": "Lưu dữ liệu thất bại",
+            "EmptyMessage": "Không thể gửi tin nhắn trống"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat với {name}",
+        "GroupChat": "Nhóm: {name}",
+        "PrivateChat": "Chat riêng",
+        "Online": "Trực tuyến",
+        "Offline": "Ngoại tuyến",
+        "Members": "thành viên",
+        "SearchMessages": "Tìm tin nhắn...",
+        "Results": "kết quả",
+        "AddFavorite": "Thêm vào yêu thích",
+        "RemoveFavorite": "Xóa khỏi yêu thích",
+        "Mute": "Tắt tiếng",
+        "Unmute": "Bật tiếng",
+        "Reply": "Trả lời",
+        "React": "Phản ứng",
+        "Pin": "Ghim",
+        "Unpin": "Bỏ ghim",
+        "Edit": "Chỉnh sửa",
+        "Delete": "Xóa",
+        "Send": "Gửi",
+        "TypeMessage": "Nhập tin nhắn...",
+        "GMMonitorTitle": "Theo dõi ẩn",
+        "All": "Tất cả",
+        "Private": "Riêng",
+        "Group": "Nhóm",
+        "ExportLog": "Xuất nhật ký",
+        "ClearLog": "Xóa nhật ký",
+        "NoInterceptedMessages": "Không có tin nhắn bị chặn",
+        "OpenCyphur": "Mở Cyphur",
+        "ShareImage": "Chia sẻ hình ảnh",
+        "SetBackground": "Đặt nền",
+        "ExportToJournal": "Xuất vào nhật ký",
+        "Stealth": "ẨN",
+        "Flagged": "Đánh dấu",
+        "New": "MỚI"
+    }
+}

@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Titkosított kommunikáció a Foundry VTT-hez",
+
+        "Buttons": {
+            "OpenHub": "Cyphur Hub megnyitása",
+            "Send": "Üzenet küldése",
+            "Cancel": "Mégse",
+            "Save": "Mentés",
+            "Delete": "Törlés",
+            "Edit": "Szerkesztés",
+            "Close": "Bezárás",
+            "Export": "Exportálás",
+            "Import": "Importálás",
+            "Confirm": "Megerősítés",
+            "Clear": "Törlés",
+            "Search": "Keresés",
+            "CreateGroup": "Csoport létrehozása",
+            "NewChat": "Új chat",
+            "Refresh": "Frissítés",
+            "SelectAll": "Összes kijelölése",
+            "DeselectAll": "Kijelölés megszüntetése"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Csatornák",
+            "Groups": "Csoportok",
+            "PrivateChats": "Privát chatek",
+            "NewConversation": "Új beszélgetés",
+            "NoConversations": "Nincs beszélgetés",
+            "StartChatting": "Új chat indítása",
+            "OnlineUsers": "Online felhasználók",
+            "OfflineUsers": "Offline felhasználók",
+            "AllUsers": "Összes felhasználó",
+            "Favorites": "Kedvencek",
+            "RecentChats": "Legutóbbi"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Privát chat {name} felhasználóval",
+            "GroupChat": "Csoport: {name}",
+            "ChannelChat": "Csatorna: {name}",
+            "TypeMessage": "Írjon üzenetet...",
+            "EncryptedChannel": "Titkosított csatorna",
+            "MessagePlaceholder": "Adja meg üzenetét...",
+            "NoMessages": "Nincs üzenet",
+            "StartConversation": "Küldjön üzenetet a kezdéshez",
+            "MessageSent": "Üzenet elküldve",
+            "MessageDeleted": "Üzenet törölve",
+            "MessageEdited": "(szerkesztve)",
+            "Edited": "szerkesztve",
+            "Pinned": "Kitűzve",
+            "ReplyingTo": "Válasz {name} felhasználónak",
+            "CancelReply": "Válasz megszakítása"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Távol",
+            "Busy": "Elfoglalt",
+            "Typing": "{name} gépel...",
+            "TypingMultiple": "{names} gépelnek...",
+            "LastSeen": "Utoljára látva: {time}",
+            "Active": "Most aktív"
+        },
+
+        "Groups": {
+            "Title": "Csoportkezelő",
+            "CreateNew": "Új csoport létrehozása",
+            "GroupName": "Csoport neve",
+            "Members": "Tagok",
+            "NoGroups": "Nincs csoport",
+            "EditGroup": "Csoport szerkesztése",
+            "DeleteGroup": "Csoport törlése",
+            "DeleteConfirm": "Biztosan törli ezt a csoportot?",
+            "MemberCount": "{count} tag",
+            "GroupCreated": "Csoport létrehozva",
+            "GroupDeleted": "Csoport törölve"
+        },
+
+        "Monitor": {
+            "Title": "Tevékenységfigyelő",
+            "AllActivity": "Összes tevékenység",
+            "PrivateMessages": "Privát üzenetek",
+            "GroupMessages": "Csoportüzenetek",
+            "NoActivity": "Nincs rögzített tevékenység",
+            "ExportLog": "Napló exportálása",
+            "ClearLog": "Napló törlése"
+        },
+
+        "Settings": {
+            "Title": "Cyphur beállítások",
+            "General": "Általános beállítások",
+            "Appearance": "Megjelenés",
+            "Notifications": "Értesítések",
+            "Sounds": "Hangbeállítások",
+            "EnableSounds": "Hangok engedélyezése",
+            "SoundVolume": "Hangerő",
+            "Theme": "Téma",
+            "SaveSettings": "Beállítások mentése"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Mátrix",
+            "Cyber": "Cyber",
+            "Midnight": "Éjfél",
+            "Plasma": "Plazma",
+            "Hologram": "Hologram",
+            "Quantum": "Kvantum",
+            "Void": "Űr"
+        },
+
+        "Errors": {
+            "SendFailed": "Üzenet küldése sikertelen",
+            "ConnectionError": "Kapcsolódási hiba",
+            "LoadFailed": "Adatok betöltése sikertelen",
+            "SaveFailed": "Adatok mentése sikertelen",
+            "EmptyMessage": "Üres üzenet nem küldhető"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat {name} felhasználóval",
+        "GroupChat": "Csoport: {name}",
+        "PrivateChat": "Privát chat",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "tag",
+        "SearchMessages": "Üzenetek keresése...",
+        "Results": "találat",
+        "AddFavorite": "Hozzáadás a kedvencekhez",
+        "RemoveFavorite": "Eltávolítás a kedvencekből",
+        "Mute": "Némítás",
+        "Unmute": "Némítás feloldása",
+        "Reply": "Válasz",
+        "React": "Reakció",
+        "Pin": "Kitűzés",
+        "Unpin": "Kitűzés megszüntetése",
+        "Edit": "Szerkesztés",
+        "Delete": "Törlés",
+        "Send": "Küldés",
+        "TypeMessage": "Írjon üzenetet...",
+        "GMMonitorTitle": "Rejtett figyelő",
+        "All": "Összes",
+        "Private": "Privát",
+        "Group": "Csoport",
+        "ExportLog": "Napló exportálása",
+        "ClearLog": "Napló törlése",
+        "NoInterceptedMessages": "Nincs elfogott üzenet",
+        "OpenCyphur": "Cyphur megnyitása",
+        "ShareImage": "Kép megosztása",
+        "SetBackground": "Háttér beállítása",
+        "ExportToJournal": "Exportálás naplóba",
+        "Stealth": "REJTETT",
+        "Flagged": "Megjelölve",
+        "New": "ÚJ"
+    }
+}

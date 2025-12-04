@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Foundry VTT加密通訊",
+
+        "Buttons": {
+            "OpenHub": "開啟Cyphur Hub",
+            "Send": "傳送訊息",
+            "Cancel": "取消",
+            "Save": "儲存",
+            "Delete": "刪除",
+            "Edit": "編輯",
+            "Close": "關閉",
+            "Export": "匯出",
+            "Import": "匯入",
+            "Confirm": "確認",
+            "Clear": "清除",
+            "Search": "搜尋",
+            "CreateGroup": "建立群組",
+            "NewChat": "新聊天",
+            "Refresh": "重新整理",
+            "SelectAll": "全選",
+            "DeselectAll": "取消全選"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "頻道",
+            "Groups": "群組",
+            "PrivateChats": "私人聊天",
+            "NewConversation": "新對話",
+            "NoConversations": "沒有對話",
+            "StartChatting": "開始新聊天",
+            "OnlineUsers": "線上使用者",
+            "OfflineUsers": "離線使用者",
+            "AllUsers": "所有使用者",
+            "Favorites": "收藏",
+            "RecentChats": "最近"
+        },
+
+        "Chat": {
+            "Title": "聊天",
+            "PrivateWith": "與{name}的私人聊天",
+            "GroupChat": "群組: {name}",
+            "ChannelChat": "頻道: {name}",
+            "TypeMessage": "輸入訊息...",
+            "EncryptedChannel": "加密頻道",
+            "MessagePlaceholder": "請輸入您的訊息...",
+            "NoMessages": "沒有訊息",
+            "StartConversation": "傳送訊息以開始",
+            "MessageSent": "訊息已傳送",
+            "MessageDeleted": "訊息已刪除",
+            "MessageEdited": "(已編輯)",
+            "Edited": "已編輯",
+            "Pinned": "已釘選",
+            "ReplyingTo": "回覆{name}",
+            "CancelReply": "取消回覆"
+        },
+
+        "Status": {
+            "Online": "線上",
+            "Offline": "離線",
+            "Away": "離開",
+            "Busy": "忙碌",
+            "Typing": "{name}正在輸入...",
+            "TypingMultiple": "{names}正在輸入...",
+            "LastSeen": "最後上線 {time}",
+            "Active": "目前活動中"
+        },
+
+        "Groups": {
+            "Title": "群組管理",
+            "CreateNew": "建立新群組",
+            "GroupName": "群組名稱",
+            "Members": "成員",
+            "NoGroups": "沒有建立的群組",
+            "EditGroup": "編輯群組",
+            "DeleteGroup": "刪除群組",
+            "DeleteConfirm": "確定要刪除此群組嗎？",
+            "MemberCount": "{count}位成員",
+            "GroupCreated": "群組建立成功",
+            "GroupDeleted": "群組已刪除"
+        },
+
+        "Monitor": {
+            "Title": "活動監控",
+            "AllActivity": "所有活動",
+            "PrivateMessages": "私人訊息",
+            "GroupMessages": "群組訊息",
+            "NoActivity": "沒有記錄的活動",
+            "ExportLog": "匯出記錄",
+            "ClearLog": "清除記錄"
+        },
+
+        "Settings": {
+            "Title": "Cyphur設定",
+            "General": "一般設定",
+            "Appearance": "外觀",
+            "Notifications": "通知",
+            "Sounds": "音效設定",
+            "EnableSounds": "啟用音效",
+            "SoundVolume": "音量",
+            "Theme": "主題",
+            "SaveSettings": "儲存設定"
+        },
+
+        "Themes": {
+            "Neon": "霓虹",
+            "Matrix": "駭客任務",
+            "Cyber": "賽博",
+            "Midnight": "午夜",
+            "Plasma": "電漿",
+            "Hologram": "全息",
+            "Quantum": "量子",
+            "Void": "虛空"
+        },
+
+        "Errors": {
+            "SendFailed": "訊息傳送失敗",
+            "ConnectionError": "連線錯誤",
+            "LoadFailed": "資料載入失敗",
+            "SaveFailed": "資料儲存失敗",
+            "EmptyMessage": "無法傳送空白訊息"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "與{name}聊天",
+        "GroupChat": "群組: {name}",
+        "PrivateChat": "私人聊天",
+        "Online": "線上",
+        "Offline": "離線",
+        "Members": "成員",
+        "SearchMessages": "搜尋訊息...",
+        "Results": "個結果",
+        "AddFavorite": "加入收藏",
+        "RemoveFavorite": "移除收藏",
+        "Mute": "靜音",
+        "Unmute": "取消靜音",
+        "Reply": "回覆",
+        "React": "反應",
+        "Pin": "釘選",
+        "Unpin": "取消釘選",
+        "Edit": "編輯",
+        "Delete": "刪除",
+        "Send": "傳送",
+        "TypeMessage": "輸入訊息...",
+        "GMMonitorTitle": "隱密監控",
+        "All": "全部",
+        "Private": "私人",
+        "Group": "群組",
+        "ExportLog": "匯出記錄",
+        "ClearLog": "清除記錄",
+        "NoInterceptedMessages": "沒有攔截的訊息",
+        "OpenCyphur": "開啟Cyphur",
+        "ShareImage": "分享圖片",
+        "SetBackground": "設定背景",
+        "ExportToJournal": "匯出至日誌",
+        "Stealth": "隱密",
+        "Flagged": "已標記",
+        "New": "新"
+    }
+}

@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Salattu viestintä Foundry VTT:lle",
+
+        "Buttons": {
+            "OpenHub": "Avaa Cyphur Hub",
+            "Send": "Lähetä viesti",
+            "Cancel": "Peruuta",
+            "Save": "Tallenna",
+            "Delete": "Poista",
+            "Edit": "Muokkaa",
+            "Close": "Sulje",
+            "Export": "Vie",
+            "Import": "Tuo",
+            "Confirm": "Vahvista",
+            "Clear": "Tyhjennä",
+            "Search": "Etsi",
+            "CreateGroup": "Luo ryhmä",
+            "NewChat": "Uusi keskustelu",
+            "Refresh": "Päivitä",
+            "SelectAll": "Valitse kaikki",
+            "DeselectAll": "Poista valinnat"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanavat",
+            "Groups": "Ryhmät",
+            "PrivateChats": "Yksityiset keskustelut",
+            "NewConversation": "Uusi keskustelu",
+            "NoConversations": "Ei keskusteluja",
+            "StartChatting": "Aloita uusi keskustelu",
+            "OnlineUsers": "Online-käyttäjät",
+            "OfflineUsers": "Offline-käyttäjät",
+            "AllUsers": "Kaikki käyttäjät",
+            "Favorites": "Suosikit",
+            "RecentChats": "Viimeisimmät"
+        },
+
+        "Chat": {
+            "Title": "Keskustelu",
+            "PrivateWith": "Yksityinen keskustelu käyttäjän {name} kanssa",
+            "GroupChat": "Ryhmä: {name}",
+            "ChannelChat": "Kanava: {name}",
+            "TypeMessage": "Kirjoita viesti...",
+            "EncryptedChannel": "Salattu kanava",
+            "MessagePlaceholder": "Syötä viestisi...",
+            "NoMessages": "Ei viestejä",
+            "StartConversation": "Lähetä viesti aloittaaksesi",
+            "MessageSent": "Viesti lähetetty",
+            "MessageDeleted": "Viesti poistettu",
+            "MessageEdited": "(muokattu)",
+            "Edited": "muokattu",
+            "Pinned": "Kiinnitetty",
+            "ReplyingTo": "Vastaus käyttäjälle {name}",
+            "CancelReply": "Peruuta vastaus"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Poissa",
+            "Busy": "Varattu",
+            "Typing": "{name} kirjoittaa...",
+            "TypingMultiple": "{names} kirjoittavat...",
+            "LastSeen": "Nähty viimeksi {time}",
+            "Active": "Aktiivinen nyt"
+        },
+
+        "Groups": {
+            "Title": "Ryhmien hallinta",
+            "CreateNew": "Luo uusi ryhmä",
+            "GroupName": "Ryhmän nimi",
+            "Members": "Jäsenet",
+            "NoGroups": "Ei ryhmiä",
+            "EditGroup": "Muokkaa ryhmää",
+            "DeleteGroup": "Poista ryhmä",
+            "DeleteConfirm": "Haluatko varmasti poistaa tämän ryhmän?",
+            "MemberCount": "{count} jäsen(tä)",
+            "GroupCreated": "Ryhmä luotu",
+            "GroupDeleted": "Ryhmä poistettu"
+        },
+
+        "Monitor": {
+            "Title": "Toiminnan seuranta",
+            "AllActivity": "Kaikki toiminta",
+            "PrivateMessages": "Yksityisviestit",
+            "GroupMessages": "Ryhmäviestit",
+            "NoActivity": "Ei tallennettua toimintaa",
+            "ExportLog": "Vie loki",
+            "ClearLog": "Tyhjennä loki"
+        },
+
+        "Settings": {
+            "Title": "Cyphur asetukset",
+            "General": "Yleiset asetukset",
+            "Appearance": "Ulkoasu",
+            "Notifications": "Ilmoitukset",
+            "Sounds": "Ääniasetukset",
+            "EnableSounds": "Ota äänet käyttöön",
+            "SoundVolume": "Äänenvoimakkuus",
+            "Theme": "Teema",
+            "SaveSettings": "Tallenna asetukset"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Keskiyö",
+            "Plasma": "Plasma",
+            "Hologram": "Hologrammi",
+            "Quantum": "Quantum",
+            "Void": "Tyhjyys"
+        },
+
+        "Errors": {
+            "SendFailed": "Viestin lähetys epäonnistui",
+            "ConnectionError": "Yhteysvirhe",
+            "LoadFailed": "Tietojen lataus epäonnistui",
+            "SaveFailed": "Tietojen tallennus epäonnistui",
+            "EmptyMessage": "Tyhjää viestiä ei voi lähettää"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Keskustelu käyttäjän {name} kanssa",
+        "GroupChat": "Ryhmä: {name}",
+        "PrivateChat": "Yksityinen keskustelu",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "jäsentä",
+        "SearchMessages": "Etsi viestejä...",
+        "Results": "tulosta",
+        "AddFavorite": "Lisää suosikkeihin",
+        "RemoveFavorite": "Poista suosikeista",
+        "Mute": "Mykistä",
+        "Unmute": "Poista mykistys",
+        "Reply": "Vastaa",
+        "React": "Reagoi",
+        "Pin": "Kiinnitä",
+        "Unpin": "Irrota",
+        "Edit": "Muokkaa",
+        "Delete": "Poista",
+        "Send": "Lähetä",
+        "TypeMessage": "Kirjoita viesti...",
+        "GMMonitorTitle": "Salaseuranta",
+        "All": "Kaikki",
+        "Private": "Yksityinen",
+        "Group": "Ryhmä",
+        "ExportLog": "Vie loki",
+        "ClearLog": "Tyhjennä loki",
+        "NoInterceptedMessages": "Ei siepattuja viestejä",
+        "OpenCyphur": "Avaa Cyphur",
+        "ShareImage": "Jaa kuva",
+        "SetBackground": "Aseta tausta",
+        "ExportToJournal": "Vie päiväkirjaan",
+        "Stealth": "SALA",
+        "Flagged": "Merkitty",
+        "New": "UUSI"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "id": "rnk-cyphur",
+    "title": "RNK Cyphur",
+    "description": "Next-generation encrypted communications module for Foundry VTT. Features private messaging, group channels, image sharing, GM stealth monitoring, and a sleek cyberpunk interface. System agnostic.",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Odinn",
+            "email": "Asgardinnovations@protonmail.com",
+            "url": "https://github.com/Odinn-1982",
+            "discord": "Odinn1982"
+        }
+    ],
+    "compatibility": {
+        "minimum": "11",
+        "verified": "13"
+    },
+    "esmodules": [
+        "./main.js"
+    ],
+    "styles": [
+        "./styles/cyphur-neon.css",
+        "./styles/cyphur-themes.css"
+    ],
+    "socket": true,
+    "packs": [],
+    "license": "MIT",
+    "manifest": "https://raw.githubusercontent.com/Odinn-1982/rnk-cyphur/main/module.json",
+    "download": "https://github.com/Odinn-1982/rnk-cyphur/releases/latest/download/rnk-cyphur.zip",
+    "url": "https://github.com/Odinn-1982/rnk-cyphur",
+    "readme": "README.md",
+    "bugs": "https://github.com/Odinn-1982/rnk-cyphur/issues",
+    "changelog": "CHANGELOG.md",
+    "media": [
+        {
+            "type": "cover",
+            "url": "https://raw.githubusercontent.com/Odinn-1982/rnk-cyphur/main/assets/cover.jpg",
+            "caption": "Cyphur - Encrypted Communications"
+        }
+    ],
+    "languages": [
+        { "lang": "en", "name": "English", "path": "lang/en.json" },
+        { "lang": "es", "name": "Español", "path": "lang/es.json" },
+        { "lang": "fr", "name": "Français", "path": "lang/fr.json" },
+        { "lang": "de", "name": "Deutsch", "path": "lang/de.json" },
+        { "lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json" },
+        { "lang": "ja", "name": "日本語", "path": "lang/ja.json" },
+        { "lang": "ko", "name": "한국어", "path": "lang/ko.json" },
+        { "lang": "zh-Hans", "name": "简体中文", "path": "lang/zh-Hans.json" },
+        { "lang": "zh-TW", "name": "繁體中文", "path": "lang/zh-TW.json" },
+        { "lang": "ru", "name": "Русский", "path": "lang/ru.json" },
+        { "lang": "pl", "name": "Polski", "path": "lang/pl.json" },
+        { "lang": "it", "name": "Italiano", "path": "lang/it.json" },
+        { "lang": "sv", "name": "Svenska", "path": "lang/sv.json" },
+        { "lang": "nl", "name": "Nederlands", "path": "lang/nl.json" },
+        { "lang": "cs", "name": "Čeština", "path": "lang/cs.json" },
+        { "lang": "tr", "name": "Türkçe", "path": "lang/tr.json" },
+        { "lang": "hu", "name": "Magyar", "path": "lang/hu.json" },
+        { "lang": "fi", "name": "Suomi", "path": "lang/fi.json" },
+        { "lang": "da", "name": "Dansk", "path": "lang/da.json" },
+        { "lang": "no", "name": "Norsk", "path": "lang/no.json" },
+        { "lang": "uk", "name": "Українська", "path": "lang/uk.json" },
+        { "lang": "he", "name": "עברית", "path": "lang/he.json" },
+        { "lang": "th", "name": "ไทย", "path": "lang/th.json" },
+        { "lang": "vi", "name": "Tiếng Việt", "path": "lang/vi.json" },
+        { "lang": "ar", "name": "العربية", "path": "lang/ar.json" }
+    ]
+}

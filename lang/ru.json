@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Зашифрованная связь для Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Открыть Cyphur Hub",
+            "Send": "Отправить сообщение",
+            "Cancel": "Отмена",
+            "Save": "Сохранить",
+            "Delete": "Удалить",
+            "Edit": "Редактировать",
+            "Close": "Закрыть",
+            "Export": "Экспорт",
+            "Import": "Импорт",
+            "Confirm": "Подтвердить",
+            "Clear": "Очистить",
+            "Search": "Поиск",
+            "CreateGroup": "Создать группу",
+            "NewChat": "Новый чат",
+            "Refresh": "Обновить",
+            "SelectAll": "Выбрать все",
+            "DeselectAll": "Снять выбор"
+        },
+
+        "Hub": {
+            "Title": "Hub Cyphur",
+            "Channels": "Каналы",
+            "Groups": "Группы",
+            "PrivateChats": "Личные чаты",
+            "NewConversation": "Новый разговор",
+            "NoConversations": "Нет разговоров",
+            "StartChatting": "Начните новый чат",
+            "OnlineUsers": "Пользователи онлайн",
+            "OfflineUsers": "Пользователи офлайн",
+            "AllUsers": "Все пользователи",
+            "Favorites": "Избранное",
+            "RecentChats": "Недавние"
+        },
+
+        "Chat": {
+            "Title": "Чат",
+            "PrivateWith": "Личный чат с {name}",
+            "GroupChat": "Группа: {name}",
+            "ChannelChat": "Канал: {name}",
+            "TypeMessage": "Введите сообщение...",
+            "EncryptedChannel": "Зашифрованный канал",
+            "MessagePlaceholder": "Введите ваше сообщение...",
+            "NoMessages": "Нет сообщений",
+            "StartConversation": "Отправьте сообщение, чтобы начать",
+            "MessageSent": "Сообщение отправлено",
+            "MessageDeleted": "Сообщение удалено",
+            "MessageEdited": "(изменено)",
+            "Edited": "изменено",
+            "Pinned": "Закреплено",
+            "ReplyingTo": "Ответ на {name}",
+            "CancelReply": "Отменить ответ"
+        },
+
+        "Status": {
+            "Online": "В сети",
+            "Offline": "Не в сети",
+            "Away": "Отошёл",
+            "Busy": "Занят",
+            "Typing": "{name} печатает...",
+            "TypingMultiple": "{names} печатают...",
+            "LastSeen": "Был(а) {time}",
+            "Active": "Активен сейчас"
+        },
+
+        "Groups": {
+            "Title": "Управление группами",
+            "CreateNew": "Создать новую группу",
+            "GroupName": "Название группы",
+            "Members": "Участники",
+            "NoGroups": "Группы не созданы",
+            "EditGroup": "Редактировать группу",
+            "DeleteGroup": "Удалить группу",
+            "DeleteConfirm": "Вы уверены, что хотите удалить эту группу?",
+            "MemberCount": "{count} участник(ов)",
+            "GroupCreated": "Группа успешно создана",
+            "GroupDeleted": "Группа удалена"
+        },
+
+        "Monitor": {
+            "Title": "Монитор активности",
+            "AllActivity": "Вся активность",
+            "PrivateMessages": "Личные сообщения",
+            "GroupMessages": "Групповые сообщения",
+            "NoActivity": "Активность не зарегистрирована",
+            "ExportLog": "Экспорт журнала",
+            "ClearLog": "Очистить журнал"
+        },
+
+        "Settings": {
+            "Title": "Настройки Cyphur",
+            "General": "Общие настройки",
+            "Appearance": "Внешний вид",
+            "Notifications": "Уведомления",
+            "Sounds": "Настройки звука",
+            "EnableSounds": "Включить звуки",
+            "SoundVolume": "Громкость",
+            "Theme": "Тема",
+            "SaveSettings": "Сохранить настройки"
+        },
+
+        "Themes": {
+            "Neon": "Неон",
+            "Matrix": "Матрица",
+            "Cyber": "Кибер",
+            "Midnight": "Полночь",
+            "Plasma": "Плазма",
+            "Hologram": "Голограмма",
+            "Quantum": "Квантум",
+            "Void": "Пустота"
+        },
+
+        "Errors": {
+            "SendFailed": "Ошибка отправки сообщения",
+            "ConnectionError": "Ошибка подключения",
+            "LoadFailed": "Ошибка загрузки данных",
+            "SaveFailed": "Ошибка сохранения данных",
+            "EmptyMessage": "Невозможно отправить пустое сообщение"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Чат с {name}",
+        "GroupChat": "Группа: {name}",
+        "PrivateChat": "Личный чат",
+        "Online": "В сети",
+        "Offline": "Не в сети",
+        "Members": "участников",
+        "SearchMessages": "Поиск сообщений...",
+        "Results": "результатов",
+        "AddFavorite": "Добавить в избранное",
+        "RemoveFavorite": "Удалить из избранного",
+        "Mute": "Отключить звук",
+        "Unmute": "Включить звук",
+        "Reply": "Ответить",
+        "React": "Реакция",
+        "Pin": "Закрепить",
+        "Unpin": "Открепить",
+        "Edit": "Редактировать",
+        "Delete": "Удалить",
+        "Send": "Отправить",
+        "TypeMessage": "Введите сообщение...",
+        "GMMonitorTitle": "Скрытый монитор",
+        "All": "Все",
+        "Private": "Личные",
+        "Group": "Группа",
+        "ExportLog": "Экспорт журнала",
+        "ClearLog": "Очистить журнал",
+        "NoInterceptedMessages": "Нет перехваченных сообщений",
+        "OpenCyphur": "Открыть Cyphur",
+        "ShareImage": "Поделиться изображением",
+        "SetBackground": "Установить фон",
+        "ExportToJournal": "Экспорт в журнал",
+        "Stealth": "СКРЫТНО",
+        "Flagged": "Помечено",
+        "New": "НОВОЕ"
+    }
+}

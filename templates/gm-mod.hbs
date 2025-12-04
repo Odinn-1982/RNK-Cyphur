@@ -1,0 +1,87 @@
+{{!-- GM Moderation - Simplified --}}
+<div class="cyphur-mod-container">
+    <div class="cyphur-mod-header">
+        <h3><i class="fas fa-gavel"></i> Moderation</h3>
+        <div class="cyphur-mod-actions">
+            <button type="button" class="cyphur-btn-icon" data-action="refresh" title="Refresh">
+                <i class="fas fa-sync"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="cyphur-mod-content">
+        {{!-- Private Chats --}}
+        <div class="cyphur-mod-section">
+            <div class="cyphur-mod-section-header">
+                <h4><i class="fas fa-lock"></i> Private ({{totalPrivate}})</h4>
+                <button type="button" class="cyphur-btn-small cyphur-btn-danger" data-action="clearAllPrivate">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+            </div>
+            
+            <div class="cyphur-mod-list">
+                {{#each privateChats}}
+                <div class="cyphur-mod-item" data-conversation-id="{{this.id}}" data-type="private">
+                    <div class="cyphur-mod-item-info">
+                        <span class="cyphur-mod-item-name">{{this.name}}</span>
+                        <span class="cyphur-mod-item-count">{{this.messageCount}} msgs</span>
+                    </div>
+                    <div class="cyphur-mod-item-actions">
+                        <button type="button" class="cyphur-btn-icon" data-action="viewConversation" title="View">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button type="button" class="cyphur-btn-icon" data-action="clearConversation" title="Clear">
+                            <i class="fas fa-eraser"></i>
+                        </button>
+                        <button type="button" class="cyphur-btn-icon cyphur-btn-danger" data-action="deleteConversation" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                {{else}}
+                <div class="cyphur-empty-state">
+                    <p>No private chats</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        {{!-- Group Chats --}}
+        <div class="cyphur-mod-section">
+            <div class="cyphur-mod-section-header">
+                <h4><i class="fas fa-users"></i> Groups ({{totalGroups}})</h4>
+                <button type="button" class="cyphur-btn-small cyphur-btn-danger" data-action="clearAllGroups">
+                    <i class="fas fa-trash"></i> Clear All
+                </button>
+            </div>
+            
+            <div class="cyphur-mod-list">
+                {{#each groupChats}}
+                <div class="cyphur-mod-item" data-conversation-id="{{this.id}}" data-type="group">
+                    <div class="cyphur-mod-item-info">
+                        <span class="cyphur-mod-item-name">{{this.name}}</span>
+                        <span class="cyphur-mod-item-meta">
+                            {{this.memberCount}} members · {{this.messageCount}} msgs
+                        </span>
+                    </div>
+                    <div class="cyphur-mod-item-actions">
+                        <button type="button" class="cyphur-btn-icon" data-action="viewConversation" title="View">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button type="button" class="cyphur-btn-icon" data-action="clearConversation" title="Clear">
+                            <i class="fas fa-eraser"></i>
+                        </button>
+                        <button type="button" class="cyphur-btn-icon cyphur-btn-danger" data-action="deleteConversation" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                {{else}}
+                <div class="cyphur-empty-state">
+                    <p>No group chats</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

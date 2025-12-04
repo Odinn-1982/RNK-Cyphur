@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Krypteret kommunikation til Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Åbn Cyphur Hub",
+            "Send": "Send besked",
+            "Cancel": "Annuller",
+            "Save": "Gem",
+            "Delete": "Slet",
+            "Edit": "Rediger",
+            "Close": "Luk",
+            "Export": "Eksporter",
+            "Import": "Importer",
+            "Confirm": "Bekræft",
+            "Clear": "Ryd",
+            "Search": "Søg",
+            "CreateGroup": "Opret gruppe",
+            "NewChat": "Ny chat",
+            "Refresh": "Opdater",
+            "SelectAll": "Vælg alle",
+            "DeselectAll": "Fravælg alle"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanaler",
+            "Groups": "Grupper",
+            "PrivateChats": "Private chats",
+            "NewConversation": "Ny samtale",
+            "NoConversations": "Ingen samtaler",
+            "StartChatting": "Start en ny chat",
+            "OnlineUsers": "Online brugere",
+            "OfflineUsers": "Offline brugere",
+            "AllUsers": "Alle brugere",
+            "Favorites": "Favoritter",
+            "RecentChats": "Seneste"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Privat chat med {name}",
+            "GroupChat": "Gruppe: {name}",
+            "ChannelChat": "Kanal: {name}",
+            "TypeMessage": "Skriv en besked...",
+            "EncryptedChannel": "Krypteret kanal",
+            "MessagePlaceholder": "Indtast din besked...",
+            "NoMessages": "Ingen beskeder",
+            "StartConversation": "Send en besked for at starte",
+            "MessageSent": "Besked sendt",
+            "MessageDeleted": "Besked slettet",
+            "MessageEdited": "(redigeret)",
+            "Edited": "redigeret",
+            "Pinned": "Fastgjort",
+            "ReplyingTo": "Svarer til {name}",
+            "CancelReply": "Annuller svar"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Væk",
+            "Busy": "Optaget",
+            "Typing": "{name} skriver...",
+            "TypingMultiple": "{names} skriver...",
+            "LastSeen": "Sidst set {time}",
+            "Active": "Aktiv nu"
+        },
+
+        "Groups": {
+            "Title": "Gruppehåndtering",
+            "CreateNew": "Opret ny gruppe",
+            "GroupName": "Gruppenavn",
+            "Members": "Medlemmer",
+            "NoGroups": "Ingen grupper",
+            "EditGroup": "Rediger gruppe",
+            "DeleteGroup": "Slet gruppe",
+            "DeleteConfirm": "Er du sikker på, at du vil slette denne gruppe?",
+            "MemberCount": "{count} medlem(mer)",
+            "GroupCreated": "Gruppe oprettet",
+            "GroupDeleted": "Gruppe slettet"
+        },
+
+        "Monitor": {
+            "Title": "Aktivitetsmonitor",
+            "AllActivity": "Al aktivitet",
+            "PrivateMessages": "Private beskeder",
+            "GroupMessages": "Gruppebeskeder",
+            "NoActivity": "Ingen registreret aktivitet",
+            "ExportLog": "Eksporter log",
+            "ClearLog": "Ryd log"
+        },
+
+        "Settings": {
+            "Title": "Cyphur indstillinger",
+            "General": "Generelle indstillinger",
+            "Appearance": "Udseende",
+            "Notifications": "Notifikationer",
+            "Sounds": "Lydindstillinger",
+            "EnableSounds": "Aktiver lyde",
+            "SoundVolume": "Lydstyrke",
+            "Theme": "Tema",
+            "SaveSettings": "Gem indstillinger"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Midnat",
+            "Plasma": "Plasma",
+            "Hologram": "Hologram",
+            "Quantum": "Quantum",
+            "Void": "Tomrum"
+        },
+
+        "Errors": {
+            "SendFailed": "Kunne ikke sende besked",
+            "ConnectionError": "Forbindelsesfejl",
+            "LoadFailed": "Kunne ikke indlæse data",
+            "SaveFailed": "Kunne ikke gemme data",
+            "EmptyMessage": "Kan ikke sende tom besked"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat med {name}",
+        "GroupChat": "Gruppe: {name}",
+        "PrivateChat": "Privat chat",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "medlemmer",
+        "SearchMessages": "Søg beskeder...",
+        "Results": "resultater",
+        "AddFavorite": "Tilføj til favoritter",
+        "RemoveFavorite": "Fjern fra favoritter",
+        "Mute": "Slå fra",
+        "Unmute": "Slå til",
+        "Reply": "Svar",
+        "React": "Reager",
+        "Pin": "Fastgør",
+        "Unpin": "Frigør",
+        "Edit": "Rediger",
+        "Delete": "Slet",
+        "Send": "Send",
+        "TypeMessage": "Skriv en besked...",
+        "GMMonitorTitle": "Skjult monitor",
+        "All": "Alle",
+        "Private": "Privat",
+        "Group": "Gruppe",
+        "ExportLog": "Eksporter log",
+        "ClearLog": "Ryd log",
+        "NoInterceptedMessages": "Ingen opfangede beskeder",
+        "OpenCyphur": "Åbn Cyphur",
+        "ShareImage": "Del billede",
+        "SetBackground": "Indstil baggrund",
+        "ExportToJournal": "Eksporter til dagbog",
+        "Stealth": "SKJULT",
+        "Flagged": "Markeret",
+        "New": "NY"
+    }
+}

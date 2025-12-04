@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Foundry VTT için şifreli iletişim",
+
+        "Buttons": {
+            "OpenHub": "Cyphur Hub'ı Aç",
+            "Send": "Mesaj Gönder",
+            "Cancel": "İptal",
+            "Save": "Kaydet",
+            "Delete": "Sil",
+            "Edit": "Düzenle",
+            "Close": "Kapat",
+            "Export": "Dışa Aktar",
+            "Import": "İçe Aktar",
+            "Confirm": "Onayla",
+            "Clear": "Temizle",
+            "Search": "Ara",
+            "CreateGroup": "Grup Oluştur",
+            "NewChat": "Yeni Sohbet",
+            "Refresh": "Yenile",
+            "SelectAll": "Tümünü Seç",
+            "DeselectAll": "Seçimi Kaldır"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanallar",
+            "Groups": "Gruplar",
+            "PrivateChats": "Özel Sohbetler",
+            "NewConversation": "Yeni Konuşma",
+            "NoConversations": "Konuşma yok",
+            "StartChatting": "Yeni bir sohbet başlat",
+            "OnlineUsers": "Çevrimiçi Kullanıcılar",
+            "OfflineUsers": "Çevrimdışı Kullanıcılar",
+            "AllUsers": "Tüm Kullanıcılar",
+            "Favorites": "Favoriler",
+            "RecentChats": "Son"
+        },
+
+        "Chat": {
+            "Title": "Sohbet",
+            "PrivateWith": "{name} ile özel sohbet",
+            "GroupChat": "Grup: {name}",
+            "ChannelChat": "Kanal: {name}",
+            "TypeMessage": "Mesaj yazın...",
+            "EncryptedChannel": "Şifreli kanal",
+            "MessagePlaceholder": "Mesajınızı girin...",
+            "NoMessages": "Mesaj yok",
+            "StartConversation": "Başlamak için bir mesaj gönderin",
+            "MessageSent": "Mesaj gönderildi",
+            "MessageDeleted": "Mesaj silindi",
+            "MessageEdited": "(düzenlendi)",
+            "Edited": "düzenlendi",
+            "Pinned": "Sabitlendi",
+            "ReplyingTo": "{name} kişisine yanıt",
+            "CancelReply": "Yanıtı iptal et"
+        },
+
+        "Status": {
+            "Online": "Çevrimiçi",
+            "Offline": "Çevrimdışı",
+            "Away": "Uzakta",
+            "Busy": "Meşgul",
+            "Typing": "{name} yazıyor...",
+            "TypingMultiple": "{names} yazıyor...",
+            "LastSeen": "Son görülme {time}",
+            "Active": "Şu an aktif"
+        },
+
+        "Groups": {
+            "Title": "Grup Yönetimi",
+            "CreateNew": "Yeni grup oluştur",
+            "GroupName": "Grup adı",
+            "Members": "Üyeler",
+            "NoGroups": "Grup yok",
+            "EditGroup": "Grubu düzenle",
+            "DeleteGroup": "Grubu sil",
+            "DeleteConfirm": "Bu grubu silmek istediğinizden emin misiniz?",
+            "MemberCount": "{count} üye",
+            "GroupCreated": "Grup oluşturuldu",
+            "GroupDeleted": "Grup silindi"
+        },
+
+        "Monitor": {
+            "Title": "Aktivite Monitörü",
+            "AllActivity": "Tüm aktivite",
+            "PrivateMessages": "Özel mesajlar",
+            "GroupMessages": "Grup mesajları",
+            "NoActivity": "Kayıtlı aktivite yok",
+            "ExportLog": "Günlüğü dışa aktar",
+            "ClearLog": "Günlüğü temizle"
+        },
+
+        "Settings": {
+            "Title": "Cyphur Ayarları",
+            "General": "Genel ayarlar",
+            "Appearance": "Görünüm",
+            "Notifications": "Bildirimler",
+            "Sounds": "Ses ayarları",
+            "EnableSounds": "Sesleri etkinleştir",
+            "SoundVolume": "Ses düzeyi",
+            "Theme": "Tema",
+            "SaveSettings": "Ayarları kaydet"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Siber",
+            "Midnight": "Gece Yarısı",
+            "Plasma": "Plazma",
+            "Hologram": "Hologram",
+            "Quantum": "Kuantum",
+            "Void": "Boşluk"
+        },
+
+        "Errors": {
+            "SendFailed": "Mesaj gönderilemedi",
+            "ConnectionError": "Bağlantı hatası",
+            "LoadFailed": "Veri yüklenemedi",
+            "SaveFailed": "Veri kaydedilemedi",
+            "EmptyMessage": "Boş mesaj gönderilemez"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "{name} ile sohbet",
+        "GroupChat": "Grup: {name}",
+        "PrivateChat": "Özel sohbet",
+        "Online": "Çevrimiçi",
+        "Offline": "Çevrimdışı",
+        "Members": "üye",
+        "SearchMessages": "Mesajlarda ara...",
+        "Results": "sonuç",
+        "AddFavorite": "Favorilere ekle",
+        "RemoveFavorite": "Favorilerden kaldır",
+        "Mute": "Sessize al",
+        "Unmute": "Sesi aç",
+        "Reply": "Yanıtla",
+        "React": "Tepki ver",
+        "Pin": "Sabitle",
+        "Unpin": "Sabitlemeyi kaldır",
+        "Edit": "Düzenle",
+        "Delete": "Sil",
+        "Send": "Gönder",
+        "TypeMessage": "Mesaj yazın...",
+        "GMMonitorTitle": "Gizli Monitör",
+        "All": "Tümü",
+        "Private": "Özel",
+        "Group": "Grup",
+        "ExportLog": "Günlüğü dışa aktar",
+        "ClearLog": "Günlüğü temizle",
+        "NoInterceptedMessages": "Yakalanan mesaj yok",
+        "OpenCyphur": "Cyphur'u Aç",
+        "ShareImage": "Resim paylaş",
+        "SetBackground": "Arka plan ayarla",
+        "ExportToJournal": "Günlüğe aktar",
+        "Stealth": "GİZLİ",
+        "Flagged": "İşaretlendi",
+        "New": "YENİ"
+    }
+}

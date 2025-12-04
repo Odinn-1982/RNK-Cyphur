@@ -1,0 +1,370 @@
+/* ============================================
+   RNK CYPHUR - DARK MATRIX THEME
+   Hacker-inspired minimalist dark theme
+   ============================================ */
+
+/* Override CSS Variables for Dark Matrix Theme */
+.cyphur-theme-matrix {
+    --cyphur-neon-cyan: #00ff41;
+    --cyphur-neon-magenta: #00cc33;
+    --cyphur-neon-purple: #009926;
+    --cyphur-neon-blue: #00ff41;
+    --cyphur-neon-green: #00ff41;
+    --cyphur-neon-yellow: #ccff00;
+    --cyphur-neon-orange: #99ff00;
+    --cyphur-neon-red: #ff3300;
+    
+    --cyphur-bg-dark: #000000;
+    --cyphur-bg-darker: #000000;
+    --cyphur-bg-panel: rgba(0, 10, 0, 0.98);
+    --cyphur-bg-input: rgba(0, 20, 0, 0.9);
+    --cyphur-bg-hover: rgba(0, 255, 65, 0.1);
+    --cyphur-bg-active: rgba(0, 255, 65, 0.2);
+    
+    --cyphur-border: rgba(0, 255, 65, 0.3);
+    --cyphur-border-hover: rgba(0, 255, 65, 0.6);
+    --cyphur-border-focus: var(--cyphur-neon-green);
+    
+    --cyphur-text-primary: #00ff41;
+    --cyphur-text-secondary: #009926;
+    --cyphur-text-muted: #006619;
+    --cyphur-text-glow: var(--cyphur-neon-green);
+    
+    --cyphur-glow-cyan: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.3);
+    --cyphur-glow-magenta: 0 0 10px rgba(0, 204, 51, 0.5), 0 0 20px rgba(0, 204, 51, 0.3);
+    --cyphur-glow-text: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+/* Cyber Theme */
+.cyphur-theme-cyber {
+    --cyphur-neon-cyan: #ff0080;
+    --cyphur-neon-magenta: #00d4ff;
+    --cyphur-neon-purple: #8000ff;
+    --cyphur-neon-blue: #0080ff;
+    --cyphur-neon-green: #00ff80;
+    --cyphur-neon-yellow: #ffff00;
+    --cyphur-neon-orange: #ff8000;
+    --cyphur-neon-red: #ff0040;
+    
+    --cyphur-bg-dark: #0d0015;
+    --cyphur-bg-darker: #060008;
+    --cyphur-bg-panel: rgba(13, 0, 21, 0.95);
+    --cyphur-bg-input: rgba(20, 0, 30, 0.9);
+    --cyphur-bg-hover: rgba(255, 0, 128, 0.1);
+    --cyphur-bg-active: rgba(255, 0, 128, 0.2);
+    
+    --cyphur-border: rgba(255, 0, 128, 0.3);
+    --cyphur-border-hover: rgba(255, 0, 128, 0.6);
+    --cyphur-border-focus: var(--cyphur-neon-cyan);
+    
+    --cyphur-glow-cyan: 0 0 10px rgba(255, 0, 128, 0.5), 0 0 20px rgba(255, 0, 128, 0.3);
+    --cyphur-glow-magenta: 0 0 10px rgba(0, 212, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+    --cyphur-glow-text: 0 0 5px rgba(255, 0, 128, 0.5);
+}
+
+/* Midnight Theme */
+.cyphur-theme-midnight {
+    --cyphur-neon-cyan: #4a90d9;
+    --cyphur-neon-magenta: #9b59b6;
+    --cyphur-neon-purple: #6c5ce7;
+    --cyphur-neon-blue: #3498db;
+    --cyphur-neon-green: #2ecc71;
+    --cyphur-neon-yellow: #f39c12;
+    --cyphur-neon-orange: #e67e22;
+    --cyphur-neon-red: #e74c3c;
+    
+    --cyphur-bg-dark: #0f1419;
+    --cyphur-bg-darker: #0a0d10;
+    --cyphur-bg-panel: rgba(15, 20, 25, 0.98);
+    --cyphur-bg-input: rgba(22, 30, 38, 0.9);
+    --cyphur-bg-hover: rgba(74, 144, 217, 0.1);
+    --cyphur-bg-active: rgba(74, 144, 217, 0.2);
+    
+    --cyphur-border: rgba(74, 144, 217, 0.3);
+    --cyphur-border-hover: rgba(74, 144, 217, 0.6);
+    --cyphur-border-focus: var(--cyphur-neon-cyan);
+    
+    --cyphur-glow-cyan: 0 0 10px rgba(74, 144, 217, 0.3), 0 0 15px rgba(74, 144, 217, 0.2);
+    --cyphur-glow-magenta: 0 0 10px rgba(155, 89, 182, 0.3), 0 0 15px rgba(155, 89, 182, 0.2);
+    --cyphur-glow-text: 0 0 3px rgba(74, 144, 217, 0.3);
+}
+
+/* Plasma Theme */
+.cyphur-theme-plasma {
+    --cyphur-neon-cyan: #e040fb;
+    --cyphur-neon-magenta: #7c4dff;
+    --cyphur-neon-purple: #651fff;
+    --cyphur-neon-blue: #536dfe;
+    --cyphur-neon-green: #00e676;
+    --cyphur-neon-yellow: #ffea00;
+    --cyphur-neon-orange: #ff9100;
+    --cyphur-neon-red: #ff1744;
+    
+    --cyphur-bg-dark: #12001a;
+    --cyphur-bg-darker: #08000d;
+    --cyphur-bg-panel: rgba(18, 0, 26, 0.95);
+    --cyphur-bg-input: rgba(30, 0, 45, 0.9);
+    --cyphur-bg-hover: rgba(224, 64, 251, 0.1);
+    --cyphur-bg-active: rgba(224, 64, 251, 0.2);
+    
+    --cyphur-border: rgba(224, 64, 251, 0.3);
+    --cyphur-border-hover: rgba(224, 64, 251, 0.6);
+    --cyphur-border-focus: var(--cyphur-neon-cyan);
+    
+    --cyphur-glow-cyan: 0 0 15px rgba(224, 64, 251, 0.5), 0 0 30px rgba(224, 64, 251, 0.3);
+    --cyphur-glow-magenta: 0 0 15px rgba(124, 77, 255, 0.5), 0 0 30px rgba(124, 77, 255, 0.3);
+    --cyphur-glow-text: 0 0 8px rgba(224, 64, 251, 0.5);
+}
+
+/* Hologram Theme */
+.cyphur-theme-hologram {
+    --cyphur-neon-cyan: #00fff2;
+    --cyphur-neon-magenta: #00ccff;
+    --cyphur-neon-purple: #0099ff;
+    --cyphur-neon-blue: #0066ff;
+    --cyphur-neon-green: #00ffcc;
+    --cyphur-neon-yellow: #ccffff;
+    --cyphur-neon-orange: #99ffff;
+    --cyphur-neon-red: #ff6699;
+    
+    --cyphur-bg-dark: rgba(0, 20, 30, 0.85);
+    --cyphur-bg-darker: rgba(0, 10, 15, 0.9);
+    --cyphur-bg-panel: rgba(0, 30, 45, 0.8);
+    --cyphur-bg-input: rgba(0, 40, 60, 0.7);
+    --cyphur-bg-hover: rgba(0, 255, 242, 0.15);
+    --cyphur-bg-active: rgba(0, 255, 242, 0.25);
+    
+    --cyphur-border: rgba(0, 255, 242, 0.5);
+    --cyphur-border-hover: rgba(0, 255, 242, 0.8);
+    --cyphur-border-focus: var(--cyphur-neon-cyan);
+    
+    --cyphur-glow-cyan: 0 0 20px rgba(0, 255, 242, 0.6), 0 0 40px rgba(0, 255, 242, 0.4), 0 0 60px rgba(0, 255, 242, 0.2);
+    --cyphur-glow-magenta: 0 0 20px rgba(0, 204, 255, 0.6), 0 0 40px rgba(0, 204, 255, 0.4);
+    --cyphur-glow-text: 0 0 10px rgba(0, 255, 242, 0.6);
+}
+
+/* Hologram-specific transparency effects */
+.cyphur-theme-hologram .cyphur-window {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.cyphur-theme-hologram .cyphur-message {
+    background: rgba(0, 255, 242, 0.05);
+}
+
+/* Quantum Theme */
+.cyphur-theme-quantum {
+    --cyphur-neon-cyan: #b388ff;
+    --cyphur-neon-magenta: #ea80fc;
+    --cyphur-neon-purple: #8c9eff;
+    --cyphur-neon-blue: #82b1ff;
+    --cyphur-neon-green: #b9f6ca;
+    --cyphur-neon-yellow: #fff59d;
+    --cyphur-neon-orange: #ffcc80;
+    --cyphur-neon-red: #ff8a80;
+    
+    --cyphur-bg-dark: #1a1625;
+    --cyphur-bg-darker: #0f0c15;
+    --cyphur-bg-panel: rgba(26, 22, 37, 0.95);
+    --cyphur-bg-input: rgba(38, 32, 55, 0.9);
+    --cyphur-bg-hover: rgba(179, 136, 255, 0.1);
+    --cyphur-bg-active: rgba(179, 136, 255, 0.2);
+    
+    --cyphur-border: rgba(179, 136, 255, 0.3);
+    --cyphur-border-hover: rgba(179, 136, 255, 0.6);
+    --cyphur-border-focus: var(--cyphur-neon-cyan);
+    
+    --cyphur-text-primary: #e0d4ff;
+    --cyphur-text-secondary: #a094c4;
+    --cyphur-text-muted: #6b5f8a;
+    
+    --cyphur-glow-cyan: 0 0 10px rgba(179, 136, 255, 0.4), 0 0 20px rgba(179, 136, 255, 0.2);
+    --cyphur-glow-magenta: 0 0 10px rgba(234, 128, 252, 0.4), 0 0 20px rgba(234, 128, 252, 0.2);
+    --cyphur-glow-text: 0 0 5px rgba(179, 136, 255, 0.4);
+}
+
+/* Void Theme - Ultra Dark */
+.cyphur-theme-void {
+    --cyphur-neon-cyan: #ffffff;
+    --cyphur-neon-magenta: #cccccc;
+    --cyphur-neon-purple: #999999;
+    --cyphur-neon-blue: #888888;
+    --cyphur-neon-green: #66ff66;
+    --cyphur-neon-yellow: #ffff66;
+    --cyphur-neon-orange: #ff9966;
+    --cyphur-neon-red: #ff6666;
+    
+    --cyphur-bg-dark: #000000;
+    --cyphur-bg-darker: #000000;
+    --cyphur-bg-panel: rgba(0, 0, 0, 0.98);
+    --cyphur-bg-input: rgba(15, 15, 15, 0.95);
+    --cyphur-bg-hover: rgba(255, 255, 255, 0.05);
+    --cyphur-bg-active: rgba(255, 255, 255, 0.1);
+    
+    --cyphur-border: rgba(255, 255, 255, 0.15);
+    --cyphur-border-hover: rgba(255, 255, 255, 0.3);
+    --cyphur-border-focus: #ffffff;
+    
+    --cyphur-text-primary: #ffffff;
+    --cyphur-text-secondary: #888888;
+    --cyphur-text-muted: #444444;
+    
+    --cyphur-glow-cyan: 0 0 5px rgba(255, 255, 255, 0.3);
+    --cyphur-glow-magenta: 0 0 5px rgba(200, 200, 200, 0.3);
+    --cyphur-glow-text: none;
+}
+
+/* Void theme - minimal animations */
+.cyphur-theme-void .cyphur-window::before {
+    display: none;
+}
+
+.cyphur-theme-void .cyphur-hotbar-btn .unread-indicator {
+    animation: none;
+}
+
+/* ============================================
+   MATRIX THEME - SPECIAL EFFECTS
+   ============================================ */
+
+/* Matrix Rain Effect (Optional - Applied via JS) */
+.cyphur-theme-matrix .cyphur-window::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: 
+        linear-gradient(0deg, 
+            rgba(0, 0, 0, 0) 0%, 
+            rgba(0, 255, 65, 0.03) 50%, 
+            rgba(0, 0, 0, 0) 100%);
+    animation: matrix-rain 8s linear infinite;
+}
+
+@keyframes matrix-rain {
+    0% { background-position: 0 -100vh; }
+    100% { background-position: 0 100vh; }
+}
+
+/* Matrix scanline effect */
+.cyphur-theme-matrix .cyphur-messages::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+}
+
+/* ============================================
+   THEME PREVIEW COLORS
+   ============================================ */
+.cyphur-theme-preview.neon {
+    background: linear-gradient(135deg, #00fff2 0%, #0066ff 100%);
+}
+
+.cyphur-theme-preview.matrix {
+    background: linear-gradient(135deg, #00ff41 0%, #003300 100%);
+}
+
+.cyphur-theme-preview.cyber {
+    background: linear-gradient(135deg, #ff0080 0%, #8000ff 100%);
+}
+
+.cyphur-theme-preview.midnight {
+    background: linear-gradient(135deg, #4a90d9 0%, #0f1419 100%);
+}
+
+.cyphur-theme-preview.plasma {
+    background: linear-gradient(135deg, #e040fb 0%, #651fff 100%);
+}
+
+.cyphur-theme-preview.hologram {
+    background: linear-gradient(135deg, #00fff2 0%, #0099ff 50%, #00ffcc 100%);
+}
+
+.cyphur-theme-preview.quantum {
+    background: linear-gradient(135deg, #b388ff 0%, #ea80fc 50%, #8c9eff 100%);
+}
+
+.cyphur-theme-preview.void {
+    background: linear-gradient(135deg, #333333 0%, #000000 100%);
+}
+
+/* ============================================
+   BACKGROUND IMAGE SUPPORT
+   ============================================ */
+.cyphur-window.has-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cyphur-window.has-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cyphur-bg-panel);
+    z-index: -1;
+}
+
+.cyphur-window.has-background .window-content {
+    background: rgba(10, 10, 18, 0.85);
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .cyphur-window::before,
+    .cyphur-typing-dots span,
+    .cyphur-hotbar-btn .unread-indicator,
+    .cyphur-glitch::before,
+    .cyphur-glitch::after {
+        animation: none;
+    }
+    
+    .cyphur-fade-in,
+    .cyphur-slide-in {
+        animation: none;
+    }
+    
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --cyphur-border: rgba(255, 255, 255, 0.5);
+        --cyphur-text-primary: #ffffff;
+        --cyphur-text-secondary: #cccccc;
+    }
+    
+    .cyphur-window {
+        border-width: 2px;
+    }
+    
+    .cyphur-btn,
+    .cyphur-action-btn {
+        border-width: 2px;
+    }
+}

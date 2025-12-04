@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "Versleutelde communicatie voor Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "Cyphur Hub openen",
+            "Send": "Bericht versturen",
+            "Cancel": "Annuleren",
+            "Save": "Opslaan",
+            "Delete": "Verwijderen",
+            "Edit": "Bewerken",
+            "Close": "Sluiten",
+            "Export": "Exporteren",
+            "Import": "Importeren",
+            "Confirm": "Bevestigen",
+            "Clear": "Wissen",
+            "Search": "Zoeken",
+            "CreateGroup": "Groep maken",
+            "NewChat": "Nieuwe chat",
+            "Refresh": "Vernieuwen",
+            "SelectAll": "Alles selecteren",
+            "DeselectAll": "Selectie opheffen"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "Kanalen",
+            "Groups": "Groepen",
+            "PrivateChats": "Privéchats",
+            "NewConversation": "Nieuw gesprek",
+            "NoConversations": "Geen gesprekken",
+            "StartChatting": "Start een nieuwe chat",
+            "OnlineUsers": "Online gebruikers",
+            "OfflineUsers": "Offline gebruikers",
+            "AllUsers": "Alle gebruikers",
+            "Favorites": "Favorieten",
+            "RecentChats": "Recent"
+        },
+
+        "Chat": {
+            "Title": "Chat",
+            "PrivateWith": "Privéchat met {name}",
+            "GroupChat": "Groep: {name}",
+            "ChannelChat": "Kanaal: {name}",
+            "TypeMessage": "Typ een bericht...",
+            "EncryptedChannel": "Versleuteld kanaal",
+            "MessagePlaceholder": "Voer uw bericht in...",
+            "NoMessages": "Geen berichten",
+            "StartConversation": "Stuur een bericht om te beginnen",
+            "MessageSent": "Bericht verzonden",
+            "MessageDeleted": "Bericht verwijderd",
+            "MessageEdited": "(bewerkt)",
+            "Edited": "bewerkt",
+            "Pinned": "Vastgezet",
+            "ReplyingTo": "Reageren op {name}",
+            "CancelReply": "Reactie annuleren"
+        },
+
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Away": "Afwezig",
+            "Busy": "Bezet",
+            "Typing": "{name} typt...",
+            "TypingMultiple": "{names} typen...",
+            "LastSeen": "Laatst gezien {time}",
+            "Active": "Nu actief"
+        },
+
+        "Groups": {
+            "Title": "Groepsbeheer",
+            "CreateNew": "Nieuwe groep maken",
+            "GroupName": "Groepsnaam",
+            "Members": "Leden",
+            "NoGroups": "Geen groepen",
+            "EditGroup": "Groep bewerken",
+            "DeleteGroup": "Groep verwijderen",
+            "DeleteConfirm": "Weet u zeker dat u deze groep wilt verwijderen?",
+            "MemberCount": "{count} lid/leden",
+            "GroupCreated": "Groep aangemaakt",
+            "GroupDeleted": "Groep verwijderd"
+        },
+
+        "Monitor": {
+            "Title": "Activiteitsmonitor",
+            "AllActivity": "Alle activiteit",
+            "PrivateMessages": "Privéberichten",
+            "GroupMessages": "Groepsberichten",
+            "NoActivity": "Geen geregistreerde activiteit",
+            "ExportLog": "Log exporteren",
+            "ClearLog": "Log wissen"
+        },
+
+        "Settings": {
+            "Title": "Cyphur instellingen",
+            "General": "Algemene instellingen",
+            "Appearance": "Uiterlijk",
+            "Notifications": "Meldingen",
+            "Sounds": "Geluidsinstellingen",
+            "EnableSounds": "Geluiden inschakelen",
+            "SoundVolume": "Volume",
+            "Theme": "Thema",
+            "SaveSettings": "Instellingen opslaan"
+        },
+
+        "Themes": {
+            "Neon": "Neon",
+            "Matrix": "Matrix",
+            "Cyber": "Cyber",
+            "Midnight": "Middernacht",
+            "Plasma": "Plasma",
+            "Hologram": "Hologram",
+            "Quantum": "Quantum",
+            "Void": "Leegte"
+        },
+
+        "Errors": {
+            "SendFailed": "Bericht versturen mislukt",
+            "ConnectionError": "Verbindingsfout",
+            "LoadFailed": "Gegevens laden mislukt",
+            "SaveFailed": "Gegevens opslaan mislukt",
+            "EmptyMessage": "Leeg bericht kan niet worden verzonden"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "Chat met {name}",
+        "GroupChat": "Groep: {name}",
+        "PrivateChat": "Privéchat",
+        "Online": "Online",
+        "Offline": "Offline",
+        "Members": "leden",
+        "SearchMessages": "Berichten zoeken...",
+        "Results": "resultaten",
+        "AddFavorite": "Toevoegen aan favorieten",
+        "RemoveFavorite": "Verwijderen uit favorieten",
+        "Mute": "Dempen",
+        "Unmute": "Dempen opheffen",
+        "Reply": "Reageren",
+        "React": "Reactie",
+        "Pin": "Vastzetten",
+        "Unpin": "Losmaken",
+        "Edit": "Bewerken",
+        "Delete": "Verwijderen",
+        "Send": "Versturen",
+        "TypeMessage": "Typ een bericht...",
+        "GMMonitorTitle": "Stealth monitor",
+        "All": "Alles",
+        "Private": "Privé",
+        "Group": "Groep",
+        "ExportLog": "Log exporteren",
+        "ClearLog": "Log wissen",
+        "NoInterceptedMessages": "Geen onderschepte berichten",
+        "OpenCyphur": "Cyphur openen",
+        "ShareImage": "Afbeelding delen",
+        "SetBackground": "Achtergrond instellen",
+        "ExportToJournal": "Exporteren naar dagboek",
+        "Stealth": "STEALTH",
+        "Flagged": "Gemarkeerd",
+        "New": "NIEUW"
+    }
+}

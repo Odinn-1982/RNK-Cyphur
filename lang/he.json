@@ -1,0 +1,162 @@
+{
+    "CYPHUR": {
+        "ModuleName": "RNK Cyphur",
+        "ModuleDescription": "תקשורת מוצפנת עבור Foundry VTT",
+
+        "Buttons": {
+            "OpenHub": "פתח את Cyphur Hub",
+            "Send": "שלח הודעה",
+            "Cancel": "ביטול",
+            "Save": "שמור",
+            "Delete": "מחק",
+            "Edit": "ערוך",
+            "Close": "סגור",
+            "Export": "ייצוא",
+            "Import": "ייבוא",
+            "Confirm": "אישור",
+            "Clear": "נקה",
+            "Search": "חיפוש",
+            "CreateGroup": "צור קבוצה",
+            "NewChat": "צ'אט חדש",
+            "Refresh": "רענון",
+            "SelectAll": "בחר הכל",
+            "DeselectAll": "בטל בחירה"
+        },
+
+        "Hub": {
+            "Title": "Cyphur Hub",
+            "Channels": "ערוצים",
+            "Groups": "קבוצות",
+            "PrivateChats": "צ'אטים פרטיים",
+            "NewConversation": "שיחה חדשה",
+            "NoConversations": "אין שיחות",
+            "StartChatting": "התחל צ'אט חדש",
+            "OnlineUsers": "משתמשים מחוברים",
+            "OfflineUsers": "משתמשים לא מחוברים",
+            "AllUsers": "כל המשתמשים",
+            "Favorites": "מועדפים",
+            "RecentChats": "אחרונים"
+        },
+
+        "Chat": {
+            "Title": "צ'אט",
+            "PrivateWith": "צ'אט פרטי עם {name}",
+            "GroupChat": "קבוצה: {name}",
+            "ChannelChat": "ערוץ: {name}",
+            "TypeMessage": "כתוב הודעה...",
+            "EncryptedChannel": "ערוץ מוצפן",
+            "MessagePlaceholder": "הקלד את ההודעה שלך...",
+            "NoMessages": "אין הודעות",
+            "StartConversation": "שלח הודעה כדי להתחיל",
+            "MessageSent": "ההודעה נשלחה",
+            "MessageDeleted": "ההודעה נמחקה",
+            "MessageEdited": "(נערך)",
+            "Edited": "נערך",
+            "Pinned": "מוצמד",
+            "ReplyingTo": "מגיב ל-{name}",
+            "CancelReply": "בטל תגובה"
+        },
+
+        "Status": {
+            "Online": "מחובר",
+            "Offline": "לא מחובר",
+            "Away": "לא נמצא",
+            "Busy": "עסוק",
+            "Typing": "{name} מקליד...",
+            "TypingMultiple": "{names} מקלידים...",
+            "LastSeen": "נראה לאחרונה {time}",
+            "Active": "פעיל כעת"
+        },
+
+        "Groups": {
+            "Title": "ניהול קבוצות",
+            "CreateNew": "צור קבוצה חדשה",
+            "GroupName": "שם הקבוצה",
+            "Members": "חברים",
+            "NoGroups": "אין קבוצות",
+            "EditGroup": "ערוך קבוצה",
+            "DeleteGroup": "מחק קבוצה",
+            "DeleteConfirm": "האם אתה בטוח שברצונך למחוק קבוצה זו?",
+            "MemberCount": "{count} חבר/ים",
+            "GroupCreated": "הקבוצה נוצרה",
+            "GroupDeleted": "הקבוצה נמחקה"
+        },
+
+        "Monitor": {
+            "Title": "מוניטור פעילות",
+            "AllActivity": "כל הפעילות",
+            "PrivateMessages": "הודעות פרטיות",
+            "GroupMessages": "הודעות קבוצה",
+            "NoActivity": "אין פעילות רשומה",
+            "ExportLog": "ייצוא יומן",
+            "ClearLog": "נקה יומן"
+        },
+
+        "Settings": {
+            "Title": "הגדרות Cyphur",
+            "General": "הגדרות כלליות",
+            "Appearance": "מראה",
+            "Notifications": "התראות",
+            "Sounds": "הגדרות צליל",
+            "EnableSounds": "הפעל צלילים",
+            "SoundVolume": "עוצמה",
+            "Theme": "ערכת נושא",
+            "SaveSettings": "שמור הגדרות"
+        },
+
+        "Themes": {
+            "Neon": "ניאון",
+            "Matrix": "מטריקס",
+            "Cyber": "סייבר",
+            "Midnight": "חצות",
+            "Plasma": "פלזמה",
+            "Hologram": "הולוגרמה",
+            "Quantum": "קוונטום",
+            "Void": "ריקנות"
+        },
+
+        "Errors": {
+            "SendFailed": "שליחת ההודעה נכשלה",
+            "ConnectionError": "שגיאת חיבור",
+            "LoadFailed": "טעינת נתונים נכשלה",
+            "SaveFailed": "שמירת נתונים נכשלה",
+            "EmptyMessage": "לא ניתן לשלוח הודעה ריקה"
+        },
+
+        "AppName": "Cyphur",
+        "ChatWith": "צ'אט עם {name}",
+        "GroupChat": "קבוצה: {name}",
+        "PrivateChat": "צ'אט פרטי",
+        "Online": "מחובר",
+        "Offline": "לא מחובר",
+        "Members": "חברים",
+        "SearchMessages": "חפש הודעות...",
+        "Results": "תוצאות",
+        "AddFavorite": "הוסף למועדפים",
+        "RemoveFavorite": "הסר ממועדפים",
+        "Mute": "השתק",
+        "Unmute": "בטל השתקה",
+        "Reply": "הגב",
+        "React": "הגב",
+        "Pin": "הצמד",
+        "Unpin": "בטל הצמדה",
+        "Edit": "ערוך",
+        "Delete": "מחק",
+        "Send": "שלח",
+        "TypeMessage": "כתוב הודעה...",
+        "GMMonitorTitle": "מוניטור סמוי",
+        "All": "הכל",
+        "Private": "פרטי",
+        "Group": "קבוצה",
+        "ExportLog": "ייצוא יומן",
+        "ClearLog": "נקה יומן",
+        "NoInterceptedMessages": "אין הודעות שנתפסו",
+        "OpenCyphur": "פתח Cyphur",
+        "ShareImage": "שתף תמונה",
+        "SetBackground": "הגדר רקע",
+        "ExportToJournal": "ייצוא ליומן",
+        "Stealth": "סמוי",
+        "Flagged": "מסומן",
+        "New": "חדש"
+    }
+}

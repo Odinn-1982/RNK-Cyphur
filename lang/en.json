@@ -1,4 +1,4 @@
-{
+﻿{
     "CYPHUR": {
         "ModuleName": "RNK Cyphur",
         "ModuleDescription": "Encrypted communications for Foundry VTT",
@@ -267,7 +267,8 @@
             "Unauthorized": "You don't have permission to do that",
             "UserNotFound": "User not found",
             "GroupNotFound": "Group not found",
-            "EmptyMessage": "Cannot send an empty message"
+            "EmptyMessage": "Cannot send an empty message",
+            "SelectUsersToChat": "Please select at least one user to start a chat"
         },
 
         "Confirmations": {
@@ -483,3 +484,6 @@
         "SettingShareBackgroundHint": "Allow others to see your custom background"
     }
 }
+
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * RNK Cyphur - Player Hub Window
  * Main hub for accessing conversations and starting new chats
  * Players: Create chats, view own chats, change theme, export, notifications
@@ -207,7 +207,7 @@ export class PlayerHubWindow extends AppClass {
         let content = msg.messageContent || msg.content || '';
         // Strip HTML and truncate
         content = content.replace(/<[^>]*>/g, '').trim();
-        if (msg.type === 'image') return '📷 Image';
+        if (msg.type === 'image') return 'ðŸ“· Image';
         return content.length > 50 ? content.substring(0, 50) + '...' : content;
     }
 
@@ -290,8 +290,18 @@ export class PlayerHubWindow extends AppClass {
         });
 
         // User selection for new chat
-        element.querySelectorAll('.cyphur-user-item').forEach(item => {
+        element.querySelectorAll('.cyphur-user-card').forEach(item => {
+            // Single click toggles selection
             item.addEventListener('click', () => item.classList.toggle('selected'));
+            
+            // Double-click opens chat immediately
+            item.addEventListener('dblclick', () => {
+                const userId = item.dataset.userId;
+                if (userId) {
+                    const api = game.modules.get(MODULE_ID)?.api;
+                    api?.UIManager?.openChatFor?.(userId);
+                }
+            });
         });
 
         // Create chat button
@@ -367,7 +377,7 @@ export class PlayerHubWindow extends AppClass {
     }
 
     async _onCreateChat() {
-        const selectedUsers = Array.from(this.element.querySelectorAll('.cyphur-user-item.selected'))
+        const selectedUsers = Array.from(this.element.querySelectorAll('.cyphur-user-card.selected'))
             .map(el => el.dataset.userId);
         const api = game.modules.get(MODULE_ID)?.api;
 
@@ -664,3 +674,4 @@ export class PlayerHubWindow extends AppClass {
         windowContent.insertBefore(logoContainer, windowContent.firstChild);
     }
 }
+

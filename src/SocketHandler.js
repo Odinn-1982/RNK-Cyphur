@@ -120,13 +120,18 @@ export class SocketHandler {
         if (!isIncoming(message)) return;
 
         if (isRelay && game.user.isGM) {
-            // GM receiving a relay - add to monitor only
+            // GM receiving a relay - add to monitor AND save to history
             const monitorPayload = {
                 senderId: originalSenderId,
                 recipientId: originalRecipientId,
                 messageData: message
             };
             DataManager.addInterceptedMessage(monitorPayload);
+            
+            // Add to persistent history
+            DataManager.addPrivateMessage(originalSenderId, originalRecipientId, message);
+            await DataManager.savePrivateChats();
+            
             UIManager.updateGMMonitor();
         } else if (!isRelay) {
             // Normal message reception

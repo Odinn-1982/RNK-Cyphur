@@ -1,8 +1,12 @@
-﻿{
+{
     "CYPHUR": {
         "ModuleName": "RNK Cyphur",
         "ModuleDescription": "Encrypted communications for Foundry VTT",
 
+        "OpenCyphur": "Cyphur Communications",
+        "SelectUser": "Select a user to chat with:",
+        "NoUsersOnline": "No other users are currently online",
+        
         "Buttons": {
             "OpenHub": "Open Cyphur Hub",
             "Send": "Send Message",

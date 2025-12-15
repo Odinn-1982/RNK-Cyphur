@@ -7,6 +7,8 @@
 
 import { MODULE_ID, THEMES, SOUNDS } from './Constants.js';
 import { QuantumPortal } from './QuantumPortal.js';
+import { UIManager } from './UIManager.js';
+import { DataManager } from './DataManager.js';
 
 // Version-compatible Application class
 let AppClass;
@@ -59,12 +61,10 @@ export class PlayerHubWindow extends AppClass {
 
     async getData() {
         const currentUser = game.user;
-        const api = game.modules.get(MODULE_ID)?.api;
-        const DataManager = api?.DataManager;
         const conversations = [];
 
         // Get group chats where user is a member
-        if (DataManager?.groupChats) {
+        if (DataManager.groupChats) {
             const visibleGroups = Array.from(DataManager.groupChats.values())
                 .filter(g => g.members?.includes(currentUser.id));
             
@@ -92,7 +92,7 @@ export class PlayerHubWindow extends AppClass {
         }
 
         // Get private chats
-        if (DataManager?.privateChats) {
+        if (DataManager.privateChats) {
             const visiblePrivateChats = Array.from(DataManager.privateChats.values())
                 .filter(chat => chat.users?.includes(currentUser.id));
             
@@ -161,16 +161,16 @@ export class PlayerHubWindow extends AppClass {
         // Current settings for player controls
         let currentTheme = 'neon';
         let enableSounds = true;
-        let soundVolume = 50;
+        let soundVolume = 0.5;
         let notificationSound = 'notify.wav';
         let enableNotifications = true;
         
         try {
             currentTheme = game.settings.get(MODULE_ID, 'theme');
-            enableSounds = game.settings.get(MODULE_ID, 'enableSounds');
-            soundVolume = game.settings.get(MODULE_ID, 'soundVolume');
+            enableSounds = game.settings.get(MODULE_ID, 'enableSound');
+            soundVolume = game.settings.get(MODULE_ID, 'notificationVolume');
             notificationSound = game.settings.get(MODULE_ID, 'notificationSound');
-            enableNotifications = game.settings.get(MODULE_ID, 'enableNotifications');
+            enableNotifications = game.settings.get(MODULE_ID, 'enableDesktopNotifications');
         } catch (e) { /* defaults */ }
 
         return {
@@ -179,7 +179,7 @@ export class PlayerHubWindow extends AppClass {
             gmUsers,
             playerUsers,
             isGM: game.user.isGM,
-            totalUnread: DataManager?.getTotalUnread?.() || 0,
+            totalUnread: DataManager.getTotalUnread() || 0,
             activeTab: this.activeTab,
             // Theme options for players
             themes: Object.entries(THEMES).map(([key, value]) => ({
@@ -195,7 +195,7 @@ export class PlayerHubWindow extends AppClass {
                 selected: s.file === notificationSound
             })),
             enableSounds,
-            soundVolume,
+            soundVolume: soundVolume * 100, // Convert 0-1 to 0-100 for slider
             enableNotifications,
             // Module info
             moduleId: MODULE_ID
@@ -314,12 +314,13 @@ export class PlayerHubWindow extends AppClass {
 
         // Sound toggle
         element.querySelector('[data-action="toggleSounds"]')?.addEventListener('change', (e) => {
-            game.settings.set(MODULE_ID, 'enableSounds', e.target.checked);
+            game.settings.set(MODULE_ID, 'enableSound', e.target.checked);
         });
 
         // Volume slider
         element.querySelector('[data-action="setVolume"]')?.addEventListener('input', (e) => {
-            game.settings.set(MODULE_ID, 'soundVolume', parseInt(e.target.value));
+            // Convert 0-100 slider to 0-1 float
+            game.settings.set(MODULE_ID, 'notificationVolume', parseInt(e.target.value) / 100);
         });
 
         // Notification sound select
@@ -332,7 +333,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Notification toggle
         element.querySelector('[data-action="toggleNotifications"]')?.addEventListener('change', (e) => {
-            game.settings.set(MODULE_ID, 'enableNotifications', e.target.checked);
+            game.settings.set(MODULE_ID, 'enableDesktopNotifications', e.target.checked);
             if (e.target.checked) this._requestNotificationPermission();
         });
 
@@ -345,6 +346,15 @@ export class PlayerHubWindow extends AppClass {
             element.querySelector('[data-action="openGMTools"]')?.addEventListener('click', () => this._onOpenGMTools());
             element.querySelector('[data-action="openGroupManager"]')?.addEventListener('click', () => this._onOpenGroupManager());
             element.querySelector('[data-action="openMonitor"]')?.addEventListener('click', () => this._onOpenMonitor());
+            element.querySelector('[data-action="setGlobalBackground"]')?.addEventListener('click', () => this._onSetGlobalBackground());
+            
+            element.querySelectorAll('[data-action="setUserBackground"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const userId = e.currentTarget.dataset.userId;
+                    if (userId) this._onSetUserBackground(userId);
+                });
+            });
         }
 
         // Search/filter
@@ -366,20 +376,18 @@ export class PlayerHubWindow extends AppClass {
     _onOpenConversation(item) {
         const convId = item.dataset.conversationId;
         const type = item.dataset.type;
-        const api = game.modules.get(MODULE_ID)?.api;
 
         if (type === 'group') {
-            api?.UIManager?.openGroupChat?.(convId);
+            UIManager.openGroupChat(convId);
         } else if (type === 'private') {
             const otherUserId = item.dataset.userId;
-            if (otherUserId) api?.UIManager?.openChatFor?.(otherUserId);
+            if (otherUserId) UIManager.openChatFor(otherUserId);
         }
     }
 
     async _onCreateChat() {
         const selectedUsers = Array.from(this.element.querySelectorAll('.cyphur-user-card.selected'))
             .map(el => el.dataset.userId);
-        const api = game.modules.get(MODULE_ID)?.api;
 
         if (selectedUsers.length === 0) {
             return ui.notifications.warn(game.i18n.localize('CYPHUR.Errors.SelectUsersToChat') || 'Select at least one user');
@@ -387,7 +395,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Single user = private chat
         if (selectedUsers.length === 1) {
-            api?.UIManager?.openChatFor?.(selectedUsers[0]);
+            UIManager.openChatFor(selectedUsers[0]);
             return;
         }
 
@@ -404,9 +412,12 @@ export class PlayerHubWindow extends AppClass {
             groupName = `Group: ${userNames.substring(0, 30)}${userNames.length > 30 ? '...' : ''}`;
         }
 
-        const group = await api?.Cyphur?.createGroup?.(groupName, selectedUsers);
+        // Import RNKCyphur dynamically if needed or assume it's available globally/imported
+        // Since we don't import RNKCyphur at the top, let's use the global or import it
+        const { RNKCyphur } = await import('./RNKCyphur.js');
+        const group = await RNKCyphur.createGroup(groupName, selectedUsers);
         if (group) {
-            api?.UIManager?.openGroupChat?.(group.id);
+            UIManager.openGroupChat(group.id);
         }
     }
 
@@ -430,7 +441,7 @@ export class PlayerHubWindow extends AppClass {
     _onTestSound() {
         try {
             const soundFile = game.settings.get(MODULE_ID, 'notificationSound');
-            const volume = game.settings.get(MODULE_ID, 'soundVolume') / 100;
+            const volume = game.settings.get(MODULE_ID, 'notificationVolume');
             const audio = new Audio(`modules/${MODULE_ID}/sounds/${soundFile}`);
             audio.volume = volume;
             audio.play();
@@ -447,18 +458,16 @@ export class PlayerHubWindow extends AppClass {
 
     async _onToggleFavorite(e) {
         const convId = e.currentTarget.closest('.cyphur-conv-item')?.dataset.conversationId;
-        const api = game.modules.get(MODULE_ID)?.api;
-        if (convId && api?.DataManager) {
-            await api.DataManager.toggleFavorite(convId);
+        if (convId) {
+            await DataManager.toggleFavorite(convId);
             this.render();
         }
     }
 
     async _onToggleMute(e) {
         const convId = e.currentTarget.closest('.cyphur-conv-item')?.dataset.conversationId;
-        const api = game.modules.get(MODULE_ID)?.api;
-        if (convId && api?.DataManager) {
-            await api.DataManager.toggleMute(convId);
+        if (convId) {
+            await DataManager.toggleMute(convId);
             this.render();
         }
     }
@@ -476,13 +485,12 @@ export class PlayerHubWindow extends AppClass {
     }
 
     async _exportAllToJournal() {
-        const api = game.modules.get(MODULE_ID)?.api;
         const currentUser = game.user;
         let content = `<h1>Cyphur Chat Export</h1>\n<p>Exported: ${new Date().toLocaleString()}</p>\n<hr>\n`;
 
         // Export private chats
-        if (api?.DataManager?.privateChats) {
-            for (const [key, chat] of api.DataManager.privateChats) {
+        if (DataManager.privateChats) {
+            for (const [key, chat] of DataManager.privateChats) {
                 if (!chat.users?.includes(currentUser.id)) continue;
                 const otherUserId = chat.users.find(id => id !== currentUser.id);
                 const otherUser = game.users.get(otherUserId);
@@ -492,8 +500,8 @@ export class PlayerHubWindow extends AppClass {
         }
 
         // Export group chats
-        if (api?.DataManager?.groupChats) {
-            for (const [key, group] of api.DataManager.groupChats) {
+        if (DataManager.groupChats) {
+            for (const [key, group] of DataManager.groupChats) {
                 if (!group.members?.includes(currentUser.id)) continue;
                 content += `<h2>Group: ${group.name}</h2>\n`;
                 content += this._formatMessagesForExport(group.history || []);
@@ -534,7 +542,6 @@ export class PlayerHubWindow extends AppClass {
     }
 
     async _onExportLocal() {
-        const api = game.modules.get(MODULE_ID)?.api;
         const currentUser = game.user;
         let exportData = {
             exportDate: new Date().toISOString(),
@@ -543,8 +550,8 @@ export class PlayerHubWindow extends AppClass {
         };
 
         // Export private chats
-        if (api?.DataManager?.privateChats) {
-            for (const [key, chat] of api.DataManager.privateChats) {
+        if (DataManager.privateChats) {
+            for (const [key, chat] of DataManager.privateChats) {
                 if (!chat.users?.includes(currentUser.id)) continue;
                 const otherUserId = chat.users.find(id => id !== currentUser.id);
                 const otherUser = game.users.get(otherUserId);
@@ -561,8 +568,8 @@ export class PlayerHubWindow extends AppClass {
         }
 
         // Export group chats
-        if (api?.DataManager?.groupChats) {
-            for (const [key, group] of api.DataManager.groupChats) {
+        if (DataManager.groupChats) {
+            for (const [key, group] of DataManager.groupChats) {
                 if (!group.members?.includes(currentUser.id)) continue;
                 exportData.conversations.push({
                     type: 'group',
@@ -606,17 +613,76 @@ export class PlayerHubWindow extends AppClass {
     // GM-only methods
     _onOpenGMTools() {
         if (!game.user.isGM) return;
-        game.modules.get(MODULE_ID)?.api?.UIManager?.openGMModWindow?.();
+        UIManager.openGMModWindow();
     }
 
     _onOpenGroupManager() {
         if (!game.user.isGM) return;
-        game.modules.get(MODULE_ID)?.api?.UIManager?.openGroupManager?.();
+        UIManager.openGroupManager();
     }
 
     _onOpenMonitor() {
         if (!game.user.isGM) return;
-        game.modules.get(MODULE_ID)?.api?.UIManager?.openGMMonitor?.();
+        UIManager.openGMMonitor();
+    }
+
+    /**
+     * Set a global background for all chats
+     */
+    async _onSetGlobalBackground() {
+        if (!game.user.isGM) return;
+
+        const picker = new FilePicker({
+            type: 'image',
+            current: game.settings.get(MODULE_ID, 'gmBackgrounds')?.global || '',
+            callback: async (path) => {
+                if (path) {
+                    const gmBgs = game.settings.get(MODULE_ID, 'gmBackgrounds') || {};
+                    gmBgs.global = path;
+                    await game.settings.set(MODULE_ID, 'gmBackgrounds', gmBgs);
+                    ui.notifications.info('Global background set for all chats');
+                }
+            }
+        });
+        picker.render(true);
+    }
+
+    /**
+     * Set a background for a specific user's chats
+     * @param {string} userId - User ID to set background for
+     */
+    async _onSetUserBackground(userId) {
+        if (!game.user.isGM) return;
+
+        const user = game.users.get(userId);
+        if (!user) return;
+
+        const gmBgs = game.settings.get(MODULE_ID, 'gmBackgrounds') || {};
+        const currentBg = gmBgs.perUser?.[userId] || '';
+
+        const picker = new FilePicker({
+            type: 'image',
+            current: currentBg,
+            callback: async (path) => {
+                if (!gmBgs.perUser) gmBgs.perUser = {};
+                
+                if (path) {
+                    gmBgs.perUser[userId] = path;
+                    ui.notifications.info(`Background set for ${user.name}'s chats`);
+                } else {
+                    delete gmBgs.perUser[userId];
+                    ui.notifications.info(`Background removed for ${user.name}'s chats`);
+                }
+                
+                await game.settings.set(MODULE_ID, 'gmBackgrounds', gmBgs);
+                
+                // Reload DataManager backgrounds
+                if (DataManager.loadBackgroundSettings) {
+                    await DataManager.loadBackgroundSettings();
+                }
+            }
+        });
+        picker.render(true);
     }
 
     /**

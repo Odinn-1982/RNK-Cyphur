@@ -23,8 +23,15 @@ Hooks.once('init', () => {
         open: () => UIManager.openPlayerHub(),
         openGMPanel: () => UIManager.openGMPanel(),
         RNKCyphur: RNKCyphur,
-        UIManager: UIManager
+        UIManager: UIManager,
+        DataManager: import('./DataManager.js').then(m => m.DataManager)
     };
+
+    // Register API on module instance
+    const module = game.modules.get(MODULE_ID);
+    if (module) {
+        module.api = game.RNKCyphur;
+    }
 
     // Preload templates
     const templates = [
@@ -188,6 +195,32 @@ Hooks.once('init', () => {
         default: false
     });
 
+    game.settings.register(MODULE_ID, 'theme', {
+        name: 'CYPHUR.SettingTheme',
+        hint: 'CYPHUR.SettingThemeHint',
+        scope: 'client',
+        config: true,
+        type: String,
+        choices: Object.fromEntries(
+            [['none', 'None'], ...Object.entries(THEMES).map(([k, v]) => [k, v.name])]
+        ),
+        default: 'neon'
+    });
+
+    game.settings.register(MODULE_ID, 'chatBackgrounds', {
+        scope: 'client',
+        config: false,
+        type: Object,
+        default: {}
+    });
+
+    game.settings.register(MODULE_ID, 'gmBackgrounds', {
+        scope: 'world',
+        config: false,
+        type: Object,
+        default: {}
+    });
+
     // ════════════════════════════════════════════════════════════════════════
     // ADDITIONAL CLIENT SETTINGS (Hidden - managed through Hub)
     // ════════════════════════════════════════════════════════════════════════
@@ -234,78 +267,161 @@ Hooks.once('init', () => {
 // ════════════════════════════════════════════════════════════════════════════
 
 Hooks.once('ready', () => {
-    RNKCyphur.initialize();
+    console.log('Cyphur | Ready hook fired');
+    
+    try {
+        RNKCyphur.initialize();
+        console.log('Cyphur | Module initialized successfully');
+    } catch (error) {
+        console.error('Cyphur | Error initializing:', error);
+    }
 
     // Apply global theme
-    const globalTheme = game.settings.get(MODULE_ID, 'globalTheme') || 'neon';
-    if (globalTheme && globalTheme !== 'none') {
-        UIManager.applyTheme(globalTheme);
+    try {
+        const globalTheme = game.settings.get(MODULE_ID, 'globalTheme') || 'neon';
+        if (globalTheme && globalTheme !== 'none') {
+            UIManager.applyTheme(globalTheme);
+        }
+    } catch (error) {
+        console.error('Cyphur | Error applying theme:', error);
     }
 
     // Store personal background reference
-    const bg = game.settings.get(MODULE_ID, 'personalBackground');
-    if (bg) {
-        window.RNKCyphurPersonalBackground = bg;
+    try {
+        const bg = game.settings.get(MODULE_ID, 'personalBackground');
+        if (bg) {
+            window.RNKCyphurPersonalBackground = bg;
+        }
+    } catch (error) {
+        console.error('Cyphur | Error loading background:', error);
     }
 
     // Register hotbar button
+    console.log('Cyphur | Registering hotbar button...');
     registerCyphurHotbarButton();
     
+    // Force scene controls refresh to ensure Cyphur button appears
+    setTimeout(() => {
+        if (ui.controls) {
+            console.log('Cyphur | Forcing scene controls refresh');
+            try {
+                ui.controls.initialize();
+            } catch (error) {
+                console.error('Cyphur | Error refreshing scene controls:', error);
+            }
+        } else {
+            console.warn('Cyphur | ui.controls not available');
+        }
+    }, 1000);
+    
     console.log('Cyphur | Ready for encrypted communications!');
+    console.log('Cyphur | Check for floating button at bottom-left of screen');
 });
 
 // ════════════════════════════════════════════════════════════════════════════
 // HOTBAR BUTTON INJECTION
 // ════════════════════════════════════════════════════════════════════════════
 
+// ════════════════════════════════════════════════════════════════════════════
+// HOTBAR BUTTON INJECTION
+// ════════════════════════════════════════════════════════════════════════════
+
 function registerCyphurHotbarButton() {
-    Hooks.on('renderHotbar', () => injectCyphurHotbarSlot());
-    injectCyphurHotbarSlot();
+    // Always create the floating button immediately
+    createFloatingButton();
+    
+    // Ensure it persists if UI updates
+    Hooks.on('renderHotbar', () => {
+        setTimeout(createFloatingButton, 100);
+    });
+    
+    // Periodic check to ensure it stays visible
+    setTimeout(createFloatingButton, 500);
+    setTimeout(createFloatingButton, 2000);
 }
 
 function injectCyphurHotbarSlot() {
-    // Only inject on page 1
-    const currentPage = ui.hotbar?.page ?? ui.hotbar?._page ?? 1;
-    if (currentPage !== 1) return;
+    // Deprecated: Redirect to floating button
+    createFloatingButton();
+}
 
-    const slot = document.querySelector('#hotbar .slot[data-slot="8"]');
-    if (!slot) return;
+function createFloatingButton() {
+    // Check if floating button already exists
+    const existing = document.getElementById('cyphur-floating-btn');
+    if (existing) {
+        console.log('Cyphur | Floating button already exists');
+        return;
+    }
 
-    // Check if already injected
-    if (slot.classList.contains('cyphur-injected')) return;
-
-    slot.classList.add('cyphur-injected');
-    slot.innerHTML = `
-        <div class="cyphur-hotbar-btn" title="Open Cyphur Communications">
-            <i class="fas fa-satellite-dish"></i>
-            <span class="cyphur-hotbar-badge" style="display:none;">0</span>
-        </div>
+    console.log('Cyphur | Creating floating button...');
+    const btn = document.createElement('div');
+    btn.id = 'cyphur-floating-btn';
+    btn.className = 'cyphur-hotbar-btn';
+    btn.innerHTML = `
+        <i class="fas fa-satellite-dish"></i>
+        <span class="cyphur-hotbar-badge" style="display:none;">0</span>
     `;
-
-    slot.style.cursor = 'pointer';
-    slot.addEventListener('click', (e) => {
+    btn.title = "Open Cyphur Communications";
+    
+    // Style as a floating radial button
+    Object.assign(btn.style, {
+        position: 'fixed',
+        bottom: '120px',
+        left: '20px',
+        width: '60px',
+        height: '60px',
+        background: 'rgba(10, 10, 18, 0.95)',
+        border: '2px solid #00fff2',
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        zIndex: '99999',
+        boxShadow: '0 0 20px rgba(0, 255, 242, 0.5)',
+        fontSize: '28px',
+        color: '#00fff2',
+        transition: 'all 0.3s ease',
+        pointerEvents: 'auto'
+    });
+    
+    // Hover effect
+    btn.onmouseenter = () => {
+        btn.style.transform = 'scale(1.1)';
+        btn.style.boxShadow = '0 0 30px rgba(0, 255, 242, 0.8)';
+        btn.style.background = 'rgba(20, 20, 35, 1)';
+    };
+    btn.onmouseleave = () => {
+        btn.style.transform = 'scale(1)';
+        btn.style.boxShadow = '0 0 20px rgba(0, 255, 242, 0.5)';
+        btn.style.background = 'rgba(10, 10, 18, 0.95)';
+    };
+    
+    btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        console.log('Cyphur | Floating button clicked!');
         UIManager.openPlayerHub();
     });
-
-    // Update badge
+    
+    document.body.appendChild(btn);
+    console.log('Cyphur | Floating button added to DOM:', btn);
     updateHotbarBadge();
 }
 
 function updateHotbarBadge() {
     import('./DataManager.js').then(({ DataManager }) => {
         const total = DataManager.getTotalUnread();
-        const badge = document.querySelector('.cyphur-hotbar-badge');
+        const badges = document.querySelectorAll('.cyphur-hotbar-badge');
         
-        if (badge) {
+        badges.forEach(badge => {
             if (total > 0) {
                 badge.textContent = total > 99 ? '99+' : total;
                 badge.style.display = 'flex';
             } else {
                 badge.style.display = 'none';
             }
-        }
+        });
     });
 }
 
@@ -321,37 +437,57 @@ Hooks.on('updateSetting', (setting) => {
 // ════════════════════════════════════════════════════════════════════════════
 
 Hooks.on('getSceneControlButtons', (controls) => {
+    console.log('Cyphur | getSceneControlButtons hook fired', controls);
+    
+    // Foundry may provide a non-array controls shape; normalize before using array methods.
+    const controlsArr = Array.isArray(controls)
+        ? controls
+        : (Array.isArray(controls?.controls)
+            ? controls.controls
+            : (Array.isArray(controls?.sceneControls)
+                ? controls.sceneControls
+                : null));
+    
+    console.log('Cyphur | Controls array:', controlsArr);
+    if (!controlsArr) {
+        console.warn('Cyphur | Could not find controls array!');
+        return;
+    }
+
     // Add Cyphur as its own control layer at the end
-    controls.push({
+    const cyphurControl = {
         name: 'cyphur',
-        title: 'CYPHUR.OpenCyphur',
+        title: 'Cyphur Communications',
         icon: 'fas fa-satellite-dish',
-        layer: 'controls',
         visible: true,
         tools: [
             {
                 name: 'openHub',
-                title: 'CYPHUR.Hub.Title',
+                title: 'Open Cyphur Hub',
                 icon: 'fas fa-comments',
                 button: true,
-                onClick: () => UIManager.openPlayerHub()
+                onClick: () => {
+                    console.log('Cyphur | Hub button clicked');
+                    UIManager.openPlayerHub();
+                }
             },
             {
                 name: 'newChat',
-                title: 'CYPHUR.Buttons.NewChat',
+                title: 'New Private Chat',
                 icon: 'fas fa-plus',
                 button: true,
                 onClick: () => {
+                    console.log('Cyphur | New chat button clicked');
                     // Open user selection dialog
                     const users = game.users.filter(u => u.id !== game.user.id && u.active);
                     if (users.length === 0) {
-                        ui.notifications.warn(game.i18n.localize('CYPHUR.NoUsersOnline'));
+                        ui.notifications.warn('No other users are currently online');
                         return;
                     }
                     new Dialog({
-                        title: game.i18n.localize('CYPHUR.Buttons.NewChat'),
+                        title: 'New Private Chat',
                         content: `<div class="cyphur-user-select">
-                            <p>${game.i18n.localize('CYPHUR.SelectUser')}</p>
+                            <p>Select a user to chat with:</p>
                             <select id="cyphur-user-select" style="width:100%;padding:5px;">
                                 ${users.map(u => `<option value="${u.id}">${u.name}</option>`).join('')}
                             </select>
@@ -359,7 +495,7 @@ Hooks.on('getSceneControlButtons', (controls) => {
                         buttons: {
                             start: {
                                 icon: '<i class="fas fa-comments"></i>',
-                                label: game.i18n.localize('CYPHUR.Buttons.Send'),
+                                label: 'Start Chat',
                                 callback: (html) => {
                                     const userId = html.find('#cyphur-user-select').val();
                                     UIManager.openChatFor(userId);
@@ -372,33 +508,45 @@ Hooks.on('getSceneControlButtons', (controls) => {
             }
         ],
         activeTool: 'openHub'
-    });
+    };
+    
+    controlsArr.push(cyphurControl);
+    console.log('Cyphur | Added Cyphur control to scene controls:', cyphurControl);
 
     // Also add GM tools if user is GM
     if (game.user.isGM) {
-        const cyphurControl = controls.find(c => c.name === 'cyphur');
+        console.log('Cyphur | Adding GM tools to scene control');
         if (cyphurControl) {
             cyphurControl.tools.push(
                 {
                     name: 'gmMonitor',
-                    title: 'CYPHUR.GMMonitorTitle',
+                    title: 'GM Monitor',
                     icon: 'fas fa-eye',
                     button: true,
-                    onClick: () => UIManager.openGMMonitor()
+                    onClick: () => {
+                        console.log('Cyphur | GM Monitor clicked');
+                        UIManager.openGMMonitor();
+                    }
                 },
                 {
                     name: 'gmTools',
-                    title: 'CYPHUR.GMModTitle',
+                    title: 'GM Moderation Tools',
                     icon: 'fas fa-tools',
                     button: true,
-                    onClick: () => UIManager.openGMModWindow()
+                    onClick: () => {
+                        console.log('Cyphur | GM Tools clicked');
+                        UIManager.openGMModWindow();
+                    }
                 },
                 {
                     name: 'groupManager',
-                    title: 'CYPHUR.GroupManagerTitle',
+                    title: 'Group Manager',
                     icon: 'fas fa-users-cog',
                     button: true,
-                    onClick: () => UIManager.openGroupManager()
+                    onClick: () => {
+                        console.log('Cyphur | Group Manager clicked');
+                        UIManager.openGroupManager();
+                    }
                 }
             );
         }

@@ -166,11 +166,15 @@ export class UIManager {
         if (type === 'private') {
             const existingWindow = this.openPrivateChatWindows.get(id);
             if (existingWindow?.rendered) {
+                // Ensure new messages scroll to bottom
+                existingWindow._shouldScrollToBottom = true;
                 existingWindow.render(false);
             }
         } else {
             const existingWindow = this.openGroupChatWindows.get(id);
             if (existingWindow?.rendered) {
+                // Ensure new messages scroll to bottom
+                existingWindow._shouldScrollToBottom = true;
                 existingWindow.render(false);
             }
         }

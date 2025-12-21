@@ -115,9 +115,17 @@ export class SocketHandler {
     static async _handlePrivateMessage(payload, isIncoming) {
         const { recipientId, message, isRelay, originalSenderId, originalRecipientId } = payload;
         
+        console.debug(`Cyphur | Private message received. Recipient: ${recipientId}, Current User: ${game.user.id}, Relay: ${isRelay}`);
+        
         // Only process if this message is for us and we didn't send it
-        if (recipientId !== game.user.id) return;
-        if (!isIncoming(message)) return;
+        if (recipientId !== game.user.id) {
+            console.debug(`Cyphur | Message not for us, returning. Expected: ${game.user.id}, Got: ${recipientId}`);
+            return;
+        }
+        if (!isIncoming(message)) {
+            console.debug(`Cyphur | Message is from us (sender check), ignoring`);
+            return;
+        }
 
         if (isRelay && game.user.isGM) {
             // GM receiving a relay - add to monitor AND save to history
@@ -135,6 +143,7 @@ export class SocketHandler {
             UIManager.updateGMMonitor();
         } else if (!isRelay) {
             // Normal message reception
+            console.debug(`Cyphur | Normal message reception from ${message.senderId}`);
             DataManager.addPrivateMessage(message.senderId, recipientId, message);
             if (game.user.isGM) await DataManager.savePrivateChats();
             
@@ -169,6 +178,7 @@ export class SocketHandler {
             }
             
             // Update UI
+            console.debug(`Cyphur | Opening chat window for ${message.senderId}`);
             UIManager.openChatWindowForNewMessage(message.senderId, 'private');
             UIManager.updatePlayerHub();
         }
@@ -380,6 +390,8 @@ export class SocketHandler {
     static sendPrivateMessage(recipientId, messageData) {
         const recipientUser = game.users.get(recipientId);
         const recipients = [recipientId];
+        
+        console.debug(`Cyphur | Sending private message to ${recipientId} (${recipientUser?.name || 'Unknown'})`);
         
         // Send to recipient
         this.emit(SOCKET_EVENTS.PRIVATE_MESSAGE, {

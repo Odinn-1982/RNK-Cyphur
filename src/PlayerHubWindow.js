@@ -55,7 +55,7 @@ export class PlayerHubWindow extends AppClass {
         this.activeTab = 'conversations';
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         return this.getData();
     }
 
@@ -207,7 +207,7 @@ export class PlayerHubWindow extends AppClass {
         let content = msg.messageContent || msg.content || '';
         // Strip HTML and truncate
         content = content.replace(/<[^>]*>/g, '').trim();
-        if (msg.type === 'image') return 'ðŸ“· Image';
+        if (msg.type === 'image') return '[Image]';
         return content.length > 50 ? content.substring(0, 50) + '...' : content;
     }
 
@@ -490,7 +490,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Export private chats
         if (DataManager.privateChats) {
-            for (const [key, chat] of DataManager.privateChats) {
+            for (const chat of DataManager.privateChats.values()) {
                 if (!chat.users?.includes(currentUser.id)) continue;
                 const otherUserId = chat.users.find(id => id !== currentUser.id);
                 const otherUser = game.users.get(otherUserId);
@@ -501,7 +501,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Export group chats
         if (DataManager.groupChats) {
-            for (const [key, group] of DataManager.groupChats) {
+            for (const group of DataManager.groupChats.values()) {
                 if (!group.members?.includes(currentUser.id)) continue;
                 content += `<h2>Group: ${group.name}</h2>\n`;
                 content += this._formatMessagesForExport(group.history || []);
@@ -521,7 +521,7 @@ export class PlayerHubWindow extends AppClass {
         ui.notifications.info(game.i18n.localize('CYPHUR.Export.JournalSuccess') || 'Chat exported to journal');
     }
 
-    async _exportConversationsToJournal(convIds) {
+    async _exportConversationsToJournal() {
         // Similar to above but only for selected conversations
         ui.notifications.info('Exporting selected conversations...');
         await this._exportAllToJournal(); // Simplified for now
@@ -551,7 +551,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Export private chats
         if (DataManager.privateChats) {
-            for (const [key, chat] of DataManager.privateChats) {
+            for (const chat of DataManager.privateChats.values()) {
                 if (!chat.users?.includes(currentUser.id)) continue;
                 const otherUserId = chat.users.find(id => id !== currentUser.id);
                 const otherUser = game.users.get(otherUserId);
@@ -569,7 +569,7 @@ export class PlayerHubWindow extends AppClass {
 
         // Export group chats
         if (DataManager.groupChats) {
-            for (const [key, group] of DataManager.groupChats) {
+            for (const group of DataManager.groupChats.values()) {
                 if (!group.members?.includes(currentUser.id)) continue;
                 exportData.conversations.push({
                     type: 'group',
@@ -584,7 +584,7 @@ export class PlayerHubWindow extends AppClass {
         }
 
         // Create readable text format
-        let textContent = `CYPHUR CHAT EXPORT\n`;
+        let textContent = 'CYPHUR CHAT EXPORT\n';
         textContent += `Exported: ${new Date().toLocaleString()}\n`;
         textContent += `User: ${currentUser.name}\n`;
         textContent += `${'='.repeat(50)}\n\n`;

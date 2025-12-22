@@ -8,7 +8,7 @@
 import { DataManager } from './DataManager.js';
 import { UIManager } from './UIManager.js';
 import { Utils } from './Utils.js';
-import { MODULE_ID, SOCKET_EVENTS } from './Constants.js';
+import { MODULE_ID } from './Constants.js';
 import { QuantumPortal } from './QuantumPortal.js';
 
 // Version-compatible Application class
@@ -125,7 +125,7 @@ export class GMMonitorWindow extends AppClass {
         };
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         let messages = [...DataManager.interceptedMessages];
 
         // Apply user filter
@@ -441,7 +441,7 @@ export class GMMonitorWindow extends AppClass {
     /**
      * Handle new message interception
      */
-    _onNewMessage(messageData) {
+    _onNewMessage() {
         // Update title with unread count
         if (this.element) {
             const titleEl = this.element.querySelector('.window-title');
@@ -539,7 +539,7 @@ export class GMMonitorWindow extends AppClass {
             if (m.messageData?.imageUrl) {
                 content += `<p><img src="${m.messageData.imageUrl}" style="max-width:200px;"></p>`;
             }
-            content += `<hr>`;
+            content += '<hr>';
         }
 
         // Create Journal Entry
@@ -580,7 +580,7 @@ export class GMMonitorWindow extends AppClass {
         portalBtn.className = 'quantum-portal-trigger';
         portalBtn.type = 'button';
         portalBtn.title = game.i18n.localize('CYPHUR.QuantumPortal.Tooltip') || 'Open in Quantum Portal';
-        portalBtn.innerHTML = `<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="Quantum Portal" class="quantum-logo spinning">`;
+        portalBtn.innerHTML = '<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="Quantum Portal" class="quantum-logo spinning">';
         
         portalBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -607,7 +607,7 @@ export class GMMonitorWindow extends AppClass {
         
         const logoContainer = document.createElement('div');
         logoContainer.className = 'cyphur-header-logo';
-        logoContainer.innerHTML = `<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="RNK Cyphur" title="RNK Cyphur - Stealth Monitor">`;
+        logoContainer.innerHTML = '<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="RNK Cyphur" title="RNK Cyphur - Stealth Monitor">';
         
         windowContent.insertBefore(logoContainer, windowContent.firstChild);
     }

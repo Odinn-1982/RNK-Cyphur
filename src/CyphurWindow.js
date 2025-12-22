@@ -10,7 +10,7 @@ import { SocketHandler } from './SocketHandler.js';
 import { Utils } from './Utils.js';
 import { RNKCyphur } from './RNKCyphur.js';
 import { QuantumPortal } from './QuantumPortal.js';
-import { MODULE_ID, REACTION_EMOJIS } from './Constants.js';
+import { REACTION_EMOJIS } from './Constants.js';
 
 // Version-compatible Application class
 let AppClass;
@@ -81,7 +81,7 @@ export class CyphurWindow extends AppClass {
     }
 
     static PARTS = {
-        form: { template: `modules/rnk-cyphur/templates/chat-window.hbs` }
+        form: { template: 'modules/rnk-cyphur/templates/chat-window.hbs' }
     };
 
     // v11/v12 compatibility - getData method (alias for _prepareContext)
@@ -89,7 +89,7 @@ export class CyphurWindow extends AppClass {
         return this._prepareContext();
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         const context = {
             currentUser: game.user,
             isGM: game.user.isGM,
@@ -511,9 +511,12 @@ export class CyphurWindow extends AppClass {
     _scrollToBottom(smooth = true) {
         const messageList = this.element?.querySelector('.cyphur-message-list');
         if (messageList) {
-            messageList.scrollTo({
-                top: messageList.scrollHeight,
-                behavior: smooth ? 'smooth' : 'auto'
+            // Use requestAnimationFrame to ensure DOM is ready before scrolling
+            requestAnimationFrame(() => {
+                messageList.scrollTo({
+                    top: messageList.scrollHeight,
+                    behavior: smooth ? 'smooth' : 'auto'
+                });
             });
         }
         this._shouldScrollToBottom = true;

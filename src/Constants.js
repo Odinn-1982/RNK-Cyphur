@@ -76,32 +76,11 @@ export const SOUNDS = [
     { id: 'glitch-effect', name: 'Glitch', file: 'glitch-effect.mp3' },
     { id: 'hello', name: 'Hello', file: 'hello.mp3' },
     { id: 'warning', name: 'Warning', file: 'warning.mp3' },
-    { id: 'siren', name: 'Siren', file: 'siren.mp3' },
-    { id: 'camera-flash', name: 'Camera Flash', file: 'camera-flash.mp3' },
-    { id: 'vine-boom', name: 'Vine Boom', file: 'vine-boom.mp3' },
-    { id: 'wow', name: 'Wow', file: 'wow.mp3' },
-    { id: 'game-over', name: 'Game Over', file: 'game-over.mp3' },
-    { id: 'punch', name: 'Punch', file: 'punch.mp3' },
-    { id: 'sword', name: 'Sword', file: 'sword.mp3' },
-    { id: 'water-splash', name: 'Water Splash', file: 'water-splash.mp3' },
-    { id: 'censor-beep', name: 'Censor Beep', file: 'censor-beep.mp3' },
-    { id: 'car-horn', name: 'Car Horn', file: 'car-horn-honking.mp3' },
-    { id: 'vinyl-stop', name: 'Vinyl Stop', file: 'vinyl-stop.mp3' },
-    { id: 'wolf', name: 'Wolf', file: 'wolf.mp3' },
-    { id: 'witch', name: 'Witch', file: 'witch.mp3' },
-    { id: 'evil-laugh', name: 'Evil Laugh', file: 'evil laugh.mp3' },
-    { id: 'creepy-laugh', name: 'Creepy Laugh', file: 'creepy laugh.mp3' },
-    { id: 'scary-laugh', name: 'Scary Laugh', file: 'scary laugh.mp3' },
-    { id: 'possessed', name: 'Possessed', file: 'possessed.mp3' },
-    { id: 'female-siren', name: 'Female Siren', file: 'female siren 5.mp3' },
-    { id: 'run', name: 'Run', file: 'run.mp3' },
-    { id: 'run-away', name: 'Run Away Girl', file: 'run away girl.mp3' },
-    { id: 'get-out', name: 'Get Out', file: 'get out of here.mp3' },
-    { id: 'stop-breathing', name: 'Stop Breathing', file: 'stop breathing.mp3' }
+    { id: 'siren', name: 'Siren', file: 'siren.mp3' }
 ];
 
 // Reaction emoji presets
-export const REACTION_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '🔥', '💯', '🎲', '⚔️', '🛡️', '✨', '🎉', '💀', '🤔', '👀'];
+export const REACTION_EMOJIS = [];
 
 // Status indicators
 export const STATUS = {

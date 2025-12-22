@@ -53,7 +53,7 @@ export class SettingsWindow extends AppClass {
         return this._prepareContext();
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         const currentTheme = game.user.isGM 
             ? game.settings.get(MODULE_ID, 'globalTheme') 
             : 'none';

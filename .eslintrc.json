@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "globals": {
+    "game": "readonly",
+    "foundry": "readonly",
+    "Hooks": "readonly",
+    "ui": "readonly",
+    "mergeObject": "readonly",
+    "renderTemplate": "readonly",
+    "loadTemplates": "readonly",
+    "Dialog": "readonly",
+    "FormApplication": "readonly",
+    "Application": "readonly",
+    "AudioHelper": "readonly",
+    "ChatMessage": "readonly",
+    "CONFIG": "readonly",
+    "CONST": "readonly",
+    "FilePicker": "readonly",
+    "ImageHelper": "readonly",
+    "JournalEntry": "readonly",
+    "JournalEntryPage": "readonly",
+    "KeyboardManager": "readonly",
+    "Ray": "readonly",
+    "TextEditor": "readonly",
+    "User": "readonly",
+    "canvas": "readonly",
+    "globalThis": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-undef": "error",
+    "semi": ["error", "always"],
+    "quotes": ["warn", "single", { "avoidEscape": true }]
+  }
+}

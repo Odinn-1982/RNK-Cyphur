@@ -4,7 +4,7 @@
  */
 
 import { DataManager } from './DataManager.js';
-import { MODULE_ID, THEMES } from './Constants.js';
+import { THEMES } from './Constants.js';
 
 export class UIManager {
     // Window tracking

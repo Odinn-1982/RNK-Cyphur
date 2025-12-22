@@ -17,11 +17,17 @@ import { GMMonitorWindow } from './src/GMMonitorWindow.js';
 import { SettingsWindow } from './src/SettingsWindow.js';
 import { GMModWindow } from './src/GMModWindow.js';
 
+// Expose RNKCyphur globally for other modules
+globalThis.RNKCyphur = RNKCyphur;
+
 // ════════════════════════════════════════════════════════════════════════════
 // LAZY LOADING INITIALIZATION
 // ════════════════════════════════════════════════════════════════════════════
 
 let _cyphurInitialized = false;
+
+// Expose initialization function globally
+globalThis.RNKCyphur.ensureInitialized = initializeCyphurIfNeeded;
 
 async function initializeCyphurIfNeeded() {
     if (_cyphurInitialized) return;
@@ -109,20 +115,31 @@ function createFloatingButton() {
 }
 
 // ════════════════════════════════════════════════════════════════════════════
-// CODEX REGISTRATION (Top-level)
+// CODEX REGISTRATION - Module Level (Before Hooks)
 // ════════════════════════════════════════════════════════════════════════════
+// Register with RNK Codex at module load time so Codex finds it during init
 
-if (!globalThis.RNK_MODULES) globalThis.RNK_MODULES = [];
-globalThis.RNK_MODULES.push({
-    id: 'cyphur',
-    name: 'Cyphur',
-    icon: 'fa-lock',
-    description: 'Encrypted Communications',
-    onClick: async () => {
-        await initializeCyphurIfNeeded();
-        UIManager.openPlayerHub();
-    }
-});
+globalThis.RNK_MODULES = globalThis.RNK_MODULES || [];
+if (!globalThis.RNK_MODULES.some(m => m.id === 'rnk-cyphur')) {
+    globalThis.RNK_MODULES.push({
+        id: 'rnk-cyphur',
+        title: 'Cyphur Communications',
+        icon: 'fa-solid fa-satellite-dish',
+        order: 30,
+        quantumPortal: true,
+        applicationClass: 'cyphur-window',
+        windowSelector: '.cyphur-window, .cyphur-player-hub, #cyphur-floating-btn',
+        onClick: async () => {
+            try {
+                await initializeCyphurIfNeeded();
+                UIManager.openPlayerHub();
+            } catch (e) {
+                console.error('Cyphur | Failed to open from Codex:', e);
+                ui.notifications?.warn?.('Failed to open Cyphur');
+            }
+        }
+    });
+}
 
 // ════════════════════════════════════════════════════════════════════════════
 // INIT HOOK - Settings Registration Only
@@ -146,7 +163,7 @@ Hooks.once('init', () => {
         },
         RNKCyphur: RNKCyphur,
         UIManager: UIManager,
-        DataManager: import('./DataManager.js').then(m => m.DataManager)
+        DataManager: import('./src/DataManager.js').then(m => m.DataManager)
     };
 
     const module = game.modules.get(MODULE_ID);

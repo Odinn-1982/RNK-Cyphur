@@ -12,8 +12,6 @@ import { MODULE_ID, DEFAULTS, THEMES } from './Constants.js';
 // ════════════════════════════════════════════════════════════════════════════
 
 Hooks.once('init', () => {
-    console.log('Cyphur | Initializing encrypted communications module...');
-    
     // Expose API
     window.RNKCyphur = RNKCyphur;
     window.RNKCyphurUIManager = UIManager;
@@ -46,7 +44,6 @@ Hooks.once('init', () => {
     // Version-compatible template loading
     const loadTemplatesFunc = foundry.applications?.handlebars?.loadTemplates || loadTemplates;
     loadTemplatesFunc(templates)
-        .then(() => console.debug('Cyphur | Templates preloaded'))
         .catch(err => console.warn('Cyphur | Error preloading templates', err));
 
     // ════════════════════════════════════════════════════════════════════════
@@ -267,11 +264,8 @@ Hooks.once('init', () => {
 // ════════════════════════════════════════════════════════════════════════════
 
 Hooks.once('ready', () => {
-    console.log('Cyphur | Ready hook fired');
-    
     try {
         RNKCyphur.initialize();
-        console.log('Cyphur | Module initialized successfully');
     } catch (error) {
         console.error('Cyphur | Error initializing:', error);
     }
@@ -297,13 +291,11 @@ Hooks.once('ready', () => {
     }
 
     // Register hotbar button
-    console.log('Cyphur | Registering hotbar button...');
     registerCyphurHotbarButton();
     
     // Force scene controls refresh to ensure Cyphur button appears
     setTimeout(() => {
         if (ui.controls) {
-            console.log('Cyphur | Forcing scene controls refresh');
             try {
                 ui.controls.initialize();
             } catch (error) {
@@ -313,9 +305,6 @@ Hooks.once('ready', () => {
             console.warn('Cyphur | ui.controls not available');
         }
     }, 1000);
-    
-    console.log('Cyphur | Ready for encrypted communications!');
-    console.log('Cyphur | Check for floating button at bottom-left of screen');
 });
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -340,20 +329,13 @@ function registerCyphurHotbarButton() {
     setTimeout(createFloatingButton, 2000);
 }
 
-function injectCyphurHotbarSlot() {
-    // Deprecated: Redirect to floating button
-    createFloatingButton();
-}
-
 function createFloatingButton() {
     // Check if floating button already exists
     const existing = document.getElementById('cyphur-floating-btn');
     if (existing) {
-        console.log('Cyphur | Floating button already exists');
         return;
     }
 
-    console.log('Cyphur | Creating floating button...');
     const btn = document.createElement('div');
     btn.id = 'cyphur-floating-btn';
     btn.className = 'cyphur-hotbar-btn';
@@ -361,7 +343,7 @@ function createFloatingButton() {
         <i class="fas fa-satellite-dish"></i>
         <span class="cyphur-hotbar-badge" style="display:none;">0</span>
     `;
-    btn.title = "Open Cyphur Communications";
+    btn.title = 'Open Cyphur Communications';
     
     // Style as a floating radial button
     Object.assign(btn.style, {
@@ -400,12 +382,10 @@ function createFloatingButton() {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Cyphur | Floating button clicked!');
         UIManager.openPlayerHub();
     });
     
     document.body.appendChild(btn);
-    console.log('Cyphur | Floating button added to DOM:', btn);
     updateHotbarBadge();
 }
 
@@ -437,8 +417,6 @@ Hooks.on('updateSetting', (setting) => {
 // ════════════════════════════════════════════════════════════════════════════
 
 Hooks.on('getSceneControlButtons', (controls) => {
-    console.log('Cyphur | getSceneControlButtons hook fired', controls);
-    
     // Foundry may provide a non-array controls shape; normalize before using array methods.
     const controlsArr = Array.isArray(controls)
         ? controls
@@ -448,7 +426,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                 ? controls.sceneControls
                 : null));
     
-    console.log('Cyphur | Controls array:', controlsArr);
     if (!controlsArr) {
         console.warn('Cyphur | Could not find controls array!');
         return;
@@ -467,7 +444,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                 icon: 'fas fa-comments',
                 button: true,
                 onClick: () => {
-                    console.log('Cyphur | Hub button clicked');
                     UIManager.openPlayerHub();
                 }
             },
@@ -477,7 +453,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                 icon: 'fas fa-plus',
                 button: true,
                 onClick: () => {
-                    console.log('Cyphur | New chat button clicked');
                     // Open user selection dialog
                     const users = game.users.filter(u => u.id !== game.user.id && u.active);
                     if (users.length === 0) {
@@ -511,11 +486,9 @@ Hooks.on('getSceneControlButtons', (controls) => {
     };
     
     controlsArr.push(cyphurControl);
-    console.log('Cyphur | Added Cyphur control to scene controls:', cyphurControl);
 
     // Also add GM tools if user is GM
     if (game.user.isGM) {
-        console.log('Cyphur | Adding GM tools to scene control');
         if (cyphurControl) {
             cyphurControl.tools.push(
                 {
@@ -524,7 +497,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                     icon: 'fas fa-eye',
                     button: true,
                     onClick: () => {
-                        console.log('Cyphur | GM Monitor clicked');
                         UIManager.openGMMonitor();
                     }
                 },
@@ -534,7 +506,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                     icon: 'fas fa-tools',
                     button: true,
                     onClick: () => {
-                        console.log('Cyphur | GM Tools clicked');
                         UIManager.openGMModWindow();
                     }
                 },
@@ -544,7 +515,6 @@ Hooks.on('getSceneControlButtons', (controls) => {
                     icon: 'fas fa-users-cog',
                     button: true,
                     onClick: () => {
-                        console.log('Cyphur | Group Manager clicked');
                         UIManager.openGroupManager();
                     }
                 }
@@ -558,7 +528,7 @@ Hooks.on('getSceneControlButtons', (controls) => {
 // ════════════════════════════════════════════════════════════════════════════
 
 // Optional: Add a whisper redirect button in Foundry's chat
-Hooks.on('renderChatMessage', (message, html, data) => {
+Hooks.on('renderChatMessage', (message, html) => {
     // If it's a whisper, add option to continue in Cyphur
     if (message.whisper?.length > 0 && message.whisper.length < game.users.size) {
         const recipientId = message.whisper.find(id => id !== game.user.id);

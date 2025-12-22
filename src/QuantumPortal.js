@@ -15,8 +15,6 @@ export class QuantumPortal {
      * Initialize the Quantum Portal system
      */
     static init() {
-        console.log(`${MODULE_ID} | Quantum Portal initializing...`);
-        
         // Clean up portals when main window closes
         window.addEventListener('beforeunload', () => {
             this.closeAllPortals();
@@ -85,8 +83,6 @@ export class QuantumPortal {
         // Emit event
         Hooks.callAll('cyphur.portalOpened', app, portalWindow);
         
-        console.log(`${MODULE_ID} | Quantum Portal opened for ${app.title}`);
-        
         return portalWindow;
     }
     
@@ -105,7 +101,7 @@ export class QuantumPortal {
      * Close all open portals
      */
     static closeAllPortals() {
-        for (const [appId, portal] of this.portalWindows) {
+        for (const portal of this.portalWindows.values()) {
             if (portal && !portal.closed) {
                 portal.close();
             }
@@ -124,9 +120,9 @@ export class QuantumPortal {
         }
         
         // Try by ID
-        const appId = app.id || app.appId;
-        if (appId) {
-            const elem = document.getElementById(appId);
+        const id = app.id || app.appId;
+        if (id) {
+            const elem = document.getElementById(id);
             if (elem) return elem;
         }
         
@@ -202,7 +198,7 @@ export class QuantumPortal {
         await this._copyStyles(doc);
         
         // Set document title
-        doc.title = `⚡ ${app.title} - Quantum Portal`;
+        doc.title = `${app.title} - Quantum Portal`;
         
         // Style the body
         doc.body.style.cssText = `
@@ -336,7 +332,6 @@ export class QuantumPortal {
      * @private
      */
     static _setupPortalInteractivity(portal, app, clone, originalElement) {
-        const doc = portal.document;
         
         // Handle form submissions
         clone.querySelectorAll('form').forEach(form => {
@@ -353,7 +348,7 @@ export class QuantumPortal {
         
         // Handle button clicks
         clone.querySelectorAll('button, [data-action]').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 const action = btn.dataset.action;
                 if (action === 'close') {
                     portal.close();
@@ -376,7 +371,7 @@ export class QuantumPortal {
         
         // Handle input changes
         clone.querySelectorAll('input, textarea, select').forEach(input => {
-            input.addEventListener('change', (e) => {
+            input.addEventListener('change', () => {
                 const name = input.name || input.id;
                 if (name) {
                     const original = originalElement.querySelector(`[name="${name}"], #${name}`);
@@ -387,7 +382,7 @@ export class QuantumPortal {
                 }
             });
             
-            input.addEventListener('input', (e) => {
+            input.addEventListener('input', () => {
                 const name = input.name || input.id;
                 if (name) {
                     const original = originalElement.querySelector(`[name="${name}"], #${name}`);
@@ -422,7 +417,7 @@ export class QuantumPortal {
     static _addPortalIndicator(doc) {
         const indicator = doc.createElement('div');
         indicator.className = 'quantum-portal-indicator';
-        indicator.innerHTML = '⚡ Quantum Portal Active';
+        indicator.innerHTML = 'Quantum Portal Active';
         doc.body.appendChild(indicator);
     }
     
@@ -443,8 +438,6 @@ export class QuantumPortal {
         
         // Emit event
         Hooks.callAll('cyphur.portalClosed', app);
-        
-        console.log(`${MODULE_ID} | Quantum Portal closed for ${app.title}`);
     }
     
     /**

@@ -5,6 +5,14 @@ All notable changes to RNK Cyphur will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-12-22
+
+### Changed
+- **Deep Clean**: Removed all emojis from UI elements and source code for better compatibility.
+- **Optimization**: Removed unused assets and sound files to reduce module size.
+- **Code Cleanup**: Removed debug console logs and unused scripts.
+- **Linting**: Codebase now passes strict linting rules.
+
 ## [1.0.0] - 2024-01-XX
 
 ### Added

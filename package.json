@@ -1,6 +1,6 @@
 {
     "name": "rnk-cyphur",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Next-generation encrypted communications module for Foundry VTT",
     "main": "main.js",
     "type": "module",
@@ -25,5 +25,7 @@
         "url": "https://github.com/Odinn-1982/rnk-cyphur/issues"
     },
     "homepage": "https://github.com/Odinn-1982/rnk-cyphur#readme",
-    "devDependencies": {}
+    "devDependencies": {
+        "eslint": "^8.56.0"
+    }
 }

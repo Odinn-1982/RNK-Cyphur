@@ -123,7 +123,7 @@ export class SocketHandler {
             return;
         }
         if (!isIncoming(message)) {
-            console.debug(`Cyphur | Message is from us (sender check), ignoring`);
+            console.debug('Cyphur | Message is from us (sender check), ignoring');
             return;
         }
 
@@ -181,6 +181,9 @@ export class SocketHandler {
             console.debug(`Cyphur | Opening chat window for ${message.senderId}`);
             UIManager.openChatWindowForNewMessage(message.senderId, 'private');
             UIManager.updatePlayerHub();
+
+            // Hook for external modules (like Gateway)
+            Hooks.callAll('RNKCyphurMessageReceived', message);
         }
     }
 
@@ -690,7 +693,7 @@ export class SocketHandler {
         
         // Send relevant group chats
         const groups = [];
-        for (const [groupId, group] of DataManager.groupChats.entries()) {
+        for (const group of DataManager.groupChats.values()) {
             if (group.members.includes(userId)) {
                 groups.push(group);
             }

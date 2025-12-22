@@ -7,7 +7,6 @@
 import { DataManager } from './DataManager.js';
 import { UIManager } from './UIManager.js';
 import { RNKCyphur } from './RNKCyphur.js';
-import { Utils } from './Utils.js';
 import { QuantumPortal } from './QuantumPortal.js';
 import { MODULE_ID } from './Constants.js';
 
@@ -56,7 +55,7 @@ export class GMModWindow extends AppClass {
         return this._prepareContext({});
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         // Get all conversations
         const privateChats = Array.from(DataManager.privateChats.entries()).map(([key, chat]) => {
             const users = chat.users.map(id => game.users.get(id)?.name || 'Unknown').join(' ↔ ');
@@ -208,7 +207,7 @@ export class GMModWindow extends AppClass {
         });
 
         if (confirmed) {
-            for (const [key, chat] of DataManager.privateChats.entries()) {
+            for (const chat of DataManager.privateChats.values()) {
                 chat.history = [];
             }
             await DataManager.savePrivateChats();
@@ -225,7 +224,7 @@ export class GMModWindow extends AppClass {
         });
 
         if (confirmed) {
-            for (const [id, group] of DataManager.groupChats.entries()) {
+            for (const group of DataManager.groupChats.values()) {
                 group.history = [];
             }
             await DataManager.saveGroupChats();
@@ -258,7 +257,7 @@ export class GMModWindow extends AppClass {
         portalBtn.className = 'quantum-portal-trigger';
         portalBtn.type = 'button';
         portalBtn.title = game.i18n.localize('CYPHUR.QuantumPortal.Tooltip') || 'Open in Quantum Portal';
-        portalBtn.innerHTML = `<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="Quantum Portal" class="quantum-logo spinning">`;
+        portalBtn.innerHTML = '<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="Quantum Portal" class="quantum-logo spinning">';
         
         portalBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -285,7 +284,7 @@ export class GMModWindow extends AppClass {
         
         const logoContainer = document.createElement('div');
         logoContainer.className = 'cyphur-header-logo';
-        logoContainer.innerHTML = `<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="RNK Cyphur" title="RNK Cyphur - GM Moderation">`;
+        logoContainer.innerHTML = '<img src="modules/rnk-cyphur/rnk-codex.jpg" alt="RNK Cyphur" title="RNK Cyphur - GM Moderation">';
         
         windowContent.insertBefore(logoContainer, windowContent.firstChild);
     }

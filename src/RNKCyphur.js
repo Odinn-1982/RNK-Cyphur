@@ -39,8 +39,6 @@ export class RNKCyphur {
         
         // Initialize socket communications
         SocketHandler.initialize();
-        
-        console.log(`${this.NAME} | Initialized and ready for encrypted communications.`);
     }
 
     /**
@@ -80,8 +78,6 @@ export class RNKCyphur {
         // Send via socket
         SocketHandler.sendPrivateMessage(recipientId, messageData);
 
-        const recipientUser = game.users.get(recipientId);
-        
         // If sender is GM, add to monitor immediately
         if (game.user.isGM) {
             const monitorPayload = {

@@ -20,8 +20,6 @@ export class DataManager {
     static pinnedMessages = new Map();
     static sharedBackgrounds = new Map();
     static userPresence = new Map();
-    static chatBackgrounds = new Map();
-    static gmBackgrounds = new Map();
 
     // ════════════════════════════════════════════════════════════════════════════
     // INITIALIZATION & LOADING
@@ -1121,11 +1119,11 @@ export class DataManager {
         if (!chat || !chat.history) return '';
         
         const lines = [];
-        const title = isGroup ? `Group: ${chat.name || 'Unknown'}` : `Private Chat`;
-        lines.push(`═══════════════════════════════════════`);
+        const title = isGroup ? `Group: ${chat.name || 'Unknown'}` : 'Private Chat';
+        lines.push('═══════════════════════════════════════');
         lines.push(`Cyphur Chat Export - ${title}`);
         lines.push(`Exported: ${new Date().toLocaleString()}`);
-        lines.push(`═══════════════════════════════════════`);
+        lines.push('═══════════════════════════════════════');
         lines.push('');
         
         const sorted = [...chat.history].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
@@ -1145,9 +1143,9 @@ export class DataManager {
             lines.push('');
         }
         
-        lines.push(`═══════════════════════════════════════`);
+        lines.push('═══════════════════════════════════════');
         lines.push(`End of Export - ${sorted.length} messages`);
-        lines.push(`═══════════════════════════════════════`);
+        lines.push('═══════════════════════════════════════');
         
         return lines.join('\n');
     }
@@ -1207,101 +1205,6 @@ export class DataManager {
         });
         
         return conversations;
-    }
-
-    // ════════════════════════════════════════════════════════════════════════════
-    // BACKGROUND MANAGEMENT
-    // ════════════════════════════════════════════════════════════════════════════
-
-    /**
-     * Load background settings from storage
-     */
-    static async loadBackgroundSettings() {
-        try {
-            const chatBgs = game.settings.get(MODULE_ID, 'chatBackgrounds') || {};
-            this.chatBackgrounds = new Map(Object.entries(chatBgs));
-            
-            if (game.user.isGM) {
-                const gmBgs = game.settings.get(MODULE_ID, 'gmBackgrounds') || {};
-                this.gmBackgrounds = new Map(Object.entries(gmBgs.perChat || {}));
-            }
-            
-            console.debug(`Cyphur | Loaded ${this.chatBackgrounds.size} chat backgrounds`);
-        } catch (e) {
-            console.error('Cyphur | Failed to load background settings:', e);
-        }
-    }
-
-    /**
-     * Set a background for a specific chat conversation
-     * @param {string} conversationId - Conversation ID
-     * @param {string} path - Background image path
-     */
-    static async setChatBackground(conversationId, path) {
-        this.chatBackgrounds.set(conversationId, path);
-        await this._saveBackgroundSettings();
-    }
-
-    /**
-     * Get the background for a specific chat conversation
-     * @param {string} conversationId - Conversation ID
-     * @returns {string|null} Background path or null
-     */
-    static getChatBackground(conversationId) {
-        return this.chatBackgrounds.get(conversationId) || null;
-    }
-
-    /**
-     * Remove background for a specific chat
-     * @param {string} conversationId - Conversation ID
-     */
-    static async removeChatBackground(conversationId) {
-        this.chatBackgrounds.delete(conversationId);
-        await this._saveBackgroundSettings();
-    }
-
-    /**
-     * Get the effective background for a conversation (considering GM overrides, etc.)
-     * @param {string} conversationId - Conversation ID
-     * @param {string} userId - User ID to check for
-     * @returns {string|null} Background path or null
-     */
-    static getEffectiveBackground(conversationId, userId) {
-        // Check GM overrides first (if GM has set a global or per-chat background)
-        if (this.gmBackgrounds.has(conversationId)) {
-            return this.gmBackgrounds.get(conversationId);
-        }
-        
-        // Check user's chat-specific background
-        if (this.chatBackgrounds.has(conversationId)) {
-            return this.chatBackgrounds.get(conversationId);
-        }
-        
-        // Check shared backgrounds from other users
-        if (this.sharedBackgrounds.has(conversationId)) {
-            return this.sharedBackgrounds.get(conversationId);
-        }
-        
-        return null;
-    }
-
-    /**
-     * Save background settings to storage
-     * @private
-     */
-    static async _saveBackgroundSettings() {
-        try {
-            const chatBgs = Object.fromEntries(this.chatBackgrounds);
-            await game.settings.set(MODULE_ID, 'chatBackgrounds', chatBgs);
-            
-            if (game.user.isGM) {
-                const gmBgsData = game.settings.get(MODULE_ID, 'gmBackgrounds') || {};
-                gmBgsData.perChat = Object.fromEntries(this.gmBackgrounds);
-                await game.settings.set(MODULE_ID, 'gmBackgrounds', gmBgsData);
-            }
-        } catch (e) {
-            console.error('Cyphur | Failed to save background settings:', e);
-        }
     }
 }
 

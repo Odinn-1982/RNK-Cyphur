@@ -56,7 +56,7 @@ export class GroupManagerWindow extends AppClass {
         return this._prepareContext();
     }
 
-    async _prepareContext(options) {
+    async _prepareContext() {
         const groups = Array.from(DataManager.groupChats.values()).map(group => ({
             id: group.id,
             name: group.name,

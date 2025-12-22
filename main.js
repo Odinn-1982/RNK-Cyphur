@@ -27,15 +27,18 @@ globalThis.RNKCyphur = RNKCyphur;
 let _cyphurInitialized = false;
 
 // Expose initialization function globally
-globalThis.RNKCyphur.ensureInitialized = initializeCyphurIfNeeded;
+globalThis.RNKCyphur.ensureInitialized = activateCyphur;
 
-async function initializeCyphurIfNeeded() {
+async function activateCyphur() {
     if (_cyphurInitialized) return;
     _cyphurInitialized = true;
 
-    console.log('🚀 Lazy loading Cyphur...');
+    console.log('🚀 Activating Cyphur...');
 
-    // Preload templates
+    // 1. Register Settings & API (Moved from init hook)
+    registerSettingsAndAPI();
+
+    // 2. Preload templates
     const templates = [
         `modules/${MODULE_ID}/templates/chat-window.hbs`,
         `modules/${MODULE_ID}/templates/group-manager.hbs`,
@@ -48,104 +51,36 @@ async function initializeCyphurIfNeeded() {
     const loadTemplatesFunc = foundry.applications?.handlebars?.loadTemplates || loadTemplates;
     await loadTemplatesFunc(templates);
 
-    // Initialize core system
+    // 3. Initialize core system
     RNKCyphur.initialize();
 
-    // Apply global theme
+    // 4. Apply global theme
     const globalTheme = game.settings.get(MODULE_ID, 'globalTheme') || 'neon';
     if (globalTheme && globalTheme !== 'none') {
         UIManager.applyTheme(globalTheme);
     }
 
-    // Load personal background
+    // 5. Load personal background
     const bg = game.settings.get(MODULE_ID, 'personalBackground');
     if (bg) {
         window.RNKCyphurPersonalBackground = bg;
     }
 
-    // Register hotbar button
+    // 6. Register hotbar button
     registerCyphurHotbarButton();
 
-    // Refresh scene controls
+    // 7. Refresh scene controls
     setTimeout(() => {
         if (ui.controls) {
             ui.controls.initialize();
         }
     }, 100);
 
-    console.log('✅ Cyphur lazy loading complete');
+    console.log('✅ Cyphur activation complete');
+    ui.notifications.info('RNK Cyphur™ Activated');
 }
 
-function registerCyphurHotbarButton() {
-    createFloatingButton();
-    Hooks.on('renderHotbar', () => setTimeout(createFloatingButton, 100));
-}
-
-function createFloatingButton() {
-    const existing = document.getElementById('cyphur-floating-btn');
-    if (existing) return;
-
-    const btn = document.createElement('div');
-    btn.id = 'cyphur-floating-btn';
-    btn.className = 'cyphur-floating-button';
-    btn.innerHTML = '<i class="fas fa-lock"></i>';
-    btn.title = 'Open Cyphur Encrypted Communications';
-    btn.onclick = () => UIManager.openPlayerHub();
-    
-    const styles = btn.style;
-    styles.position = 'fixed';
-    styles.bottom = '20px';
-    styles.left = '20px';
-    styles.width = '50px';
-    styles.height = '50px';
-    styles.borderRadius = '50%';
-    styles.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-    styles.border = '2px solid rgba(255, 255, 255, 0.3)';
-    styles.cursor = 'pointer';
-    styles.zIndex = '1000';
-    styles.display = 'flex';
-    styles.alignItems = 'center';
-    styles.justifyContent = 'center';
-    styles.fontSize = '20px';
-    styles.color = 'white';
-    styles.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
-    styles.transition = 'all 0.3s ease';
-
-    document.body.appendChild(btn);
-}
-
-// ════════════════════════════════════════════════════════════════════════════
-// CODEX REGISTRATION - Module Level (Before Hooks)
-// ════════════════════════════════════════════════════════════════════════════
-// Register with RNK Codex at module load time so Codex finds it during init
-
-globalThis.RNK_MODULES = globalThis.RNK_MODULES || [];
-if (!globalThis.RNK_MODULES.some(m => m.id === 'rnk-cyphur')) {
-    globalThis.RNK_MODULES.push({
-        id: 'rnk-cyphur',
-        title: 'Cyphur Communications',
-        icon: 'fa-solid fa-satellite-dish',
-        order: 30,
-        quantumPortal: true,
-        applicationClass: 'cyphur-window',
-        windowSelector: '.cyphur-window, .cyphur-player-hub, #cyphur-floating-btn',
-        onClick: async () => {
-            try {
-                await initializeCyphurIfNeeded();
-                UIManager.openPlayerHub();
-            } catch (e) {
-                console.error('Cyphur | Failed to open from Codex:', e);
-                ui.notifications?.warn?.('Failed to open Cyphur');
-            }
-        }
-    });
-}
-
-// ════════════════════════════════════════════════════════════════════════════
-// INIT HOOK - Settings Registration Only
-// ════════════════════════════════════════════════════════════════════════════
-
-Hooks.once('init', () => {
+function registerSettingsAndAPI() {
     console.log('Cyphur | Registering settings...');
     
     // Expose API
@@ -154,11 +89,11 @@ Hooks.once('init', () => {
     
     game.RNKCyphur = {
         open: async () => {
-            await initializeCyphurIfNeeded();
+            await activateCyphur();
             UIManager.openPlayerHub();
         },
         openGMPanel: async () => {
-            await initializeCyphurIfNeeded();
+            await activateCyphur();
             UIManager.openGMPanel();
         },
         RNKCyphur: RNKCyphur,
@@ -379,7 +314,72 @@ Hooks.once('init', () => {
         if (!_cyphurInitialized) return;
         // Add any chat message processing here
     });
-});
+}
+
+function registerCyphurHotbarButton() {
+    createFloatingButton();
+    Hooks.on('renderHotbar', () => setTimeout(createFloatingButton, 100));
+}
+
+function createFloatingButton() {
+    const existing = document.getElementById('cyphur-floating-btn');
+    if (existing) return;
+
+    const btn = document.createElement('div');
+    btn.id = 'cyphur-floating-btn';
+    btn.className = 'cyphur-floating-button';
+    btn.innerHTML = '<i class="fas fa-lock"></i>';
+    btn.title = 'Open Cyphur Encrypted Communications';
+    btn.onclick = () => UIManager.openPlayerHub();
+    
+    const styles = btn.style;
+    styles.position = 'fixed';
+    styles.bottom = '20px';
+    styles.left = '20px';
+    styles.width = '50px';
+    styles.height = '50px';
+    styles.borderRadius = '50%';
+    styles.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    styles.border = '2px solid rgba(255, 255, 255, 0.3)';
+    styles.cursor = 'pointer';
+    styles.zIndex = '1000';
+    styles.display = 'flex';
+    styles.alignItems = 'center';
+    styles.justifyContent = 'center';
+    styles.fontSize = '20px';
+    styles.color = 'white';
+    styles.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+    styles.transition = 'all 0.3s ease';
+
+    document.body.appendChild(btn);
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// CODEX REGISTRATION - Module Level (Before Hooks)
+// ════════════════════════════════════════════════════════════════════════════
+// Register with RNK Codex at module load time so Codex finds it during init
+
+globalThis.RNK_MODULES = globalThis.RNK_MODULES || [];
+if (!globalThis.RNK_MODULES.some(m => m.id === 'rnk-cyphur')) {
+    globalThis.RNK_MODULES.push({
+        id: 'rnk-cyphur',
+        title: 'Cyphur Communications',
+        icon: 'fa-solid fa-satellite-dish',
+        order: 30,
+        quantumPortal: true,
+        applicationClass: 'cyphur-window',
+        windowSelector: '.cyphur-window, .cyphur-player-hub, #cyphur-floating-btn',
+        onClick: async () => {
+            try {
+                await activateCyphur();
+                UIManager.openPlayerHub();
+            } catch (e) {
+                console.error('Cyphur | Failed to open from Codex:', e);
+                ui.notifications?.warn?.('Failed to open Cyphur');
+            }
+        }
+    });
+}
 
 // ════════════════════════════════════════════════════════════════════════════
 // VERSION DETECTION & COMPATIBILITY HELPERS (Exported for external use)

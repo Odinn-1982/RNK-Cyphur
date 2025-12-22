@@ -1,6 +1,6 @@
 {
     "name": "rnk-cyphur",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Next-generation encrypted communications module for Foundry VTT",
     "main": "main.js",
     "type": "module",

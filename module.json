@@ -2,7 +2,7 @@
     "id": "rnk-cyphur",
     "title": "RNK Cyphur™",
     "description": "Next-generation encrypted communications module for Foundry VTT. Features private messaging, group channels, image sharing, GM stealth monitoring, and a sleek cyberpunk interface. System agnostic.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "authors": [
         {
             "name": "Odinn",
@@ -63,7 +63,23 @@
         { "lang": "he", "name": "×¢×‘×¨×™×ª", "path": "lang/he.json" },
         { "lang": "th", "name": "à¹„à¸—à¸¢", "path": "lang/th.json" },
         { "lang": "vi", "name": "Tiáº¿ng Viá»‡t", "path": "lang/vi.json" },
-        { "lang": "ar", "name": "Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©", "path": "lang/ar.json" }
+        { "lang": "ar", "name": "العربية", "path": "lang/ar.json" },
+        { "lang": "ca", "name": "Català", "path": "lang/ca.json" },
+        { "lang": "el", "name": "Ελληνικά", "path": "lang/el.json" },
+        { "lang": "ro", "name": "Română", "path": "lang/ro.json" },
+        { "lang": "sk", "name": "Slovenčina", "path": "lang/sk.json" },
+        { "lang": "sr", "name": "Српски", "path": "lang/sr.json" },
+        { "lang": "hr", "name": "Hrvatski", "path": "lang/hr.json" },
+        { "lang": "bg", "name": "Български", "path": "lang/bg.json" },
+        { "lang": "id", "name": "Bahasa Indonesia", "path": "lang/id.json" },
+        { "lang": "ms", "name": "Bahasa Melayu", "path": "lang/ms.json" },
+        { "lang": "hi", "name": "हिन्दी", "path": "lang/hi.json" },
+        { "lang": "bn", "name": "বাংলা", "path": "lang/bn.json" },
+        { "lang": "fa", "name": "فارسی", "path": "lang/fa.json" },
+        { "lang": "tl", "name": "Tagalog", "path": "lang/tl.json" },
+        { "lang": "lt", "name": "Lietuvių", "path": "lang/lt.json" },
+        { "lang": "lv", "name": "Latviešu", "path": "lang/lv.json" },
+        { "lang": "et", "name": "Eesti", "path": "lang/et.json" }
     ]
 }
 
